@@ -918,6 +918,11 @@ Rectangle {
                     slideAnimation2.start()
                 }
 
+//                var fileName = "screenshot_" + name + ".png";
+//                // Update the viewer source
+//                viewer1.source = "file:///" + fileName;
+//                slideAnimation2.start()
+
 
                 var currentIndex = -1
                 for (var i = 0; i < radioButtonGroup.buttons.length; ++i) {
@@ -1798,10 +1803,13 @@ Rectangle {
                         undo.color = "#617284"
                         delete2.color = "#617284"
                         rename.color = "#617284"
+
+
                         rect8anim2.start()
                         acceptAndCancelAnim2.start()
                         recordFileNameTextInput.text="Please select the job you want to do"
                         progressBar.indeterminate=false
+
                         progressBar.z=0
                         progressBarValue.z=0
                     }
@@ -2880,3 +2888,10 @@ CustomButtonHeaderBlackBG{
         id: __materialLibrary__
     }
 }
+
+
+
+
+
+
+

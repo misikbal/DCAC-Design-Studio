@@ -7,7 +7,6 @@ import QtQuick.Studio.Components 1.0
 import QtQuick.Studio.Effects 1.0
 import QtGraphicalEffects 1.15
 
-
 Rectangle {
     id: rectangle
     width: 1280
@@ -3281,11 +3280,14 @@ else if(typee==="Logger"){
                                 textForRecordTime.text=""
                                 textForTypeText.text=""
                             }
+
                         }
                     }
+
                 }
             }
         }
+
     }
 
     Rectangle {

@@ -2292,7 +2292,6 @@ Rectangle {
                         width: 342
                         height: 40
                         x:-70
-                        y:-5
                         onClicked: {
                             console.log("Tıklanan öğenin indeksi: " + (index+1));
                             text1.text=(index+1)

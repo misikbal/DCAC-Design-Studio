@@ -158,7 +158,7 @@ Rectangle {
             Text {
                 x: 8
                 y: 8
-                width: 300
+                width: 239
                 height: 30
                 color: "#284863"
                 text: "USB Connection Settings"
@@ -2207,20 +2207,7 @@ Rectangle {
                 y: 14
                 width: 324
                 height: 32
-                checkable: true
-                display: AbstractButton.TextBesideIcon
                 rightPadding: -237
-                background: Rectangle {
-                    x:254
-                    width: 60
-                     implicitWidth: 30
-                     implicitHeight: 15
-                     radius: 15
-                     color: switch3.checked ? "gray" : "lightgray"
-                     border.color: "black"
-                     border.width: 0
-                 }
-
                 onCheckedChanged: {
                     if(switch3.checked){
                         text12.text="Well"
@@ -2365,6 +2352,7 @@ Rectangle {
                     color: "#f7f8fa"
                     border.color: "#dce8ef"
 
+
                     Flickable {
                         id: flickable
                         x: -6
@@ -2377,6 +2365,9 @@ Rectangle {
                         maximumFlickVelocity: 5000
                         contentHeight: 200
                         visible: false
+
+
+
 
                         ScrollBar.vertical: ScrollBar {
                             x: 355
@@ -2412,13 +2403,8 @@ Rectangle {
 
                                 if(switch1.checked && switch2.checked){
                                     forWifi.source="images/ConnectWifi.png"
-                                    uil_wifi.source = "images/uil_wifi_on.svg";
-                                    ellipse4.color = "#217efd"
                                 }
-                            }
-                            onNonclickedSignal: {
-                                uil_wifi.source = "images/uil_wifi.svg";
-                                ellipse4.color = "#617284"
+
                             }
                         }
 
@@ -2441,13 +2427,7 @@ Rectangle {
 
                                 if(switch1.checked && switch2.checked){
                                     forWifi.source="images/ConnectWifi.png"
-                                    uil_wifi.source = "images/uil_wifi_on.svg";
-                                    ellipse4.color = "#217efd"
                                 }
-                            }
-                            onNonclickedSignal: {
-                                uil_wifi.source = "images/uil_wifi.svg";
-                                ellipse4.color = "#617284"
                             }
                         }
 
@@ -2509,15 +2489,10 @@ Rectangle {
                                 checkbox4.checkBoxOFF.source="images/CheckBoxOFF.svg"
                                 checkbox4.checkBoxOn.visible=false
 
+
                                 if(switch1.checked && switch2.checked){
                                     forWifi.source="images/ConnectWifi.png"
-                                    uil_wifi.source = "images/uil_wifi_on.svg";
-                                    ellipse4.color = "#217efd"
                                 }
-                            }
-                            onNonclickedSignal: {
-                                uil_wifi.source = "images/uil_wifi.svg";
-                                ellipse4.color = "#617284"
                             }
                         }
 
@@ -2540,14 +2515,7 @@ Rectangle {
 
                                 if(switch1.checked && switch2.checked){
                                     forWifi.source="images/ConnectWifi.png"
-                                    uil_wifi.source = "images/uil_wifi_on.svg";
-                                    ellipse4.color = "#217efd"
                                 }
-
-                            }
-                            onNonclickedSignal: {
-                                uil_wifi.source = "images/uil_wifi.svg";
-                                ellipse4.color = "#617284"
                             }
                         }
 
@@ -2635,17 +2603,6 @@ Rectangle {
                     wrapMode: Text.Wrap
                     clip: true
                 }
-                Binding {
-                    target: switch1
-                    property: "checked"
-                    value: switch1and2CheckedForComm
-                }
-                Binding {
-                    target: switch2
-                    property: "checked"
-                    value: switch1and2CheckedForComm
-                }
-
 
                 Switch {
                     id: switch1
@@ -2666,6 +2623,7 @@ Rectangle {
                             text3.color="#284863"
                             text77.color="#284863"
 
+
                             if(switch2.checked){
                                 if(checkbox1.checkBoxOn.visible===true || checkbox2.checkBoxOn.visible===true  || checkbox3.checkBoxOn.visible===true  || checkbox4.checkBoxOn.visible===true ){
                                     forWifi.source="images/ConnectWifi.png"
@@ -2684,11 +2642,6 @@ Rectangle {
                                     receiveDataTimer.start()
                                     sendDataTimer.repeat=true
                                     sendDataTimer.start()
-
-                                    forWifi.source="images/ConnectWifi.png"
-                                    uil_wifi.source = "images/uil_wifi_on.svg";
-                                    ellipse4.color = "#217efd"
-
                                 }
                             }
                             userInput.visible=true
@@ -2711,6 +2664,7 @@ Rectangle {
                             sendDataTimer.stop()
                             sendData.text = 0 + " kbps";
                             receiveData.text = 0 + " kbps";
+
                             text1.color="#284863"
                             text2.color="#bfbfbf"
                             text3.color="#bfbfbf"
@@ -2718,13 +2672,10 @@ Rectangle {
                             text4.color="#bfbfbf"
                             text5.color="#bfbfbf"
                             text6.color="#bfbfbf"
+
                             userInput.visible=false
                             userInput2.visible=false
                             userInput3.visible=false
-
-                            forWifi.source="images/notConnectWifi.png"
-                            uil_wifi.source = "images/uil_wifi.svg";
-                            ellipse4.color = "#617284"
 
                             if(switch3.checked===true){
                                 text11.text="Internet"
@@ -2761,13 +2712,9 @@ Rectangle {
                                 text11.text="Wifi"
                                 text12.text="Well"
                                 receiveDataTimer.repeat=true
-
                                 receiveDataTimer.start()
                                 sendDataTimer.repeat=true
                                 sendDataTimer.start()
-
-                                uil_wifi.source = "images/uil_wifi_on.svg";
-                                ellipse4.color = "#217efd"
                             }
                         }
                         else {
@@ -2907,15 +2854,11 @@ Rectangle {
                                     receiveDataTimer.start()
                                     sendDataTimer.repeat=true
                                     sendDataTimer.start()
-                                    uil_wifi.source = "images/uil_wifi_on.svg";
-                                    ellipse4.color = "#217efd"
 
                                 }
                                 if(switch2.checked){
                                     forWifi.source="images/ConnectWifi.png"
                                     timerForGraph.start()
-                                    uil_wifi.source = "images/uil_wifi_on.svg";
-                                    ellipse4.color = "#217efd"
                                 }
 
                             }
@@ -2967,7 +2910,7 @@ Rectangle {
                         TextInput {
                             id:textInputForPassword
                             x: 2
-                            y: 0
+                            y: -1
                             width: 215
                             height: 32
                             font.letterSpacing: 1
@@ -3019,7 +2962,6 @@ Rectangle {
                                     x: 3
                                     y: 3
                                     source: "images/mdi_eye_off.svg"
-                                    antialiasing: true
                                     fillMode: Image.PreserveAspectFit
                                 }
                             }
@@ -4460,7 +4402,7 @@ Rectangle {
             width: 201
             height: 30
             color: "#284863"
-            text: "Device Name"
+            text: "Connected Device Name"
             font.pixelSize: 18
             horizontalAlignment: Text.AlignLeft
             verticalAlignment: Text.AlignVCenter
@@ -4600,7 +4542,7 @@ Rectangle {
                 text: "IPv4 Address"
                 font.pixelSize: 18
                 horizontalAlignment: Text.AlignLeft
-                verticalAlignment: Text.AlignVCenter
+                verticalAlignment: Text.AlignTop
                 wrapMode: Text.Wrap
                 clip: true
             }
@@ -4615,7 +4557,7 @@ Rectangle {
                 text: "IPv6 Address"
                 font.pixelSize: 18
                 horizontalAlignment: Text.AlignLeft
-                verticalAlignment: Text.AlignVCenter
+                verticalAlignment: Text.AlignTop
                 wrapMode: Text.Wrap
                 clip: true
             }
@@ -4630,7 +4572,7 @@ Rectangle {
                 text: "Subnet Mask"
                 font.pixelSize: 18
                 horizontalAlignment: Text.AlignLeft
-                verticalAlignment: Text.AlignVCenter
+                verticalAlignment: Text.AlignTop
                 wrapMode: Text.Wrap
                 clip: true
             }
@@ -4645,7 +4587,7 @@ Rectangle {
                 text: "Default Gateway"
                 font.pixelSize: 18
                 horizontalAlignment: Text.AlignLeft
-                verticalAlignment: Text.AlignVCenter
+                verticalAlignment: Text.AlignTop
                 wrapMode: Text.Wrap
                 clip: true
             }
@@ -4660,7 +4602,7 @@ Rectangle {
                 text: "DNS Server"
                 font.pixelSize: 18
                 horizontalAlignment: Text.AlignLeft
-                verticalAlignment: Text.AlignVCenter
+                verticalAlignment: Text.AlignTop
                 wrapMode: Text.Wrap
                 clip: true
             }
@@ -4675,7 +4617,7 @@ Rectangle {
                 text: "Mac Address"
                 font.pixelSize: 18
                 horizontalAlignment: Text.AlignLeft
-                verticalAlignment: Text.AlignVCenter
+                verticalAlignment: Text.AlignTop
                 wrapMode: Text.Wrap
                 clip: true
             }
@@ -4688,9 +4630,9 @@ Rectangle {
                 height: 30
                 color: "#284863"
                 text: "IPv4 Address"
-                font.pixelSize: 16
+                font.pixelSize: 18
                 horizontalAlignment: Text.AlignRight
-                verticalAlignment: Text.AlignVCenter
+                verticalAlignment: Text.AlignTop
                 wrapMode: Text.Wrap
                 clip: true
             }
@@ -4703,9 +4645,9 @@ Rectangle {
                 height: 30
                 color: "#284863"
                 text: "IPv6 Address"
-                font.pixelSize: 16
+                font.pixelSize: 18
                 horizontalAlignment: Text.AlignRight
-                verticalAlignment: Text.AlignVCenter
+                verticalAlignment: Text.AlignTop
                 wrapMode: Text.Wrap
                 clip: true
             }
@@ -4718,9 +4660,9 @@ Rectangle {
                 height: 30
                 color: "#284863"
                 text: "Subnet Mask"
-                font.pixelSize: 16
+                font.pixelSize: 18
                 horizontalAlignment: Text.AlignRight
-                verticalAlignment: Text.AlignVCenter
+                verticalAlignment: Text.AlignTop
                 wrapMode: Text.Wrap
                 clip: true
             }
@@ -4733,9 +4675,9 @@ Rectangle {
                 height: 30
                 color: "#284863"
                 text: "Default Gateway"
-                font.pixelSize: 16
+                font.pixelSize: 18
                 horizontalAlignment: Text.AlignRight
-                verticalAlignment: Text.AlignVCenter
+                verticalAlignment: Text.AlignTop
                 wrapMode: Text.Wrap
                 clip: true
             }
@@ -4748,9 +4690,9 @@ Rectangle {
                 height: 30
                 color: "#284863"
                 text: "DNS Server"
-                font.pixelSize: 16
+                font.pixelSize: 18
                 horizontalAlignment: Text.AlignRight
-                verticalAlignment: Text.AlignVCenter
+                verticalAlignment: Text.AlignTop
                 wrapMode: Text.Wrap
                 clip: true
             }
@@ -4763,9 +4705,9 @@ Rectangle {
                 height: 30
                 color: "#284863"
                 text: "Mac Address"
-                font.pixelSize: 16
+                font.pixelSize: 18
                 horizontalAlignment: Text.AlignRight
-                verticalAlignment: Text.AlignVCenter
+                verticalAlignment: Text.AlignTop
                 wrapMode: Text.Wrap
                 clip: true
             }

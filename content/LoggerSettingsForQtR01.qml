@@ -24,6 +24,7 @@ Rectangle {
 
     property bool isDialogOpen: false
 
+
     Component.onCompleted: {
         customCheckBox.checkBoxOn.visible=true
         customCheckBox.checkBoxOFF.source="images/CheckBoxONBG.svg"
@@ -46,7 +47,13 @@ Rectangle {
         //            id: colorOverlay2
         //            color: "#cab9b9b9"
         //        }
+
+
         fillMode: Image.PreserveAspectFit
+
+
+
+
 
         CustomCheckBox {
             id: customCheckBox
@@ -76,6 +83,7 @@ Rectangle {
                 forPowerText.text = forPowerText.text.replace(" Min ", "")
 
             }
+
 
 
         }
@@ -539,424 +547,424 @@ Rectangle {
 
 
 
-    Rectangle {
-        id: middleForNow
-        x: 355
-        y: 0
-        width: 552
-        height: 728
-        visible: false
-        color: "#ffffff"
-
-
-                Rectangle {
-                    id: mainForm
-                    x:35
-                    y:50
-                    height: cellSize * 12
-                    width: cellSize * 9.6
-                    property double mm: 5
-                    property double cellSize: mm *10
-                    property int fontSizePx: cellSize * 0.54
-                    property var date: new Date(calendar.currentYear, calendar.currentMonth, calendar.currentDay);
-                    clip: true
-            //        signal ok
-            //        signal cancel
-
-                    QtObject {
-                        id: palette
-                        property color primary: "#217EFD"
-                        property color primary_dark: "#217EFD"
-                        property color primary_light: "#B2EBF2"
-                        property color accent: "#FF5722"
-                        property color primary_text: "#212121"
-                        property color secondary_text: "#757575"
-                        property color icons: "#FFFFFF"
-                        property color divider: "#BDBDBD"
-                    }
-
-                    Rectangle {
-                        id: titleOfDate
-                        anchors {
-                            top: parent.top
-                            horizontalCenter: parent.horizontalCenter
-                        }
-                        height: 2.5 * mainForm.cellSize
-                        width: parent.width
-                        color:"#217EFD"
-                        z: 2
-                        Rectangle {
-                            id: selectedYear
-                            anchors {
-                                top: parent.top
-                                left: parent.left
-                                right: parent.right
-                            }
-                            height: mainForm.cellSize * 1
-                            color: parent.color
-                            Text {
-                                id: yearTitle
-                                anchors.fill: parent
-                                leftPadding: mainForm.cellSize * 0.5
-                                topPadding: mainForm.cellSize * 0.5
-                                horizontalAlignment: Text.AlignLeft
-                                verticalAlignment: Text.AlignVCenter
-                                font.pixelSize: mainForm.fontSizePx * 1.7
-                                opacity: yearsList.visible ? 1 : 0.7
-                                color: "white"
-                                text: calendar.currentYear
-                            }
-                            MouseArea {
-                                anchors.fill: parent
-                                onClicked: {
-                                    yearsList.show();
-
-                                }
-                            }
-                        }
-                        Text {
-                            id: selectedWeekDayMonth
-                            anchors {
-                                left: parent.left
-                                right: parent.right
-                                top: selectedYear.bottom
-                                bottom: parent.bottom
-                            }
-                            leftPadding: mainForm.cellSize * 0.5
-                            verticalAlignment: Text.AlignVCenter
-                            font.pixelSize: height * 0.5
-                            text: calendar.weekNames[calendar.week].slice(0, 3) + ", " + calendar.currentDay + " " + calendar.months[calendar.currentMonth].slice(0, 3)
-                            color: "white"
-                            opacity: yearsList.visible ? 0.7 : 1
-                            MouseArea {
-                                anchors.fill: parent
-                                onClicked: {
-                                    yearsList.hide();
-
-                                }
-                            }
-                        }
-
-                    }
-
-                    ListView {
-                        id: calendar
-                        anchors {
-                            top: titleOfDate.bottom
-                            left: parent.left
-                            right: parent.right
-                            leftMargin: mainForm.cellSize * 0.1
-                            rightMargin: mainForm.cellSize * 0.1
-                        }
-                        height: mainForm.cellSize * 8
-                        visible: true
-                        z: 1
-
-                        snapMode: ListView.SnapToItem
-                        orientation: ListView.Horizontal
-                        spacing: mainForm.cellSize
-                        model: CalendarModel {
-                            id: calendarModel
-        //                    from: new Date(new Date().getFullYear(), 0, 1);
-        //                    to: new Date(new Date().getFullYear(), 11, 31);
-                            from: new Date(2023, 0, 1);  // Start from January 1, 2023
-                            to: new Date(2024, 11, 31);  // End at December 31, 2024
-
-                            function  setYear(newYear) {
-                                if (calendarModel.from.getFullYear() > newYear) {
-                                    calendarModel.from = new Date(newYear, 0, 1);
-                                    calendarModel.to = new Date(newYear, 11, 31);
-                                } else {
-                                    calendarModel.to = new Date(newYear, 11, 31);
-                                    calendarModel.from = new Date(newYear, 0, 1);
-                                }
-                                calendar.currentYear = newYear;
-                                calendar.goToLastPickedDate();
-                                mainForm.setCurrentDate();
-                            }
-                        }
-
-                        property int currentDay: new Date().getDate()
-                        property int currentMonth: new Date().getMonth()
-                        property int currentYear: new Date().getFullYear()
-                        property int week: new Date().getDay()
-                        property var months: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
-                        property var weekNames: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
-
-                        delegate: Rectangle {
-                            id:backgroundColorForCalendar
-                            height: mainForm.cellSize * 8.5 //6 - на строки, 1 на дни недели и 1.5 на подпись
-                            width: mainForm.cellSize * 9
-
-
-                            Rectangle {
-                                id: monthYearTitle
-                                anchors {
-                                    top: parent.top
-                                }
-                                height: mainForm.cellSize * 1.3
-                                width: parent.width
-
-                                Text {
-                                    anchors.centerIn: parent
-                                    font.pixelSize: mainForm.fontSizePx * 1.2
-                                    text: calendar.months[model.month] + " " + model.year;
-                                }
-                            }
-
-                            DayOfWeekRow {
-                                id: weekTitles
-                                Layout.column: 1
-                                locale: monthGrid.locale
-                                anchors {
-                                    top: monthYearTitle.bottom
-                                }
-                                height: mainForm.cellSize
-                                width: parent.width
-                                delegate: Text {
-                                    text: model.shortName
-                                    horizontalAlignment: Text.AlignHCenter
-                                    verticalAlignment: Text.AlignVCenter
-                                    font.pixelSize: mainForm.fontSizePx
-                                }
-                            }
-
-
-
-
-                            MonthGrid {
-                                id: monthGrid
-                                month: model.month
-                                year: model.year
-                                spacing: 0
-                                anchors {
-                                    top: weekTitles.bottom
-                                }
-                                width: mainForm.cellSize * 9
-                                height: mainForm.cellSize * 6
-
-                                locale: Qt.locale("en_US")
-                                delegate: Rectangle {
-                                    height: mainForm.cellSize
-                                    width: mainForm.cellSize
-                                    radius: height * 0.5
-        //                            property bool isBetweenBeginAndEndDates: {
-        //                                   var currentDate = new Date(calendar.currentYear, calendar.currentMonth, model.day);
-        //                                   return currentDate >= beginDateForNow.date && currentDate <= endDateForNow.date;
-        //                               }
-                                    property bool isDayInMonth: model.month === monthGrid.month
-
-                                         property bool isInRange: isDayInMonth && isDateInRange(model.date, parseDate(beginDateForNow.text), parseDate(endDateForNow.text))
-
-                                    property bool highlighted: enabled && model.day === calendar.currentDay && model.month === calendar.currentMonth
-                                    enabled: model.month === monthGrid.month
-
-
-
-        //                            color: enabled && highlighted ? "#217EFD": "white"
-
-
-        //                            function isBetweenBeginAndEndDates() {
-        //                                 var beginDay = parseInt(beginDateForNow.text);
-        //                                 var endDay = parseInt(endDateForNow.text);
-        //                                 var currentDay = model.day;
-
-        //                                 return currentDay >= beginDay && currentDay <= endDay;
-        //                             }
-
-        //                             color: isBetweenBeginAndEndDates() ? "#284863" : (enabled && highlighted ? "#217EFD" : "white")
-
-
-
-
-
-
-        //                            property bool isInRange: isDateInRange(model.date, new Date(2023, 9, 20), new Date(2024, 0, 5))
-
-                                          color: isInRange ? "#217efd" : "#ffffff"
-
-
-        //                            function isBetweenBeginAndEndDates() {
-        //                                 var beginDateParts = beginDateForNow.text.split(".");
-        //                                 var endDateParts = endDateForNow.text.split(".");
-        //                                 var currentDay = model.day;
-
-        //                                 // Ayrıştırılan parçaları kullanarak Date nesnesi oluştur
-        //                                 var beginDate = new Date(beginDateParts[2], beginDateParts[1] - 1, beginDateParts[0]);
-        //                                 var endDate = new Date(endDateParts[2], endDateParts[1] - 1, endDateParts[0]);
-        //                                 var currentDate = new Date(calendar.currentYear, calendar.currentMonth, currentDay);
-
-        //                                 // Tarih karşılaştırmasını gerçekleştir
-        //                                 return currentDate >= beginDate && currentDate <= endDate;
-        //                             }
-        //                             color: isBetweenBeginAndEndDates() ? "#284863" :  "white"
-
-
-
-                                    Text {
-                                        anchors.centerIn: parent
-                                        text: model.day
-                                        font.pixelSize: mainForm.fontSizePx
-        //                                scale: highlighted ? 1.25 : 1
-                                        Behavior on scale { NumberAnimation { duration: 150 } }
-                                        visible: parent.enabled
-        //                                color: parent.highlighted ? "white" : "black"
-
-                                        color:"#000000"
-                                    }
-        //                            MouseArea {
-        //                                anchors.fill: parent
-        //                                onClicked: {
-        //                                    calendar.currentDay = model.date.getDate();
-        //                                    calendar.currentMonth = model.date.getMonth();
-        //                                    calendar.week = model.date.getDay();
-        //                                    calendar.currentYear = model.date.getFullYear();
-        //                                    mainForm.setCurrentDate();
-        ////                                    startTime1.text=calendar.weekNames[calendar.week].slice(0, 3) + ", " + calendar.currentDay + " " + calendar.months[calendar.currentMonth].slice(0, 3) + " - 00:24:10:400"
-        ////                                    endTime1.text=calendar.weekNames[calendar.week].slice(0, 3) + ", " + calendar.currentDay + " " + calendar.months[calendar.currentMonth].slice(0, 3) + " - 23:24:10:400"
-        ////                                    startTime2.text=calendar.weekNames[calendar.week].slice(0, 3) + ", " + calendar.currentDay + " " + calendar.months[calendar.currentMonth].slice(0, 3) + " - 00:24:10:400"
-        ////                                    endTime2.text=calendar.weekNames[calendar.week].slice(0, 3) + ", " + calendar.currentDay + " " + calendar.months[calendar.currentMonth].slice(0, 3) + " - 23:24:10:400"
-
-        //                                }
-        //                            }
-                                }
-                            }
-
-
-
-
-
-
-                            function parseDate(dateString) {
-                                var dateParts = dateString.split(".");
-                                return new Date(dateParts[2], dateParts[1] - 1, dateParts[0]);
-                            }
-
-                            function isDateInRange(currentDate, startDate, endDate) {
-                                return currentDate >= startDate && currentDate <= endDate;
-                            }
-                        }
-
-
-                        Component.onCompleted: goToLastPickedDate()
-                        function goToLastPickedDate() {
-                            positionViewAtIndex(calendar.currentMonth, ListView.SnapToItem)
-                        }
-                    }
-
-                    ListView {
-                        id: yearsList
-                        anchors.fill: calendar
-                        orientation: ListView.Vertical
-                        visible: false
-                        z: calendar.z
-
-                        property int currentYear
-        //                property int startYear: 1940
-        //                property int endYear : new Date().getFullYear();
-
-                        property int startYear: 2023  // Start year for the list
-                        property int endYear: 2026    // End year for the list
-
-                        model: ListModel {
-                            id: yearsModel
-                        }
-
-                        delegate: Rectangle {
-                            width: parent.width
-                            height: mainForm.cellSize * 1.5
-                            Text {
-                                anchors.centerIn: parent
-                                font.pixelSize: mainForm.fontSizePx * 1.5
-                                text: name
-                                scale: index === yearsList.currentYear - yearsList.startYear ? 1.5 : 1
-                                color: palette.primary_dark
-                            }
-                            MouseArea {
-                                anchors.fill: parent
-                                onClicked: {
-                                    calendarModel.setYear(yearsList.startYear + index);
-                                    yearsList.hide();
-                                }
-                            }
-                        }
-
-                        Component.onCompleted: {
-                            for (var year = startYear; year <= endYear; year ++)
-                                yearsModel.append({name: year});
-                        }
-                        function show() {
-                            visible = true;
-                            calendar.visible = false
-                            currentYear = calendar.currentYear
-                            yearsList.positionViewAtIndex(currentYear - startYear, ListView.SnapToItem);
-                        }
-                        function hide() {
-                            visible = false;
-                            calendar.visible = true;
-                        }
-                    }
-
-                    Rectangle {
-                        height: mainForm.cellSize * 1.5
-                        anchors {
-                            top: calendar.bottom
-                            right: parent.right
-                            rightMargin: mainForm.cellSize * 0.5
-                        }
-                        z: titleOfDate.z
-                        color: "black"
-                        Row {
-                            layoutDirection: "RightToLeft"
-                            anchors {
-                                right: parent.right
-                            }
-                            height: parent.height
-
-            //                Rectangle {
-            //                    id: okBtn
-            //                    height: parent.height
-            //                    width: okBtnText.contentWidth + mainForm.cellSize
-            //                    Text {
-            //                        id: okBtnText
-            //                        anchors.centerIn: parent
-            //                        font.pixelSize: mainForm.fontSizePx * 1.8
-            //                        color: palette.primary_dark
-            //                        text: "OK"
-            //                    }
-            //                    MouseArea {
-            //                        anchors.fill: parent
-            //                        onClicked: {
-            //                            mainForm.ok();
-            //                        }
-            //                    }
-            //                }
-            //                Rectangle {
-            //                    id: cancelBtn
-            //                    height: parent.height
-            //                    width: cancelBtnText.contentWidth + mainForm.cellSize
-            //                    Text {
-            //                        id: cancelBtnText
-            //                        anchors.centerIn: parent
-            //                        font.pixelSize: mainForm.fontSizePx * 1.8
-            //                        color: palette.primary_dark
-            //                        text: "CANCEL"
-            //                    }
-            //                    MouseArea {
-            //                        anchors.fill: parent
-            //                        onClicked: {
-            //                            mainForm.cancel();
-            //                        }
-            //                    }
-            //                }
-                        }
-                    }
-
-                    function setCurrentDate() {
-                        mainForm.date = new Date(calendar.currentYear, calendar.currentMonth, calendar.currentDay);
-                    }
-
-                }
+//    Rectangle {
+//        id: middleForNow
+//        x: 355
+//        y: 0
+//        width: 552
+//        height: 728
+//        visible: false
+//        color: "#ffffff"
+
+
+//                Rectangle {
+//                    id: mainForm
+//                    x:35
+//                    y:50
+//                    height: cellSize * 12
+//                    width: cellSize * 9.6
+//                    property double mm: 5
+//                    property double cellSize: mm *10
+//                    property int fontSizePx: cellSize * 0.54
+//                    property var date: new Date(calendar.currentYear, calendar.currentMonth, calendar.currentDay);
+//                    clip: true
+//            //        signal ok
+//            //        signal cancel
+
+//                    QtObject {
+//                        id: palette
+//                        property color primary: "#217EFD"
+//                        property color primary_dark: "#217EFD"
+//                        property color primary_light: "#B2EBF2"
+//                        property color accent: "#FF5722"
+//                        property color primary_text: "#212121"
+//                        property color secondary_text: "#757575"
+//                        property color icons: "#FFFFFF"
+//                        property color divider: "#BDBDBD"
+//                    }
+
+//                    Rectangle {
+//                        id: titleOfDate
+//                        anchors {
+//                            top: parent.top
+//                            horizontalCenter: parent.horizontalCenter
+//                        }
+//                        height: 2.5 * mainForm.cellSize
+//                        width: parent.width
+//                        color:"#217EFD"
+//                        z: 2
+//                        Rectangle {
+//                            id: selectedYear
+//                            anchors {
+//                                top: parent.top
+//                                left: parent.left
+//                                right: parent.right
+//                            }
+//                            height: mainForm.cellSize * 1
+//                            color: parent.color
+//                            Text {
+//                                id: yearTitle
+//                                anchors.fill: parent
+//                                leftPadding: mainForm.cellSize * 0.5
+//                                topPadding: mainForm.cellSize * 0.5
+//                                horizontalAlignment: Text.AlignLeft
+//                                verticalAlignment: Text.AlignVCenter
+//                                font.pixelSize: mainForm.fontSizePx * 1.7
+//                                opacity: yearsList.visible ? 1 : 0.7
+//                                color: "white"
+//                                text: calendar.currentYear
+//                            }
+//                            MouseArea {
+//                                anchors.fill: parent
+//                                onClicked: {
+//                                    yearsList.show();
+
+//                                }
+//                            }
+//                        }
+//                        Text {
+//                            id: selectedWeekDayMonth
+//                            anchors {
+//                                left: parent.left
+//                                right: parent.right
+//                                top: selectedYear.bottom
+//                                bottom: parent.bottom
+//                            }
+//                            leftPadding: mainForm.cellSize * 0.5
+//                            verticalAlignment: Text.AlignVCenter
+//                            font.pixelSize: height * 0.5
+//                            text: calendar.weekNames[calendar.week].slice(0, 3) + ", " + calendar.currentDay + " " + calendar.months[calendar.currentMonth].slice(0, 3)
+//                            color: "white"
+//                            opacity: yearsList.visible ? 0.7 : 1
+//                            MouseArea {
+//                                anchors.fill: parent
+//                                onClicked: {
+//                                    yearsList.hide();
+
+//                                }
+//                            }
+//                        }
+
+//                    }
+
+//                    ListView {
+//                        id: calendar
+//                        anchors {
+//                            top: titleOfDate.bottom
+//                            left: parent.left
+//                            right: parent.right
+//                            leftMargin: mainForm.cellSize * 0.1
+//                            rightMargin: mainForm.cellSize * 0.1
+//                        }
+//                        height: mainForm.cellSize * 8
+//                        visible: true
+//                        z: 1
+
+//                        snapMode: ListView.SnapToItem
+//                        orientation: ListView.Horizontal
+//                        spacing: mainForm.cellSize
+//                        model: CalendarModel {
+//                            id: calendarModel
+//        //                    from: new Date(new Date().getFullYear(), 0, 1);
+//        //                    to: new Date(new Date().getFullYear(), 11, 31);
+//                            from: new Date(2023, 0, 1);  // Start from January 1, 2023
+//                            to: new Date(2024, 11, 31);  // End at December 31, 2024
+
+//                            function  setYear(newYear) {
+//                                if (calendarModel.from.getFullYear() > newYear) {
+//                                    calendarModel.from = new Date(newYear, 0, 1);
+//                                    calendarModel.to = new Date(newYear, 11, 31);
+//                                } else {
+//                                    calendarModel.to = new Date(newYear, 11, 31);
+//                                    calendarModel.from = new Date(newYear, 0, 1);
+//                                }
+//                                calendar.currentYear = newYear;
+//                                calendar.goToLastPickedDate();
+//                                mainForm.setCurrentDate();
+//                            }
+//                        }
+
+//                        property int currentDay: new Date().getDate()
+//                        property int currentMonth: new Date().getMonth()
+//                        property int currentYear: new Date().getFullYear()
+//                        property int week: new Date().getDay()
+//                        property var months: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+//                        property var weekNames: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+
+//                        delegate: Rectangle {
+//                            id:backgroundColorForCalendar
+//                            height: mainForm.cellSize * 8.5 //6 - на строки, 1 на дни недели и 1.5 на подпись
+//                            width: mainForm.cellSize * 9
+
+
+//                            Rectangle {
+//                                id: monthYearTitle
+//                                anchors {
+//                                    top: parent.top
+//                                }
+//                                height: mainForm.cellSize * 1.3
+//                                width: parent.width
+
+//                                Text {
+//                                    anchors.centerIn: parent
+//                                    font.pixelSize: mainForm.fontSizePx * 1.2
+//                                    text: calendar.months[model.month] + " " + model.year;
+//                                }
+//                            }
+
+//                            DayOfWeekRow {
+//                                id: weekTitles
+//                                Layout.column: 1
+//                                locale: monthGrid.locale
+//                                anchors {
+//                                    top: monthYearTitle.bottom
+//                                }
+//                                height: mainForm.cellSize
+//                                width: parent.width
+//                                delegate: Text {
+//                                    text: model.shortName
+//                                    horizontalAlignment: Text.AlignHCenter
+//                                    verticalAlignment: Text.AlignVCenter
+//                                    font.pixelSize: mainForm.fontSizePx
+//                                }
+//                            }
+
+
+
+
+//                            MonthGrid {
+//                                id: monthGrid
+//                                month: model.month
+//                                year: model.year
+//                                spacing: 0
+//                                anchors {
+//                                    top: weekTitles.bottom
+//                                }
+//                                width: mainForm.cellSize * 9
+//                                height: mainForm.cellSize * 6
+
+//                                locale: Qt.locale("en_US")
+//                                delegate: Rectangle {
+//                                    height: mainForm.cellSize
+//                                    width: mainForm.cellSize
+//                                    radius: height * 0.5
+//        //                            property bool isBetweenBeginAndEndDates: {
+//        //                                   var currentDate = new Date(calendar.currentYear, calendar.currentMonth, model.day);
+//        //                                   return currentDate >= beginDateForNow.date && currentDate <= endDateForNow.date;
+//        //                               }
+//                                    property bool isDayInMonth: model.month === monthGrid.month
+
+//                                         property bool isInRange: isDayInMonth && isDateInRange(model.date, parseDate(beginDateForNow.text), parseDate(endDateForNow.text))
+
+//                                    property bool highlighted: enabled && model.day === calendar.currentDay && model.month === calendar.currentMonth
+//                                    enabled: model.month === monthGrid.month
+
+
+
+//        //                            color: enabled && highlighted ? "#217EFD": "white"
+
+
+//        //                            function isBetweenBeginAndEndDates() {
+//        //                                 var beginDay = parseInt(beginDateForNow.text);
+//        //                                 var endDay = parseInt(endDateForNow.text);
+//        //                                 var currentDay = model.day;
+
+//        //                                 return currentDay >= beginDay && currentDay <= endDay;
+//        //                             }
+
+//        //                             color: isBetweenBeginAndEndDates() ? "#284863" : (enabled && highlighted ? "#217EFD" : "white")
+
+
+
+
+
+
+//        //                            property bool isInRange: isDateInRange(model.date, new Date(2023, 9, 20), new Date(2024, 0, 5))
+
+//                                          color: isInRange ? "#217efd" : "#ffffff"
+
+
+//        //                            function isBetweenBeginAndEndDates() {
+//        //                                 var beginDateParts = beginDateForNow.text.split(".");
+//        //                                 var endDateParts = endDateForNow.text.split(".");
+//        //                                 var currentDay = model.day;
+
+//        //                                 // Ayrıştırılan parçaları kullanarak Date nesnesi oluştur
+//        //                                 var beginDate = new Date(beginDateParts[2], beginDateParts[1] - 1, beginDateParts[0]);
+//        //                                 var endDate = new Date(endDateParts[2], endDateParts[1] - 1, endDateParts[0]);
+//        //                                 var currentDate = new Date(calendar.currentYear, calendar.currentMonth, currentDay);
+
+//        //                                 // Tarih karşılaştırmasını gerçekleştir
+//        //                                 return currentDate >= beginDate && currentDate <= endDate;
+//        //                             }
+//        //                             color: isBetweenBeginAndEndDates() ? "#284863" :  "white"
+
+
+
+//                                    Text {
+//                                        anchors.centerIn: parent
+//                                        text: model.day
+//                                        font.pixelSize: mainForm.fontSizePx
+//        //                                scale: highlighted ? 1.25 : 1
+//                                        Behavior on scale { NumberAnimation { duration: 150 } }
+//                                        visible: parent.enabled
+//        //                                color: parent.highlighted ? "white" : "black"
+
+//                                        color:"#000000"
+//                                    }
+//        //                            MouseArea {
+//        //                                anchors.fill: parent
+//        //                                onClicked: {
+//        //                                    calendar.currentDay = model.date.getDate();
+//        //                                    calendar.currentMonth = model.date.getMonth();
+//        //                                    calendar.week = model.date.getDay();
+//        //                                    calendar.currentYear = model.date.getFullYear();
+//        //                                    mainForm.setCurrentDate();
+//        ////                                    startTime1.text=calendar.weekNames[calendar.week].slice(0, 3) + ", " + calendar.currentDay + " " + calendar.months[calendar.currentMonth].slice(0, 3) + " - 00:24:10:400"
+//        ////                                    endTime1.text=calendar.weekNames[calendar.week].slice(0, 3) + ", " + calendar.currentDay + " " + calendar.months[calendar.currentMonth].slice(0, 3) + " - 23:24:10:400"
+//        ////                                    startTime2.text=calendar.weekNames[calendar.week].slice(0, 3) + ", " + calendar.currentDay + " " + calendar.months[calendar.currentMonth].slice(0, 3) + " - 00:24:10:400"
+//        ////                                    endTime2.text=calendar.weekNames[calendar.week].slice(0, 3) + ", " + calendar.currentDay + " " + calendar.months[calendar.currentMonth].slice(0, 3) + " - 23:24:10:400"
+
+//        //                                }
+//        //                            }
+//                                }
+//                            }
+
+
+
+
+
+
+//                            function parseDate(dateString) {
+//                                var dateParts = dateString.split(".");
+//                                return new Date(dateParts[2], dateParts[1] - 1, dateParts[0]);
+//                            }
+
+//                            function isDateInRange(currentDate, startDate, endDate) {
+//                                return currentDate >= startDate && currentDate <= endDate;
+//                            }
+//                        }
+
+
+//                        Component.onCompleted: goToLastPickedDate()
+//                        function goToLastPickedDate() {
+//                            positionViewAtIndex(calendar.currentMonth, ListView.SnapToItem)
+//                        }
+//                    }
+
+//                    ListView {
+//                        id: yearsList
+//                        anchors.fill: calendar
+//                        orientation: ListView.Vertical
+//                        visible: false
+//                        z: calendar.z
+
+//                        property int currentYear
+//        //                property int startYear: 1940
+//        //                property int endYear : new Date().getFullYear();
+
+//                        property int startYear: 2023  // Start year for the list
+//                        property int endYear: 2026    // End year for the list
+
+//                        model: ListModel {
+//                            id: yearsModel
+//                        }
+
+//                        delegate: Rectangle {
+//                            width: parent.width
+//                            height: mainForm.cellSize * 1.5
+//                            Text {
+//                                anchors.centerIn: parent
+//                                font.pixelSize: mainForm.fontSizePx * 1.5
+//                                text: name
+//                                scale: index === yearsList.currentYear - yearsList.startYear ? 1.5 : 1
+//                                color: palette.primary_dark
+//                            }
+//                            MouseArea {
+//                                anchors.fill: parent
+//                                onClicked: {
+//                                    calendarModel.setYear(yearsList.startYear + index);
+//                                    yearsList.hide();
+//                                }
+//                            }
+//                        }
+
+//                        Component.onCompleted: {
+//                            for (var year = startYear; year <= endYear; year ++)
+//                                yearsModel.append({name: year});
+//                        }
+//                        function show() {
+//                            visible = true;
+//                            calendar.visible = false
+//                            currentYear = calendar.currentYear
+//                            yearsList.positionViewAtIndex(currentYear - startYear, ListView.SnapToItem);
+//                        }
+//                        function hide() {
+//                            visible = false;
+//                            calendar.visible = true;
+//                        }
+//                    }
+
+//                    Rectangle {
+//                        height: mainForm.cellSize * 1.5
+//                        anchors {
+//                            top: calendar.bottom
+//                            right: parent.right
+//                            rightMargin: mainForm.cellSize * 0.5
+//                        }
+//                        z: titleOfDate.z
+//                        color: "black"
+//                        Row {
+//                            layoutDirection: "RightToLeft"
+//                            anchors {
+//                                right: parent.right
+//                            }
+//                            height: parent.height
+
+//            //                Rectangle {
+//            //                    id: okBtn
+//            //                    height: parent.height
+//            //                    width: okBtnText.contentWidth + mainForm.cellSize
+//            //                    Text {
+//            //                        id: okBtnText
+//            //                        anchors.centerIn: parent
+//            //                        font.pixelSize: mainForm.fontSizePx * 1.8
+//            //                        color: palette.primary_dark
+//            //                        text: "OK"
+//            //                    }
+//            //                    MouseArea {
+//            //                        anchors.fill: parent
+//            //                        onClicked: {
+//            //                            mainForm.ok();
+//            //                        }
+//            //                    }
+//            //                }
+//            //                Rectangle {
+//            //                    id: cancelBtn
+//            //                    height: parent.height
+//            //                    width: cancelBtnText.contentWidth + mainForm.cellSize
+//            //                    Text {
+//            //                        id: cancelBtnText
+//            //                        anchors.centerIn: parent
+//            //                        font.pixelSize: mainForm.fontSizePx * 1.8
+//            //                        color: palette.primary_dark
+//            //                        text: "CANCEL"
+//            //                    }
+//            //                    MouseArea {
+//            //                        anchors.fill: parent
+//            //                        onClicked: {
+//            //                            mainForm.cancel();
+//            //                        }
+//            //                    }
+//            //                }
+//                        }
+//                    }
+
+//                    function setCurrentDate() {
+//                        mainForm.date = new Date(calendar.currentYear, calendar.currentMonth, calendar.currentDay);
+//                    }
+
+//                }
 
 
 
@@ -1050,369 +1058,369 @@ Rectangle {
 //        //            fillMode: Image.PreserveAspectFit
 //        //        }
 
-        Text {
-            id:beginDateForNow
-            x: 1000
-            y: 46
-            width: 78
-            height: 25
-            color: "#284863"
-            //            text: qsTr("04.01.2024")
-            text: forclock.text14.text
-            font.letterSpacing: -2
-            font.pixelSize: 17
-            horizontalAlignment: Text.AlignLeft
-            verticalAlignment: Text.AlignVCenter
-            wrapMode: Text.Wrap
-            font.styleName: "Regular"
-            font.family: "Akshar"
-        }
-        ForQtR01StartPage{
-            id:forclock
-            visible: false
-        }
+//        Text {
+//            id:beginDateForNow
+//            x: 1000
+//            y: 46
+//            width: 78
+//            height: 25
+//            color: "#284863"
+//            //            text: qsTr("04.01.2024")
+//            text: forclock.text14.text
+//            font.letterSpacing: -2
+//            font.pixelSize: 17
+//            horizontalAlignment: Text.AlignLeft
+//            verticalAlignment: Text.AlignVCenter
+//            wrapMode: Text.Wrap
+//            font.styleName: "Regular"
+//            font.family: "Akshar"
+//        }
+//        ForQtR01StartPage{
+//            id:forclock
+//            visible: false
+//        }
 
-        Text {
-            id: beginTimeForNow
-            x: 1000
-            y: 10
-            width: 150
-            height: 30
-            color: "#284863"
-            font.pixelSize: 17
-            horizontalAlignment: Text.AlignLeft
-            verticalAlignment: Text.AlignVCenter
-            text: forclock.text15.text
-        }
+//        Text {
+//            id: beginTimeForNow
+//            x: 1000
+//            y: 10
+//            width: 150
+//            height: 30
+//            color: "#284863"
+//            font.pixelSize: 17
+//            horizontalAlignment: Text.AlignLeft
+//            verticalAlignment: Text.AlignVCenter
+//            text: forclock.text15.text
+//        }
 
-        Text {
-            id:endDateForNow
-            x: 1142
-            y: 343
-            width: 78
-            height: 25
-            color: "#284863"
-            text:"15.10.2024"
-            //                if(comboBox1.displayText==="Day"){
-            //                     (parseInt(beginDateForNow.text.split(".")[0]) + spinBox.value).toString() + "." +
-            //                             (parseInt(beginDateForNow.text.split(".")[1])).toString()+ "." +
-            //                             (parseInt(beginDateForNow.text.split(".")[2])).toString()
-            //                 }
-            //                 else {
-            //                     beginDateForNow.text
-            //                 }
-            font.letterSpacing: -2
-            font.pixelSize: 17
-            horizontalAlignment: Text.AlignRight
-            verticalAlignment: Text.AlignVCenter
-            wrapMode: Text.Wrap
-            font.styleName: "Regular"
-            font.family: "Akshar"
-        }
+//        Text {
+//            id:endDateForNow
+//            x: 1142
+//            y: 343
+//            width: 78
+//            height: 25
+//            color: "#284863"
+//            text:"15.10.2024"
+//            //                if(comboBox1.displayText==="Day"){
+//            //                     (parseInt(beginDateForNow.text.split(".")[0]) + spinBox.value).toString() + "." +
+//            //                             (parseInt(beginDateForNow.text.split(".")[1])).toString()+ "." +
+//            //                             (parseInt(beginDateForNow.text.split(".")[2])).toString()
+//            //                 }
+//            //                 else {
+//            //                     beginDateForNow.text
+//            //                 }
+//            font.letterSpacing: -2
+//            font.pixelSize: 17
+//            horizontalAlignment: Text.AlignRight
+//            verticalAlignment: Text.AlignVCenter
+//            wrapMode: Text.Wrap
+//            font.styleName: "Regular"
+//            font.family: "Akshar"
+//        }
 
-        Text {
-            id:endTimeForNow
-            x: 1142
-            y: 370
-            width: 78
-            height: 25
-            visible: endDateForNow.visible
-            color: "#284863"
-            text:if(comboBox1.displayText==="Hour"){
-                     (parseInt(beginTimeForNow.text.split(":")[0]) + spinBox.value) + ":" +
-                             ( (beginTimeForNow.text.split(":")[1]))
+//        Text {
+//            id:endTimeForNow
+//            x: 1142
+//            y: 370
+//            width: 78
+//            height: 25
+//            visible: endDateForNow.visible
+//            color: "#284863"
+//            text:if(comboBox1.displayText==="Hour"){
+//                     (parseInt(beginTimeForNow.text.split(":")[0]) + spinBox.value) + ":" +
+//                             ( (beginTimeForNow.text.split(":")[1]))
 
-                 }
-                 else if(comboBox1.displayText==="Min."){
-                     ( (beginTimeForNow.text.split(":")[0])) + ":" +
-                             (parseInt(beginTimeForNow.text.split(":")[1])+ spinBox.value)
+//                 }
+//                 else if(comboBox1.displayText==="Min."){
+//                     ( (beginTimeForNow.text.split(":")[0])) + ":" +
+//                             (parseInt(beginTimeForNow.text.split(":")[1])+ spinBox.value)
 
-                 }
-                 else{
-                     beginTimeForNow.text
-                 }
-            font.letterSpacing: -2
-            font.pixelSize: 17
-            horizontalAlignment: Text.AlignRight
-            verticalAlignment: Text.AlignVCenter
-            wrapMode: Text.Wrap
-            font.styleName: "Regular"
-            font.family: "Akshar"
-        }
+//                 }
+//                 else{
+//                     beginTimeForNow.text
+//                 }
+//            font.letterSpacing: -2
+//            font.pixelSize: 17
+//            horizontalAlignment: Text.AlignRight
+//            verticalAlignment: Text.AlignVCenter
+//            wrapMode: Text.Wrap
+//            font.styleName: "Regular"
+//            font.family: "Akshar"
+//        }
 
-        //        Rectangle {
-        //            id: middleBottomChamp
-        //            width: 75
-        //            height: 2
-        //            visible: rectangleArea2.visible
-        //            color: "#617284"
-        //            anchors.top: rectangleArea2.bottom
-        //            anchors.topMargin: 71
-        //            anchors.horizontalCenterOffset: 0
-        //            anchors.horizontalCenter: rectangleArea2.horizontalCenter
-        //        }
+//        //        Rectangle {
+//        //            id: middleBottomChamp
+//        //            width: 75
+//        //            height: 2
+//        //            visible: rectangleArea2.visible
+//        //            color: "#617284"
+//        //            anchors.top: rectangleArea2.bottom
+//        //            anchors.topMargin: 71
+//        //            anchors.horizontalCenterOffset: 0
+//        //            anchors.horizontalCenter: rectangleArea2.horizontalCenter
+//        //        }
 
-        Rectangle {
-            id: rectangle11
-            x: -346
-            y: 608
-            width: 326
-            height: 55
-            color: "#f7f8fa"
-
-
-            Text {
-                id:chosenText21
-                width: 147
-                height: 55
-                color: "#284863"
-                text: "Time Interval"
-                anchors.verticalCenter: parent.verticalCenter
-                anchors.left: parent.left
-                font.letterSpacing: -2
-                font.pixelSize: 16
-                verticalAlignment: Text.AlignVCenter
-                wrapMode: Text.Wrap
-                anchors.verticalCenterOffset: -59
-                font.styleName: "Bold"
-                font.family: "Akshar"
-                anchors.leftMargin: 8
-            }
-
-            //            ComboBox {
-
-            //                x: 255
-            //                y: 8
-            //                width: 70
-            //                height: 40
-            //                font.pixelSize: 14
-            //                model: ["MB", "GB" ]
-            //                currentIndex: 0
-            //            }
+//        Rectangle {
+//            id: rectangle11
+//            x: -346
+//            y: 608
+//            width: 326
+//            height: 55
+//            color: "#f7f8fa"
 
 
-            Text {
-                id: comboBox
-                x: 263
-                y: -1
-                width: 73
-                height: 57
-                color: "#284863"
-                text: qsTr("MB")
-                font.letterSpacing: -2
-                font.pixelSize: 17
-                horizontalAlignment: Text.AlignHCenter
-                verticalAlignment: Text.AlignVCenter
-                wrapMode: Text.Wrap
-                font.styleName: "SemiBold"
-                font.family: "Akshar"
-            }
+//            Text {
+//                id:chosenText21
+//                width: 147
+//                height: 55
+//                color: "#284863"
+//                text: "Time Interval"
+//                anchors.verticalCenter: parent.verticalCenter
+//                anchors.left: parent.left
+//                font.letterSpacing: -2
+//                font.pixelSize: 16
+//                verticalAlignment: Text.AlignVCenter
+//                wrapMode: Text.Wrap
+//                anchors.verticalCenterOffset: -59
+//                font.styleName: "Bold"
+//                font.family: "Akshar"
+//                anchors.leftMargin: 8
+//            }
+
+//            //            ComboBox {
+
+//            //                x: 255
+//            //                y: 8
+//            //                width: 70
+//            //                height: 40
+//            //                font.pixelSize: 14
+//            //                model: ["MB", "GB" ]
+//            //                currentIndex: 0
+//            //            }
 
 
-            SpinBox {
-                id: spinBox2
-                x: 155
-                y: 8
-                width: 120
-                height: 40
-                editable: true
-                value: 100
-
-                //                    if(comboBox1.displayText==="150 cycle" ){
-                //                           (spinBox.value*8000)/20
-                //                       }
-
-                //                       else if(comboBox1.displayText==="Hour"){
-                //                           (spinBox.value*8)/23
-                //                       }
-                //                       else if(comboBox1.displayText==="Day"){
-                //                           (spinBox.value*8)/30
-                //                       }
+//            Text {
+//                id: comboBox
+//                x: 263
+//                y: -1
+//                width: 73
+//                height: 57
+//                color: "#284863"
+//                text: qsTr("MB")
+//                font.letterSpacing: -2
+//                font.pixelSize: 17
+//                horizontalAlignment: Text.AlignHCenter
+//                verticalAlignment: Text.AlignVCenter
+//                wrapMode: Text.Wrap
+//                font.styleName: "SemiBold"
+//                font.family: "Akshar"
+//            }
 
 
-                antialiasing: true
-                to: 8192
+//            SpinBox {
+//                id: spinBox2
+//                x: 155
+//                y: 8
+//                width: 120
+//                height: 40
+//                editable: true
+//                value: 100
 
-                //                    if(comboBox1.displayText==="Min."){
-                //                        8000
-                //                    }
-                //                    else if(comboBox1.displayText==="Hour"){
-                //                        8
-                //                    }
-                //                    else if(comboBox1.displayText==="Day"){
-                //                        8
-                //                    }
-                from: 1
-                onValueChanged: {
-                    // spinBox2'nin değeri değiştiğinde tetiklenir
-                    var totalMinutes = spinBox2.value;
-                    var daysToAdd = Math.floor(totalMinutes / (24 * 60)); // Toplam dakikaları günlere çevir
-                    totalMinutes = totalMinutes % (24 * 60); // Günlük dakikaları al
-                    var hoursToAdd = Math.floor(totalMinutes / 60); // Saatlik dakikaları saate çevir
-                    var minutesToAdd = totalMinutes % 60; // Saat dışındaki dakikaları al
+//                //                    if(comboBox1.displayText==="150 cycle" ){
+//                //                           (spinBox.value*8000)/20
+//                //                       }
 
-
-                    var formattedHours = hoursToAdd < 10 ? "0" + hoursToAdd : hoursToAdd;
-                    var formattedMinutes = minutesToAdd < 10 ? "0" + minutesToAdd : minutesToAdd;
-                    var formattedTime = qsTr("%1:%2").arg(formattedHours).arg(formattedMinutes);
-                    if(comboBox1.displayText==="150 cycle" || comboBox1.displayText==="1 second" || comboBox1.displayText==="3 second" || comboBox1.displayText==="15 second"){
-                        minutesToAdd=spinBox2.value
-                        totalMinutes = totalMinutes % (24 * 60); // Günlük dakikaları al
-                        minutesToAdd = totalMinutes % 60; // Saat dışındaki dakikaları al
-
-                        endTimeForNow.text = formattedTime;
-                    }
-                    else if(comboBox1.displayText==="30 second" || comboBox1.displayText==="1 minute" || comboBox1.displayText==="5 minute" || comboBox1.displayText==="10 minute"){
-                        hoursToAdd=spinBox2.value
-                        //                        totalMinutes = hoursToAdd % (24); // Günlük dakikaları al
-                        //                        hoursToAdd = Math.floor(totalMinutes); // Saatlik dakikaları saate çevir
-                        if(hoursToAdd < 24){
-
-                            // Saat ve dakika değerlerini formatla
-                            formattedHours = hoursToAdd < 10 ? "0" + hoursToAdd : hoursToAdd;
-                            formattedMinutes = "00"; // Dakika değeri sabit olarak 00
-
-                            formattedTime = qsTr("%1:%2").arg(formattedHours).arg(formattedMinutes);
-
-                            // beginTimeForNow text'ini güncelle
-                            endTimeForNow.text = formattedTime;
-                        }
-
-                        else  if (hoursToAdd >= 24) {
-                            daysToAdd = Math.floor(hoursToAdd / 24);
-                            hoursToAdd = hoursToAdd % 24;
-
-                            // Günleri ve saatleri ekleyerek tarihi güncelle
-                            var currentDate = new Date();
-                            currentDate.setDate(currentDate.getDate() + daysToAdd);
-                            currentDate.setMinutes(0); // Dakikayı sıfırla
-                            currentDate.setHours(0); // Saati sıfırla
-                            currentDate.setHours(currentDate.getHours() + hoursToAdd);
-
-                            // Saat ve dakika değerlerini formatla
-                            formattedHours = currentDate.getHours() < 10 ? "0" + currentDate.getHours() : currentDate.getHours();
-                            formattedMinutes = "00"; // Dakika değeri sabit olarak 00
-
-                            formattedTime = qsTr("%1:%2").arg(formattedHours).arg(formattedMinutes);
-
-                            // beginTimeForNow text'ini güncelle
-                            endTimeForNow.text = formattedTime;
-                        }
-
-                    }
-                    else if(comboBox1.displayText==="15 minute" || comboBox1.displayText==="30 minute" || comboBox1.displayText==="1 hour" || comboBox1.displayText==="2 hour")
-                    {
-                        daysToAdd=spinBox2.value
-                    }
-
-                    // Saat ve dakika değerlerini formatla
+//                //                       else if(comboBox1.displayText==="Hour"){
+//                //                           (spinBox.value*8)/23
+//                //                       }
+//                //                       else if(comboBox1.displayText==="Day"){
+//                //                           (spinBox.value*8)/30
+//                //                       }
 
 
-                    // beginTimeForNow text'ini güncelle
-                    //                        beginTimeForNow.text = formattedTime;
+//                antialiasing: true
+//                to: 8192
 
-                    // beginDateForNow text'ini güncelle
-                    currentDate = Qt.formatDateTime(new Date(), "dd.MM.yyyy");
-                    var currentDateObject = new Date(parseInt(currentDate.split(".")[2]), parseInt(currentDate.split(".")[1]) - 1, parseInt(currentDate.split(".")[0]));
-
-                    currentDateObject.setDate(currentDateObject.getDate() + daysToAdd);
-                    currentDateObject.setHours(currentDateObject.getHours() + hoursToAdd);
-                    currentDateObject.setMinutes(currentDateObject.getMinutes() + minutesToAdd);
-
-                    var formattedDate = Qt.formatDateTime(currentDateObject, "dd.MM.yyyy");
-                    endDateForNow.text = qsTr(formattedDate);
-
-
-                    //                    backgroundColorForCalendar.color=isBetweenBeginAndEndDates ? "#284863" : "white"
-                }
-                //                property bool isBetweenBeginAndEndDates: {
-                //                     var currentDate = new Date(calendar.currentYear, calendar.currentMonth, model.day);
-                //                     return currentDate >= beginDateForNow.date && currentDate <= endDateForNow.date;
-                //                 }
-
+//                //                    if(comboBox1.displayText==="Min."){
+//                //                        8000
+//                //                    }
+//                //                    else if(comboBox1.displayText==="Hour"){
+//                //                        8
+//                //                    }
+//                //                    else if(comboBox1.displayText==="Day"){
+//                //                        8
+//                //                    }
+//                from: 1
+//                onValueChanged: {
+//                    // spinBox2'nin değeri değiştiğinde tetiklenir
+//                    var totalMinutes = spinBox2.value;
+//                    var daysToAdd = Math.floor(totalMinutes / (24 * 60)); // Toplam dakikaları günlere çevir
+//                    totalMinutes = totalMinutes % (24 * 60); // Günlük dakikaları al
+//                    var hoursToAdd = Math.floor(totalMinutes / 60); // Saatlik dakikaları saate çevir
+//                    var minutesToAdd = totalMinutes % 60; // Saat dışındaki dakikaları al
 
 
+//                    var formattedHours = hoursToAdd < 10 ? "0" + hoursToAdd : hoursToAdd;
+//                    var formattedMinutes = minutesToAdd < 10 ? "0" + minutesToAdd : minutesToAdd;
+//                    var formattedTime = qsTr("%1:%2").arg(formattedHours).arg(formattedMinutes);
+//                    if(comboBox1.displayText==="150 cycle" || comboBox1.displayText==="1 second" || comboBox1.displayText==="3 second" || comboBox1.displayText==="15 second"){
+//                        minutesToAdd=spinBox2.value
+//                        totalMinutes = totalMinutes % (24 * 60); // Günlük dakikaları al
+//                        minutesToAdd = totalMinutes % 60; // Saat dışındaki dakikaları al
 
-            }
+//                        endTimeForNow.text = formattedTime;
+//                    }
+//                    else if(comboBox1.displayText==="30 second" || comboBox1.displayText==="1 minute" || comboBox1.displayText==="5 minute" || comboBox1.displayText==="10 minute"){
+//                        hoursToAdd=spinBox2.value
+//                        //                        totalMinutes = hoursToAdd % (24); // Günlük dakikaları al
+//                        //                        hoursToAdd = Math.floor(totalMinutes); // Saatlik dakikaları saate çevir
+//                        if(hoursToAdd < 24){
+
+//                            // Saat ve dakika değerlerini formatla
+//                            formattedHours = hoursToAdd < 10 ? "0" + hoursToAdd : hoursToAdd;
+//                            formattedMinutes = "00"; // Dakika değeri sabit olarak 00
+
+//                            formattedTime = qsTr("%1:%2").arg(formattedHours).arg(formattedMinutes);
+
+//                            // beginTimeForNow text'ini güncelle
+//                            endTimeForNow.text = formattedTime;
+//                        }
+
+//                        else  if (hoursToAdd >= 24) {
+//                            daysToAdd = Math.floor(hoursToAdd / 24);
+//                            hoursToAdd = hoursToAdd % 24;
+
+//                            // Günleri ve saatleri ekleyerek tarihi güncelle
+//                            var currentDate = new Date();
+//                            currentDate.setDate(currentDate.getDate() + daysToAdd);
+//                            currentDate.setMinutes(0); // Dakikayı sıfırla
+//                            currentDate.setHours(0); // Saati sıfırla
+//                            currentDate.setHours(currentDate.getHours() + hoursToAdd);
+
+//                            // Saat ve dakika değerlerini formatla
+//                            formattedHours = currentDate.getHours() < 10 ? "0" + currentDate.getHours() : currentDate.getHours();
+//                            formattedMinutes = "00"; // Dakika değeri sabit olarak 00
+
+//                            formattedTime = qsTr("%1:%2").arg(formattedHours).arg(formattedMinutes);
+
+//                            // beginTimeForNow text'ini güncelle
+//                            endTimeForNow.text = formattedTime;
+//                        }
+
+//                    }
+//                    else if(comboBox1.displayText==="15 minute" || comboBox1.displayText==="30 minute" || comboBox1.displayText==="1 hour" || comboBox1.displayText==="2 hour")
+//                    {
+//                        daysToAdd=spinBox2.value
+//                    }
+
+//                    // Saat ve dakika değerlerini formatla
+
+
+//                    // beginTimeForNow text'ini güncelle
+//                    //                        beginTimeForNow.text = formattedTime;
+
+//                    // beginDateForNow text'ini güncelle
+//                    currentDate = Qt.formatDateTime(new Date(), "dd.MM.yyyy");
+//                    var currentDateObject = new Date(parseInt(currentDate.split(".")[2]), parseInt(currentDate.split(".")[1]) - 1, parseInt(currentDate.split(".")[0]));
+
+//                    currentDateObject.setDate(currentDateObject.getDate() + daysToAdd);
+//                    currentDateObject.setHours(currentDateObject.getHours() + hoursToAdd);
+//                    currentDateObject.setMinutes(currentDateObject.getMinutes() + minutesToAdd);
+
+//                    var formattedDate = Qt.formatDateTime(currentDateObject, "dd.MM.yyyy");
+//                    endDateForNow.text = qsTr(formattedDate);
+
+
+//                    //                    backgroundColorForCalendar.color=isBetweenBeginAndEndDates ? "#284863" : "white"
+//                }
+//                //                property bool isBetweenBeginAndEndDates: {
+//                //                     var currentDate = new Date(calendar.currentYear, calendar.currentMonth, model.day);
+//                //                     return currentDate >= beginDateForNow.date && currentDate <= endDateForNow.date;
+//                //                 }
 
 
 
-            Text {
-                id:chosenText22
-                width: 144
-                height: 55
-                color: "#284863"
-                text: "Logger Memory Space"
-                anchors.verticalCenter: parent.verticalCenter
-                anchors.left: parent.left
-                font.letterSpacing: -2
-                font.pixelSize: 16
-                verticalAlignment: Text.AlignVCenter
-                wrapMode: Text.Wrap
-                font.styleName: "Bold"
-                font.family: "Akshar"
-                anchors.leftMargin: 8
-                MouseArea {
-                    anchors.fill: parent
-                    anchors.topMargin: -2
-                    anchors.bottomMargin: -2
-                    anchors.leftMargin: -5
-                    onClicked: {
 
-                        if(okUp22.rotation===180)
-                        {
-                            okUp22.rotation=0
-                            forLoggerChosing.visible=true
+//            }
 
-                        }
-                        else
-                        {
-                            okUp22.rotation=180
-                            forLoggerChosing.visible=false
 
-                        }
-                    }
-                    anchors.rightMargin: 0
-                }
-            }
 
-            Image {
-                id: okUp22
-                x: 135
-                y: 24
-                width: 14
-                source: "images/okUp22.svg"
-                rotation: 180
-                fillMode: Image.PreserveAspectFit
-            }
-        }
+//            Text {
+//                id:chosenText22
+//                width: 144
+//                height: 55
+//                color: "#284863"
+//                text: "Logger Memory Space"
+//                anchors.verticalCenter: parent.verticalCenter
+//                anchors.left: parent.left
+//                font.letterSpacing: -2
+//                font.pixelSize: 16
+//                verticalAlignment: Text.AlignVCenter
+//                wrapMode: Text.Wrap
+//                font.styleName: "Bold"
+//                font.family: "Akshar"
+//                anchors.leftMargin: 8
+//                MouseArea {
+//                    anchors.fill: parent
+//                    anchors.topMargin: -2
+//                    anchors.bottomMargin: -2
+//                    anchors.leftMargin: -5
+//                    onClicked: {
 
-        Rectangle {
-            id: rectangle12
-            x: -346
-            y: 549
-            width: 326
-            height: 55
-            color: "#f7f8fa"
+//                        if(okUp22.rotation===180)
+//                        {
+//                            okUp22.rotation=0
+//                            forLoggerChosing.visible=true
 
-            Text {
-                width: 147
-                height: 55
-                color: "#284863"
-                text: "Time Interval"
-                anchors.verticalCenter: parent.verticalCenter
-                anchors.left: parent.left
-                font.letterSpacing: -2
-                font.pixelSize: 16
-                verticalAlignment: Text.AlignVCenter
-                wrapMode: Text.Wrap
-                font.styleName: "Bold"
-                anchors.leftMargin: 8
-                font.family: "Akshar"
-            }
-        }
+//                        }
+//                        else
+//                        {
+//                            okUp22.rotation=180
+//                            forLoggerChosing.visible=false
 
-     }
+//                        }
+//                    }
+//                    anchors.rightMargin: 0
+//                }
+//            }
+
+//            Image {
+//                id: okUp22
+//                x: 135
+//                y: 24
+//                width: 14
+//                source: "images/okUp22.svg"
+//                rotation: 180
+//                fillMode: Image.PreserveAspectFit
+//            }
+//        }
+
+//        Rectangle {
+//            id: rectangle12
+//            x: -346
+//            y: 549
+//            width: 326
+//            height: 55
+//            color: "#f7f8fa"
+
+//            Text {
+//                width: 147
+//                height: 55
+//                color: "#284863"
+//                text: "Time Interval"
+//                anchors.verticalCenter: parent.verticalCenter
+//                anchors.left: parent.left
+//                font.letterSpacing: -2
+//                font.pixelSize: 16
+//                verticalAlignment: Text.AlignVCenter
+//                wrapMode: Text.Wrap
+//                font.styleName: "Bold"
+//                anchors.leftMargin: 8
+//                font.family: "Akshar"
+//            }
+//        }
+
+//     }
 
 
 
@@ -2375,6 +2383,8 @@ Rectangle {
         height: 531
         visible: rectangle1.isDialogOpen
         color: "#ffffff"
+
+
     }
 
     Rectangle{
@@ -2556,8 +2566,11 @@ Rectangle {
             else{
                 loggerRecAnimation.stop()
                 forLogRecord=true
+
             }
         }
+
+
     }
 
 
@@ -5023,10 +5036,12 @@ Rectangle {
         }
     }
 
-    AppSettings{
-        id:appSettingsComponent
-        visible: true
-    }
+
+
+   AppSettings{
+       id:appSettingsComponent
+       visible: true
+   }
 
    property int currentDay: new Date().getDate()
    property int currentMonth: new Date().getMonth()
@@ -5038,14 +5053,14 @@ Rectangle {
 
        for (var i = 0; i < myListModel.count; i++) {
            var currentDate = new Date(); // Her öğe için ayrı ayrı tarih ve saat bilgisi oluştur
-                function formatDate(date) {
+                         function formatDate(date) {
                       var day = ("0" + date.getDate()).slice(-2);
                       var month = ("0" + (date.getMonth() + 1)).slice(-2);
                       var year = date.getFullYear();
                       return day + "." + month + "." + year;
                   }
 
-                function formatTime(date) {
+                  function formatTime(date) {
                       var hours = ("0" + date.getHours()).slice(-2);
                       var minutes = ("0" + date.getMinutes()).slice(-2);
                       var seconds = ("0" + date.getSeconds()).slice(-2);
@@ -5133,8 +5148,8 @@ Rectangle {
            var listData = appSettingsComponent.appSettings.value("listModelData", []);
            myListModel.clear();
            for (var i = 0; i < listData.length; i++) {
-               var itemData = listData[i];
-               myListModel.append({ "name": itemData.name, "dateText": itemData.dateText || "" });
+                var itemData = listData[i];
+myListModel.append({ "name": itemData.name, "dateText": itemData.dateText || "" });
            }
        }
 
@@ -5491,7 +5506,6 @@ Rectangle {
         }
         fillMode: Image.Pad
     }
-
 
     Rectangle {
         id: addToDoDialog

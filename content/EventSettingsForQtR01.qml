@@ -289,7 +289,7 @@ Rectangle {
             // First handle customization
             first.handle: Rectangle {
                 id:firstTH
-                x: rangeSlider.leftPadding + rangeSlider.first.visualPosition * (rangeSlider.availableWidth - width) +5
+                x: rangeSlider.leftPadding + rangeSlider.first.visualPosition * (rangeSlider.availableWidth - width)
                 y: parent.height / 2 - height / 2
                 width: 3
                 height: 40
@@ -301,7 +301,7 @@ Rectangle {
             // Second handle customization
             second.handle: Rectangle {
                 id:secondTH
-                x: rangeSlider.y + rangeSlider.width/2 - rangeSlider.first.value*rangeSlider.width -15 +5
+                x: rangeSlider.y + rangeSlider.width/2 - rangeSlider.first.value*rangeSlider.width -15
                 y: parent.height / 2 - height / 2
                 width: 3
                 height: 40
@@ -348,9 +348,9 @@ Rectangle {
 
                 Rectangle {
                     id: rectangle21
-                    x: 90
+                    x: 76
                     y: 36
-                    width: 380
+                    width: 400
                     height: 250
                     color: "#00ffffff"
                     antialiasing: false
@@ -526,10 +526,10 @@ Rectangle {
                         id: on_button_fill2
                         x: 5
                         y: 8
-                        width: 24
                         source: "images/On_button_fill-2.svg"
                         antialiasing: true
                         fillMode: Image.PreserveAspectFit
+                        width: 44/2
                         visible: true
                     }
 
@@ -537,19 +537,19 @@ Rectangle {
                         id: on_button_fill1
                         x: 35
                         y: 8
-                        width: 24
                         source: "images/On_button_fill-1.svg"
                         antialiasing: true
                         fillMode: Image.PreserveAspectFit
+                        width: 44/2
                         visible: true
                     }
 
                     MouseArea {
                         id: dip
                         x: -6
-                        y: -2
+                        y: 0
                         width: 86
-                        height: 42
+                        height: 38
                         onClicked: {
                             if(on_button_fill.visible===true){
                                 on_button_fill.visible=false
@@ -692,7 +692,7 @@ Rectangle {
                         id: on_button_fill112
                         x: 5
                         y: 8
-                        width: 24
+                        width: 44/2
                         source: "images/On_button_fill-2.svg"
                         fillMode: Image.PreserveAspectFit
                         antialiasing: true
@@ -702,7 +702,7 @@ Rectangle {
                         id: on_button_fill111
                         x: 35
                         y: 8
-                        width: 24
+                        width: 44/2
                         visible: true
                         source: "images/On_button_fill-1.svg"
                         fillMode: Image.PreserveAspectFit
@@ -712,9 +712,9 @@ Rectangle {
                     MouseArea {
                         id:pst
                         x: -6
-                        y: -2
+                        y: 0
                         width: 86
-                        height: 42
+                        height: 38
                         onClicked: {
                             if(on_button_fill110.visible===true){
                                 on_button_fill110.visible=false
@@ -826,7 +826,7 @@ Rectangle {
                         id:on_button_fill122
                         x: 5
                         y: 8
-                        width: 24
+                        width: 44/2
                         visible: true
                         source: "images/On_button_fill-2.svg"
                         fillMode: Image.PreserveAspectFit
@@ -837,7 +837,7 @@ Rectangle {
                         id:on_button_fill121
                         x: 35
                         y: 8
-                        width: 24
+                        width: 44/2
                         visible: true
                         source: "images/On_button_fill-1.svg"
                         fillMode: Image.PreserveAspectFit
@@ -846,9 +846,9 @@ Rectangle {
 
                     MouseArea {
                         x: -6
-                        y: -2
+                        y: 0
                         width: 86
-                        height: 42
+                        height: 38
                         onClicked: {
                             if(on_button_fill120.visible===true){
                                 on_button_fill120.visible=false
@@ -958,7 +958,7 @@ Rectangle {
                         id:on_button_fill132
                         x: 5
                         y: 8
-                        width: 24
+                        width: 44/2
                         visible: true
                         source: "images/On_button_fill-2.svg"
                         fillMode: Image.PreserveAspectFit
@@ -969,7 +969,7 @@ Rectangle {
                         id:on_button_fill131
                         x: 35
                         y: 8
-                        width: 24
+                        width: 44/2
                         visible: true
                         source: "images/On_button_fill-1.svg"
                         fillMode: Image.PreserveAspectFit
@@ -977,10 +977,10 @@ Rectangle {
                     }
 
                     MouseArea {
-                        x: -12
+                        x: -6
                         y: 0
                         width: 86
-                        height: 40
+                        height: 38
                         onClicked: {
                             if(on_button_fill130.visible===true){
                                 on_button_fill130.visible=false
@@ -1115,7 +1115,7 @@ Rectangle {
                         id:on_button_fill142
                         x: 5
                         y: 8
-                        width: 24
+                        width: 44/2
                         visible: true
                         source: "images/On_button_fill-2.svg"
                         fillMode: Image.PreserveAspectFit
@@ -1126,7 +1126,7 @@ Rectangle {
                         id:on_button_fill141
                         x: 35
                         y: 8
-                        width: 24
+                        width: 44/2
                         visible: true
                         source: "images/On_button_fill-1.svg"
                         fillMode: Image.PreserveAspectFit
@@ -1135,9 +1135,9 @@ Rectangle {
 
                     MouseArea {
                         x: -6
-                        y: -2
+                        y: 0
                         width: 86
-                        height: 42
+                        height: 38
                         onClicked: {
                             if(on_button_fill140.visible===true){
                                 on_button_fill140.visible=false
@@ -1273,7 +1273,7 @@ Rectangle {
                         id:on_button_fill152
                         x: 5
                         y: 8
-                        width: 24
+                        width: 44/2
                         visible: true
                         source: "images/On_button_fill-2.svg"
                         fillMode: Image.PreserveAspectFit
@@ -1284,7 +1284,7 @@ Rectangle {
                         id:on_button_fill151
                         x: 35
                         y: 8
-                        width: 24
+                        width: 44/2
                         visible: true
                         source: "images/On_button_fill-1.svg"
                         fillMode: Image.PreserveAspectFit
@@ -1293,9 +1293,9 @@ Rectangle {
 
                     MouseArea {
                         x: -6
-                        y: -2
+                        y: 0
                         width: 86
-                        height: 42
+                        height: 38
                         onClicked: {
                             if(on_button_fill150.visible===true){
                                 on_button_fill150.visible=false
@@ -1431,7 +1431,7 @@ Rectangle {
                         id:on_button_fill162
                         x: 5
                         y: 8
-                        width: 24
+                        width: 44/2
                         visible: true
                         source: "images/On_button_fill-2.svg"
                         fillMode: Image.PreserveAspectFit
@@ -1442,7 +1442,7 @@ Rectangle {
                         id:on_button_fill161
                         x: 35
                         y: 8
-                        width: 24
+                        width: 44/2
                         visible: true
                         source: "images/On_button_fill-1.svg"
                         fillMode: Image.PreserveAspectFit
@@ -1451,9 +1451,9 @@ Rectangle {
 
                     MouseArea {
                         x: -6
-                        y: -2
+                        y: 0
                         width: 86
-                        height: 42
+                        height: 38
                         onClicked: {
                             if(on_button_fill160.visible===true){
                                 on_button_fill160.visible=false
@@ -1564,7 +1564,7 @@ Rectangle {
                         id:on_button_fill172
                         x: 5
                         y: 8
-                        width: 24
+                        width: 44/2
                         visible: true
                         source: "images/On_button_fill-2.svg"
                         fillMode: Image.PreserveAspectFit
@@ -1575,7 +1575,7 @@ Rectangle {
                         id:on_button_fill171
                         x: 35
                         y: 8
-                        width: 24
+                        width: 44/2
                         visible: true
                         source: "images/On_button_fill-1.svg"
                         fillMode: Image.PreserveAspectFit
@@ -1584,9 +1584,9 @@ Rectangle {
 
                     MouseArea {
                         x: -6
-                        y: -2
+                        y: 0
                         width: 86
-                        height: 42
+                        height: 38
                         onClicked: {
                             if(on_button_fill170.visible===true){
                                 on_button_fill170.visible=false
@@ -1707,7 +1707,7 @@ Rectangle {
                         id:on_button_fill182
                         x: 5
                         y: 8
-                        width: 24
+                        width: 44/2
                         visible: true
                         source: "images/On_button_fill-2.svg"
                         fillMode: Image.PreserveAspectFit
@@ -1718,7 +1718,7 @@ Rectangle {
                         id:on_button_fill181
                         x: 35
                         y: 8
-                        width: 24
+                        width: 44/2
                         visible: true
                         source: "images/On_button_fill-1.svg"
                         fillMode: Image.PreserveAspectFit
@@ -1727,9 +1727,9 @@ Rectangle {
 
                     MouseArea {
                         x: -6
-                        y: -2
+                        y: 0
                         width: 86
-                        height: 42
+                        height: 38
                         onClicked: {
                             if(on_button_fill180.visible===true){
                                 on_button_fill180.visible=false
@@ -1870,7 +1870,7 @@ Rectangle {
                         id:on_button_fill190
                         x: 5
                         y: 8
-                        width: 22
+                        width: 44/2
                         visible: false
                         source: "images/On_button_fill.svg"
                         fillMode: Image.PreserveAspectFit
@@ -1881,7 +1881,7 @@ Rectangle {
                         id:on_button_fill192
                         x: 5
                         y: 8
-                        width: 24
+                        width: 44/2
                         visible: true
                         source: "images/On_button_fill-2.svg"
                         fillMode: Image.PreserveAspectFit
@@ -1892,7 +1892,7 @@ Rectangle {
                         id:on_button_fill191
                         x: 35
                         y: 8
-                        width: 24
+                        width: 44/2
                         visible: true
                         source: "images/On_button_fill-1.svg"
                         fillMode: Image.PreserveAspectFit
@@ -1901,9 +1901,9 @@ Rectangle {
 
                     MouseArea {
                         x: -6
-                        y: -2
+                        y: 0
                         width: 86
-                        height: 42
+                        height: 38
                         onClicked: {
                             if(on_button_fill190.visible===true){
                                 on_button_fill190.visible=false
@@ -2058,7 +2058,7 @@ Rectangle {
                         id:on_button_fill1112
                         x: 5
                         y: 8
-                        width: 24
+                        width: 44/2
                         visible: true
                         source: "images/On_button_fill-2.svg"
                         fillMode: Image.PreserveAspectFit
@@ -2069,7 +2069,7 @@ Rectangle {
                         id:on_button_fill1111
                         x: 35
                         y: 8
-                        width: 24
+                        width: 44/2
                         visible: true
                         source: "images/On_button_fill-1.svg"
                         fillMode: Image.PreserveAspectFit
@@ -2078,9 +2078,9 @@ Rectangle {
 
                     MouseArea {
                         x: -6
-                        y: -2
+                        y: 0
                         width: 86
-                        height: 42
+                        height: 38
                         onClicked: {
                             if(on_button_fill1110.visible===true){
                                 on_button_fill1110.visible=false
@@ -2307,7 +2307,7 @@ Rectangle {
 
         Text {
             id: memoryTypeText12
-            x: 915
+            x: 925
             y: 4
             width: 112
             height: 47
@@ -2324,7 +2324,7 @@ Rectangle {
 
         Text {
             id: memoryTypeText13
-            x: 1056
+            x: 1055
             y: 4
             width: 84
             height: 47
@@ -2341,7 +2341,7 @@ Rectangle {
 
         Text {
             id: perc
-            x: 1057
+            x: 1056
             y: 37
             width: 83
             height: 16
@@ -2408,7 +2408,7 @@ Rectangle {
 
         Text {
             id: perc3
-            x: 915
+            x: 925
             y: 37
             width: 83
             height: 16
@@ -2426,18 +2426,26 @@ Rectangle {
 
 
     Text {
-        x: 448  // ya da istediğiniz bir başka konum
+        x: 458  // ya da istediğiniz bir başka konum
         y: 8  // rangeSlider'ın biraz üstünde görünmesi için
         text: "Value 1: " + rangeSlider.first.value.toFixed(2) // 2 basamakla sınırlı olarak gösterilir
         color: "black"
     }
 
     Text {
-        x: 572  // ya da istediğiniz bir başka konum
+        x: 562  // ya da istediğiniz bir başka konum
         y: 8  // rangeSlider'ın biraz üstünde görünmesi için
         text: "Value 1: " + secondTH.x.toFixed(2) // 2 basamakla sınırlı olarak gösterilir
         color: "black"
     }
+
+
+
+
+
+
+
+
 
 
 
@@ -2459,13 +2467,13 @@ Rectangle {
             Item {
             Text {
                 color: "#284863"
-                x:3
+                x:12
                 text: model.name
                 font.pixelSize: 15
         }
             Text {
                 color: "#284863"
-                x: 144
+                x: 140
                 text:model.extraInfo
                 font.pixelSize: 15
             }
@@ -2477,7 +2485,11 @@ Rectangle {
 
     ListModel {
         id: itemsModel
+        //        ListElement {
+        //              name: "";
+        //              extraInfo: "";
 
+        //          }
     }
 
     Image {
@@ -2503,6 +2515,8 @@ Rectangle {
                 forRecord=true
             }
         }
+
+
         }
     }
 
