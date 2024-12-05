@@ -17,9 +17,10 @@ Rectangle {
 
     property bool forUpdateHold: true
 
-Component.onCompleted: {
-turnVectorAnim.start()
-}
+    Component.onCompleted: {
+        turnVectorAnim.start()
+        arcEnd.start()
+    }
     Image {
         id: unbalance
         x: 0
@@ -35,15 +36,6 @@ turnVectorAnim.start()
             duration: 2500
             from:0
             to: 360
-        }
-        Image {
-            id: turnVectors
-            x: 508
-            y: 96
-            width: 518/2
-            source: "images/TurnVectors.svg"
-            rotation: 140
-            fillMode: Image.PreserveAspectFit
         }
 
         Image {
@@ -93,6 +85,50 @@ turnVectorAnim.start()
 
 
     }
+
+
+    PropertyAnimation {
+        id: arcEnd
+        target: arc
+        loops: -1
+        property: "end"
+        duration: 2500
+        from:-360
+        to: 0
+    }
+
+    Image {
+        id: ovalForHelpPage
+        x: 480
+        y: 68
+        width: 630/2
+        source: "images/OvalForHelpPage.svg"
+        fillMode: Image.PreserveAspectFit
+
+        ArcItem {
+            id: arc
+            x: 0
+            y: 0
+            width: 315
+            height: 315
+            strokeColor: "#ffffff"
+            end: -360
+            strokeWidth: 13
+            fillColor: "#00000000"
+        }
+    }
+
+    Image {
+        id: turnVectors
+        x: 508
+        y: 96
+        width: 518/2
+        source: "images/TurnVectors.svg"
+        rotation: 140
+        fillMode: Image.PreserveAspectFit
+    }
+
+
 
 
 

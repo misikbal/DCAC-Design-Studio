@@ -761,9 +761,6 @@ Rectangle {
 
             }
         }
-
-
-
         Rectangle {
             id: rectangleForPieChart
             x: 0
@@ -5617,7 +5614,7 @@ Rectangle {
             height: 172/2
             source: "images/BGHeader.svg"
             fillMode: Image.PreserveAspectFit
-            CustomCheckBox {
+            CustomCheckBoxForHarmonic {
                 id:valuecheck
                 x: 9
                 y: 10
@@ -5636,9 +5633,17 @@ Rectangle {
                     verticalAlignment: Text.AlignVCenter
                 }
 
+
+                onClickedSignal: {
+
+                }
+                onNonclickedSignal: {
+
+                }
+
             }
 
-            CustomCheckBox {
+            CustomCheckBoxForHarmonic {
                 id:phasecheck
                 x: 9
                 y: 45
@@ -5659,7 +5664,7 @@ Rectangle {
 
             }
 
-            CustomCheckBox {
+            CustomCheckBoxForHarmonic {
                 id:percentagecheck
                 x: 145
                 y: 9

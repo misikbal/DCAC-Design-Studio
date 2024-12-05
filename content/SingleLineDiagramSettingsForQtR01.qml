@@ -7,8 +7,6 @@ import QtQuick.Studio.Components 1.0
 import QtQuick.Studio.Effects 1.0
 import QtGraphicalEffects 1.15
 
-
-
 Rectangle {
     id: rectangle
     width: 1280
@@ -19,13 +17,114 @@ Rectangle {
     property int counterForN: 1
     property var historyForSLD: []
 
+    property string fullText: "This text is the sample text that will be written during the analysis period. This section only contains a demo image for now. Depending on the analysis results, the scrollable area size increases and decreases. The animation works successfully."
+    property int currentIndex: 0
+    property string displayText: ""
 
     Component.onCompleted: {
         //console.log(mouseArea1Y.visible)
-
     }
 
-    Rectangle {
+    function funcForBox1() {
+        mouseArea11.visible=false
+        animationClick11.complete()
+        animationClick11.stop()
+        dropZone11.opacity=0
+        animationRectsClicked.complete()
+        animationRectsClicked.stop()
+        rectangleForCom1.opacity=0
+        rectangleForCom2.opacity=0
+        rectangleForCom3.opacity=0
+        rectangleForCom4.opacity=0
+        rectangleForCom5.opacity=0
+        rectangleForCom6.opacity=0
+        rectangleForCom7.opacity=0
+        rectangleForCom8.opacity=0
+        rectangleForCom9.opacity=0
+        rectangleForCom10.opacity=0
+        bmBoxRect1.border.color="#217efd"
+        rectangle1.x=-500
+        rectangle3.visible=false
+        rectangle4.visible=false
+        rectangle3.rotation=0
+        comBM11.visible=true
+    }
+
+    function funcForBox2() {
+        mouseArea12.visible=false
+        animationClick12.complete()
+        animationClick12.stop()
+        dropZone12.opacity=0
+        animationRectsClicked.complete()
+        animationRectsClicked.stop()
+        rectangleForCom1.opacity=0
+        rectangleForCom2.opacity=0
+        rectangleForCom3.opacity=0
+        rectangleForCom4.opacity=0
+        rectangleForCom5.opacity=0
+        rectangleForCom6.opacity=0
+        rectangleForCom7.opacity=0
+        rectangleForCom8.opacity=0
+        rectangleForCom9.opacity=0
+        rectangleForCom10.opacity=0
+        bmBoxRect2.border.color="#217efd"
+        rectangle1.x=-500
+        rectangle5.visible=false
+        rectangle6.visible=false
+        rectangle5.rotation=0
+        comBM12.visible=true
+    }
+
+    function funcForBox4() {
+        mouseArea14.visible=false
+        animationClick14.complete()
+        animationClick14.stop()
+        dropZone14.opacity=0
+        animationRectsClicked.complete()
+        animationRectsClicked.stop()
+        rectangleForCom1.opacity=0
+        rectangleForCom2.opacity=0
+        rectangleForCom3.opacity=0
+        rectangleForCom4.opacity=0
+        rectangleForCom5.opacity=0
+        rectangleForCom6.opacity=0
+        rectangleForCom7.opacity=0
+        rectangleForCom8.opacity=0
+        rectangleForCom9.opacity=0
+        rectangleForCom10.opacity=0
+        bmBoxRect4.border.color="#217efd"
+        rectangle1.x=-500
+        rectangle7.visible=false
+        rectangle8.visible=false
+        rectangle7.rotation=0
+        comBM14.visible=true
+    }
+
+    function funcForBox5() {
+        mouseArea15.visible=false
+        animationClick15.complete()
+        animationClick15.stop()
+        dropZone15.opacity=0
+        animationRectsClicked.complete()
+        animationRectsClicked.stop()
+        rectangleForCom1.opacity=0
+        rectangleForCom2.opacity=0
+        rectangleForCom3.opacity=0
+        rectangleForCom4.opacity=0
+        rectangleForCom5.opacity=0
+        rectangleForCom6.opacity=0
+        rectangleForCom7.opacity=0
+        rectangleForCom8.opacity=0
+        rectangleForCom9.opacity=0
+        rectangleForCom10.opacity=0
+        bmBoxRect5.border.color="#217efd"
+        rectangle1.x=-500
+        rectangle9.visible=false
+        rectangle10.visible=false
+        rectangle9.rotation=0
+        comBM15.visible=true
+    }
+        Rectangle {
         id: rectangle1
         x: 0
         y: 0
@@ -196,11 +295,11 @@ Rectangle {
 
 
             Image {
-                id: sLDBGForImages1
+                id: sLDBGForImg1
                 x: 3
                 y: 7
                 width: 314/2
-                source: "images/SLDBGForImages.svg"
+                source: "images/SLDBGForImg.svg"
                 antialiasing: true
                 fillMode: Image.PreserveAspectFit
 
@@ -215,135 +314,77 @@ Rectangle {
                         if(dropZone11.opacity!==0){
                             com11.source="images/Com4.svg"
 
-                            mouseArea1.visible=false
                             comBM11.source="images/Com4.svg"
                             bmBox1.text="Utility"
                             infoText.text="Selected the Utility"
                             bmBoxRect1.border.color="#d6e0e7"
-                            animationClick11.complete()
-                            animationClick11.stop()
-                            dropZone11.opacity=0
-                            animationRectsClicked.complete()
-                            animationRectsClicked.stop()
-                            rectangleForCom1.opacity=0
-                            rectangleForCom2.opacity=0
-                            rectangleForCom3.opacity=0
-                            rectangleForCom4.opacity=0
-                            rectangleForCom5.opacity=0
-                            rectangleForCom6.opacity=0
-                            rectangleForCom7.opacity=0
-                            rectangleForCom8.opacity=0
-                            rectangleForCom9.opacity=0
-                            rectangleForCom10.opacity=0
-
-                            bmBoxRect1.border.color="#217efd"
-
-                            rectangle1.x=-500
                             rectangleForUtility.x=0
-                            rectangle3.visible=false
-                            rectangle4.visible=false
-                            rectangle3.rotation=0
-                            comBM11.visible=true
 
-                            if(mouseArea1.visible===false && mouseArea2.visible===false){
+//                            mouseArea11.visible=false
+//                            animationClick11.complete()
+//                            animationClick11.stop()
+//                            dropZone11.opacity=0
+//                            animationRectsClicked.complete()
+//                            animationRectsClicked.stop()
+//                            rectangleForCom1.opacity=0
+//                            rectangleForCom2.opacity=0
+//                            rectangleForCom3.opacity=0
+//                            rectangleForCom4.opacity=0
+//                            rectangleForCom5.opacity=0
+//                            rectangleForCom6.opacity=0
+//                            rectangleForCom7.opacity=0
+//                            rectangleForCom8.opacity=0
+//                            rectangleForCom9.opacity=0
+//                            rectangleForCom10.opacity=0
+//                            bmBoxRect1.border.color="#217efd"
+//                            rectangle1.x=-500
+//                            rectangle3.visible=false
+//                            rectangle4.visible=false
+//                            rectangle3.rotation=0
+//                            comBM11.visible=true
+                            funcForBox1();
+
+                            if(mouseArea11.visible===false && mouseArea12.visible===false){
                                 rectanglenode1.visible=true
                             }
 
                         }
+
                         if(dropZone12.opacity!==0){
                             com12.source="images/Com4.svg"
 
-                            mouseArea2.visible=false
                             comBM12.source="images/Com4.svg"
                             bmBox2.text="Utility"
                             infoText.text="Selected the Utility"
                             bmBoxRect2.border.color="#d6e0e7"
-                            animationClick12.complete()
-                            animationClick12.stop()
-                            dropZone12.opacity=0
-                            animationRectsClicked.complete()
-                            animationRectsClicked.stop()
-                            rectangleForCom1.opacity=0
-                            rectangleForCom2.opacity=0
-                            rectangleForCom3.opacity=0
-                            rectangleForCom4.opacity=0
-                            rectangleForCom5.opacity=0
-                            rectangleForCom6.opacity=0
-                            rectangleForCom7.opacity=0
-                            rectangleForCom8.opacity=0
-                            rectangleForCom9.opacity=0
-                            rectangleForCom10.opacity=0
-                            bmBoxRect2.border.color="#217efd"
-
-                            rectangle1.x=-500
                             rectangleForUtility.x=0
-                            rectangle5.visible=false
-                            rectangle6.visible=false
-                            rectangle5.rotation=0
-                            comBM12.visible=true
 
-                            if(mouseArea1.visible===false && mouseArea2.visible===false){
+                            funcForBox2();
+                            if(mouseArea11.visible===false && mouseArea12.visible===false){
                                 rectanglenode1.visible=true
                             }
-
-
                         }
 
                         if(dropZone14.opacity!==0){
                             com14.source="images/Com4.svg"
-
-                            mouseArea4.visible=false
                             comBM14.source="images/Com4.svg"
                             bmBox4.text="Utility"
                             infoText.text="Selected the Utility"
                             bmBoxRect4.border.color="#d6e0e7"
-                            animationClick14.complete()
-                            animationClick14.stop()
-                            dropZone14.opacity=0
-                            animationRectsClicked.complete()
-                            animationRectsClicked.stop()
-                            rectangleForCom1.opacity=0
-                            rectangleForCom2.opacity=0
-                            rectangleForCom3.opacity=0
-                            rectangleForCom4.opacity=0
-                            rectangleForCom5.opacity=0
-                            rectangleForCom6.opacity=0
-                            rectangleForCom7.opacity=0
-                            rectangleForCom8.opacity=0
-                            rectangleForCom9.opacity=0
-                            rectangleForCom10.opacity=0
-                            bmBoxRect4.border.color="#217efd"
-
-                            rectangle1.x=-500
                             rectangleForUtility.x=0
+
+                            funcForBox4();
                         }
                         if(dropZone15.opacity!==0){
                             com15.source="images/Com4.svg"
 
-                            mouseArea5.visible=false
                             comBM15.source="images/Com4.svg"
                             bmBox5.text="Utility"
                             infoText.text="Selected the Utility"
                             bmBoxRect5.border.color="#d6e0e7"
-                            animationClick15.complete()
-                            animationClick15.stop()
-                            dropZone15.opacity=0
-                            animationRectsClicked.complete()
-                            animationRectsClicked.stop()
-                            rectangleForCom1.opacity=0
-                            rectangleForCom2.opacity=0
-                            rectangleForCom3.opacity=0
-                            rectangleForCom4.opacity=0
-                            rectangleForCom5.opacity=0
-                            rectangleForCom6.opacity=0
-                            rectangleForCom7.opacity=0
-                            rectangleForCom8.opacity=0
-                            rectangleForCom9.opacity=0
-                            rectangleForCom10.opacity=0
-                            bmBoxRect5.border.color="#217efd"
-
-                            rectangle1.x=-500
                             rectangleForUtility.x=0
+
+                            funcForBox5();
                         }
                     }
 
@@ -391,11 +432,11 @@ Rectangle {
             }
 
             Image {
-                id: sLDBGForImages2
+                id: sLDBGForImg2
                 x: 167
                 y: 7
                 width: 314/2
-                source: "images/SLDBGForImages.svg"
+                source: "images/SLDBGForImg.svg"
                 MouseArea {
                     x: 0
                     y: 0
@@ -404,129 +445,274 @@ Rectangle {
                     antialiasing: true
 
                     onClicked: {
-                        if(dropZone11.opacity!==0){
-                            com11.source="images/Com1.svg"
+                  if(forRectifierNumber===1){
+                      if(dropZone11.opacity!==0){
+                          com11.source="images/Com1.svg"
 
-                            mouseArea1.visible=false
-                            comBM11.source="images/Com1.svg"
-                            bmBox1.text="Transformer"
-                            infoText.text="Selected the Transformer"
-                            bmBoxRect1.border.color="#d6e0e7"
-                            animationClick11.complete()
-                            animationClick11.stop()
-                            dropZone11.opacity=0
-                            animationRectsClicked.complete()
-                            animationRectsClicked.stop()
-                            rectangleForCom1.opacity=0
-                            rectangleForCom2.opacity=0
-                            rectangleForCom3.opacity=0
-                            rectangleForCom4.opacity=0
-                            rectangleForCom5.opacity=0
-                            rectangleForCom6.opacity=0
-                            rectangleForCom7.opacity=0
-                            rectangleForCom8.opacity=0
-                            rectangleForCom9.opacity=0
-                            rectangleForCom10.opacity=0
+                          mouseArea11.visible=false
+                          comBM11.source="images/Com1.svg"
+                          bmBox1.text="Transformer"
+                          infoText.text="Selected the Transformer"
+                          bmBoxRect1.border.color="#d6e0e7"
+                          animationClick11.complete()
+                          animationClick11.stop()
+                          dropZone11.opacity=0
+                          animationRectsClicked.complete()
+                          animationRectsClicked.stop()
+                          rectangleForCom1.opacity=0
+                          rectangleForCom2.opacity=0
+                          rectangleForCom3.opacity=0
+                          rectangleForCom4.opacity=0
+                          rectangleForCom5.opacity=0
+                          rectangleForCom6.opacity=0
+                          rectangleForCom7.opacity=0
+                          rectangleForCom8.opacity=0
+                          rectangleForCom9.opacity=0
+                          rectangleForCom10.opacity=0
 
-                            rectangle1.x=-500
-                            rectangleForTransformer.x=0
-                            bmBoxRect1.border.color="#217efd"
+                          rectangle1.x=-500
+                          rectangleForTransformer.x=0
+                          bmBoxRect1.border.color="#217efd"
 
-                            rectangle3.visible=false
-                            rectangle4.visible=false
-                            rectangle3.rotation=0
-                            comBM11.visible=true
+                          rectangle3.visible=false
+                          rectangle4.visible=false
+                          rectangle3.rotation=0
+                          comBM11.visible=true
 
-                            if(mouseArea2.visible===false && mouseArea2.visible===false){
-                                rectanglenode1.visible=true
-                            }
+                          if(mouseArea11.visible===false && mouseArea12.visible===false){
+                              rectanglenode1.visible=true
+                          }
 
-                        }
-                        if(dropZone12.opacity!==0){
-                            com12.source="images/Com1.svg"
+                      }
+                      if(dropZone12.opacity!==0){
+                          com12.source="images/Com1.svg"
 
-                            mouseArea2.visible=false
-                            comBM12.source="images/Com1.svg"
-                            bmBox2.text="Transformer"
-                            infoText.text="Selected the Transformer"
-                            bmBoxRect2.border.color="#d6e0e7"
-                            animationClick12.complete()
-                            animationClick12.stop()
-                            dropZone12.opacity=0
-                            animationRectsClicked.complete()
-                            animationRectsClicked.stop()
-                            rectangleForCom1.opacity=0
-                            rectangleForCom2.opacity=0
-                            rectangleForCom3.opacity=0
-                            rectangleForCom4.opacity=0
-                            rectangleForCom5.opacity=0
-                            rectangleForCom6.opacity=0
-                            rectangleForCom7.opacity=0
-                            rectangleForCom8.opacity=0
-                            rectangleForCom9.opacity=0
-                            rectangleForCom10.opacity=0
+                          mouseArea12.visible=false
+                          comBM12.source="images/Com1.svg"
+                          bmBox2.text="Transformer"
+                          infoText.text="Selected the Transformer"
+                          bmBoxRect2.border.color="#d6e0e7"
+                          animationClick12.complete()
+                          animationClick12.stop()
+                          dropZone12.opacity=0
+                          animationRectsClicked.complete()
+                          animationRectsClicked.stop()
+                          rectangleForCom1.opacity=0
+                          rectangleForCom2.opacity=0
+                          rectangleForCom3.opacity=0
+                          rectangleForCom4.opacity=0
+                          rectangleForCom5.opacity=0
+                          rectangleForCom6.opacity=0
+                          rectangleForCom7.opacity=0
+                          rectangleForCom8.opacity=0
+                          rectangleForCom9.opacity=0
+                          rectangleForCom10.opacity=0
 
-                            rectangle1.x=-500
-                            rectangleForTransformer.x=0
-                            bmBoxRect2.border.color="#217efd"
-                        }
+                          rectangle1.x=-500
+                          rectangleForTransformer.x=0
+                          bmBoxRect2.border.color="#217efd"
 
-                        if(dropZone14.opacity!==0){
-                            com14.source="images/Com1.svg"
 
-                            mouseArea4.visible=false
-                            comBM14.source="images/Com1.svg"
-                            bmBox4.text="Transformer"
-                            infoText.text="Selected the Transformer"
-                            bmBoxRect4.border.color="#d6e0e7"
-                            animationClick14.complete()
-                            animationClick14.stop()
-                            dropZone14.opacity=0
-                            animationRectsClicked.complete()
-                            animationRectsClicked.stop()
-                            rectangleForCom1.opacity=0
-                            rectangleForCom2.opacity=0
-                            rectangleForCom3.opacity=0
-                            rectangleForCom4.opacity=0
-                            rectangleForCom5.opacity=0
-                            rectangleForCom6.opacity=0
-                            rectangleForCom7.opacity=0
-                            rectangleForCom8.opacity=0
-                            rectangleForCom9.opacity=0
-                            rectangleForCom10.opacity=0
+                          rectangle5.visible=false
+                          rectangle6.visible=false
+                          rectangle5.rotation=0
+                          comBM12.visible=true
 
-                            rectangle1.x=-500
-                            rectangleForTransformer.x=0
-                            bmBoxRect4.border.color="#217efd"
-                        }
-                        if(dropZone15.opacity!==0){
-                            com15.source="images/Com1.svg"
+                          if(mouseArea11.visible===false && mouseArea12.visible===false){
+                              rectanglenode1.visible=true
+                          }
+                      }
 
-                            mouseArea5.visible=false
-                            comBM15.source="images/Com1.svg"
-                            bmBox5.text="Transformer"
-                            infoText.text="Selected the Transformer"
-                            bmBoxRect5.border.color="#d6e0e7"
-                            animationClick15.complete()
-                            animationClick15.stop()
-                            dropZone15.opacity=0
-                            animationRectsClicked.complete()
-                            animationRectsClicked.stop()
-                            rectangleForCom1.opacity=0
-                            rectangleForCom2.opacity=0
-                            rectangleForCom3.opacity=0
-                            rectangleForCom4.opacity=0
-                            rectangleForCom5.opacity=0
-                            rectangleForCom6.opacity=0
-                            rectangleForCom7.opacity=0
-                            rectangleForCom8.opacity=0
-                            rectangleForCom9.opacity=0
-                            rectangleForCom10.opacity=0
+                      if(dropZone14.opacity!==0){
+                          com14.source="images/Com1.svg"
 
-                            rectangle1.x=-500
-                            rectangleForTransformer.x=0
-                            bmBoxRect5.border.color="#217efd"
-                        }
+                          mouseArea14.visible=false
+                          comBM14.source="images/Com1.svg"
+                          bmBox4.text="Transformer"
+                          infoText.text="Selected the Transformer"
+                          bmBoxRect4.border.color="#d6e0e7"
+                          animationClick14.complete()
+                          animationClick14.stop()
+                          dropZone14.opacity=0
+                          animationRectsClicked.complete()
+                          animationRectsClicked.stop()
+                          rectangleForCom1.opacity=0
+                          rectangleForCom2.opacity=0
+                          rectangleForCom3.opacity=0
+                          rectangleForCom4.opacity=0
+                          rectangleForCom5.opacity=0
+                          rectangleForCom6.opacity=0
+                          rectangleForCom7.opacity=0
+                          rectangleForCom8.opacity=0
+                          rectangleForCom9.opacity=0
+                          rectangleForCom10.opacity=0
+
+                          rectangle1.x=-500
+                          rectangleForTransformer.x=0
+                          bmBoxRect4.border.color="#217efd"
+                      }
+                      if(dropZone15.opacity!==0){
+                          com15.source="images/Com1.svg"
+
+                          mouseArea15.visible=false
+                          comBM15.source="images/Com1.svg"
+                          bmBox5.text="Transformer"
+                          infoText.text="Selected the Transformer"
+                          bmBoxRect5.border.color="#d6e0e7"
+                          animationClick15.complete()
+                          animationClick15.stop()
+                          dropZone15.opacity=0
+                          animationRectsClicked.complete()
+                          animationRectsClicked.stop()
+                          rectangleForCom1.opacity=0
+                          rectangleForCom2.opacity=0
+                          rectangleForCom3.opacity=0
+                          rectangleForCom4.opacity=0
+                          rectangleForCom5.opacity=0
+                          rectangleForCom6.opacity=0
+                          rectangleForCom7.opacity=0
+                          rectangleForCom8.opacity=0
+                          rectangleForCom9.opacity=0
+                          rectangleForCom10.opacity=0
+
+                          rectangle1.x=-500
+                          rectangleForTransformer.x=0
+                          bmBoxRect5.border.color="#217efd"
+                      }
+
+                  }
+                  if(forRectifierNumber===2){
+                      if(dropZone21.opacity!==0){
+                          com21.source="images/Com1.svg"
+
+                          mouseArea21.visible=false
+                          comBM21.source="images/Com1.svg"
+                          bmBox21.text="Transformer"
+                          infoText.text="Selected the Transformer"
+                          bmBoxRect21.border.color="#d6e0e7"
+                          animationClick21.complete()
+                          animationClick21.stop()
+                          dropZone21.opacity=0
+                          animationRectsClicked.complete()
+                          animationRectsClicked.stop()
+                          rectangleForCom1.opacity=0
+                          rectangleForCom2.opacity=0
+                          rectangleForCom3.opacity=0
+                          rectangleForCom4.opacity=0
+                          rectangleForCom5.opacity=0
+                          rectangleForCom6.opacity=0
+                          rectangleForCom7.opacity=0
+                          rectangleForCom8.opacity=0
+                          rectangleForCom9.opacity=0
+                          rectangleForCom10.opacity=0
+
+                          rectangle1.x=-500
+                          rectangleForTransformer.x=0
+                          bmBoxRect21.border.color="#217efd"
+
+                          rectangle13.visible=false
+                          rectangle14.visible=false
+                          rectangle13.rotation=0
+                          comBM21.visible=true
+
+
+                      }
+
+
+                      if(dropZone22.opacity!==0){
+                          com22.source="images/Com1.svg"
+
+                          mouseArea22.visible=false
+                          comBM22.source="images/Com1.svg"
+                          bmBox22.text="Transformer"
+                          infoText.text="Selected the Transformer"
+                          bmBoxRect22.border.color="#d6e0e7"
+                          animationClick22.complete()
+                          animationClick22.stop()
+                          dropZone22.opacity=0
+                          animationRectsClicked.complete()
+                          animationRectsClicked.stop()
+                          rectangleForCom1.opacity=0
+                          rectangleForCom2.opacity=0
+                          rectangleForCom3.opacity=0
+                          rectangleForCom4.opacity=0
+                          rectangleForCom5.opacity=0
+                          rectangleForCom6.opacity=0
+                          rectangleForCom7.opacity=0
+                          rectangleForCom8.opacity=0
+                          rectangleForCom9.opacity=0
+                          rectangleForCom10.opacity=0
+
+                          rectangle1.x=-500
+                          rectangleForTransformer.x=0
+                          bmBoxRect22.border.color="#217efd"
+
+
+                          rectangle15.visible=false
+                          rectangle16.visible=false
+                          rectangle15.rotation=0
+                          comBM22.visible=true
+
+                      }
+
+                      if(dropZone24.opacity!==0){
+                          com24.source="images/Com1.svg"
+
+                          mouseArea24.visible=false
+                          comBM24.source="images/Com1.svg"
+                          bmBox24.text="Transformer"
+                          infoText.text="Selected the Transformer"
+                          bmBoxRect24.border.color="#d6e0e7"
+                          animationClick24.complete()
+                          animationClick24.stop()
+                          dropZone24.opacity=0
+                          animationRectsClicked.complete()
+                          animationRectsClicked.stop()
+                          rectangleForCom1.opacity=0
+                          rectangleForCom2.opacity=0
+                          rectangleForCom3.opacity=0
+                          rectangleForCom4.opacity=0
+                          rectangleForCom5.opacity=0
+                          rectangleForCom6.opacity=0
+                          rectangleForCom7.opacity=0
+                          rectangleForCom8.opacity=0
+                          rectangleForCom9.opacity=0
+                          rectangleForCom10.opacity=0
+
+                          rectangle1.x=-500
+                          rectangleForTransformer.x=0
+                          bmBoxRect4.border.color="#217efd"
+                      }
+                      if(dropZone15.opacity!==0){
+                          com15.source="images/Com1.svg"
+
+                          mouseArea15.visible=false
+                          comBM15.source="images/Com1.svg"
+                          bmBox5.text="Transformer"
+                          infoText.text="Selected the Transformer"
+                          bmBoxRect5.border.color="#d6e0e7"
+                          animationClick15.complete()
+                          animationClick15.stop()
+                          dropZone15.opacity=0
+                          animationRectsClicked.complete()
+                          animationRectsClicked.stop()
+                          rectangleForCom1.opacity=0
+                          rectangleForCom2.opacity=0
+                          rectangleForCom3.opacity=0
+                          rectangleForCom4.opacity=0
+                          rectangleForCom5.opacity=0
+                          rectangleForCom6.opacity=0
+                          rectangleForCom7.opacity=0
+                          rectangleForCom8.opacity=0
+                          rectangleForCom9.opacity=0
+                          rectangleForCom10.opacity=0
+
+                          rectangle1.x=-500
+                          rectangleForTransformer.x=0
+                          bmBoxRect5.border.color="#217efd"
+                      }
+
+                  }
 
 
                     }
@@ -575,11 +761,11 @@ Rectangle {
             }
 
             Image {
-                id: sLDBGForImages3
+                id: sLDBGForImg3
                 x: 3
                 y: 115
                 width: 314/2
-                source: "images/SLDBGForImages.svg"
+                source: "images/SLDBGForImg.svg"
                 MouseArea {
                     x: 0
                     y: 0
@@ -590,7 +776,7 @@ Rectangle {
                         if(dropZone11.opacity!==0){
                             com11.source="images/Com2.svg"
 
-                            mouseArea1.visible=false
+                            mouseArea11.visible=false
                             comBM11.source="images/Com2.svg"
                             bmBox1.text="VSD"
                             infoText.text="Selected the VSD"
@@ -619,7 +805,7 @@ Rectangle {
                             rectangle3.rotation=0
                             comBM11.visible=true
 
-                            if(mouseArea1.visible===false && mouseArea2.visible===false){
+                            if(mouseArea11.visible===false && mouseArea12.visible===false){
                                 rectanglenode1.visible=true
                             }
 
@@ -627,8 +813,7 @@ Rectangle {
                         }
                         if(dropZone12.opacity!==0){
                             com12.source="images/Com2.svg"
-
-                            mouseArea2.visible=false
+                            mouseArea12.visible=false
                             comBM12.source="images/Com2.svg"
                             bmBox2.text="VSD"
                             infoText.text="Selected the VSD"
@@ -649,12 +834,20 @@ Rectangle {
                             rectangleForCom9.opacity=0
                             rectangleForCom10.opacity=0
                             bmBoxRect2.border.color="#217efd"
+                            rectangle1.x=-500
+                            rectangleForVSD.x=0
+                            rectangle5.visible=false
+                            rectangle6.visible=false
+                            rectangle5.rotation=0
+                            comBM12.visible=true
+                            if(mouseArea11.visible===false && mouseArea12.visible===false){
+                                rectanglenode1.visible=true
+                            }
                         }
 
                         if(dropZone14.opacity!==0){
                             com14.source="images/Com2.svg"
-
-                            mouseArea4.visible=false
+                            mouseArea14.visible=false
                             comBM14.source="images/Com2.svg"
                             bmBox4.text="VSD"
                             infoText.text="Selected the VSD"
@@ -675,11 +868,21 @@ Rectangle {
                             rectangleForCom9.opacity=0
                             rectangleForCom10.opacity=0
                             bmBoxRect4.border.color="#217efd"
+                            rectangle1.x=-500
+                            rectangleForVSD.x=0
+                            rectangle7.visible=false
+                            rectangle8.visible=false
+                            rectangle7.rotation=0
+                            comBM14.visible=true
+                            if(mouseArea11.visible===false && mouseArea12.visible===false){
+                                rectanglenode1.visible=true
+                            }
+
                         }
                         if(dropZone15.opacity!==0){
                             com15.source="images/Com2.svg"
 
-                            mouseArea5.visible=false
+                            mouseArea15.visible=false
                             comBM15.source="images/Com2.svg"
                             bmBox5.text="VSD"
                             infoText.text="Selected the VSD"
@@ -747,11 +950,11 @@ Rectangle {
             }
 
             Image {
-                id: sLDBGForImages4
+                id: sLDBGForImg4
                 x: 167
                 y: 115
                 width: 314/2
-                source: "images/SLDBGForImages.svg"
+                source: "images/SLDBGForImg.svg"
                 MouseArea {
                     x: 0
                     y: 0
@@ -760,96 +963,107 @@ Rectangle {
                     antialiasing: true
 
                     onClicked: {
-                        if(dropZone11.opacity!==0){
-                            com11.source="images/Com3.svg"
+                        if(forRectifierNumber===1){
+                            if(dropZone11.opacity!==0){
+                                com11.source="images/Com3.svg"
 
-                            mouseArea1.visible=false
-                            comBM11.source="images/Com3.svg"
-                            bmBox1.text="Motor"
-                            infoText.text="Selected the Motor"
-                            bmBoxRect1.border.color="#d6e0e7"
-                            animationClick11.complete()
-                            animationClick11.stop()
-                            dropZone11.opacity=0
-                            animationRectsClicked.complete()
-                            animationRectsClicked.stop()
-                            rectangleForCom1.opacity=0
-                            rectangleForCom2.opacity=0
-                            rectangleForCom3.opacity=0
-                            rectangleForCom4.opacity=0
-                            rectangleForCom5.opacity=0
-                            rectangleForCom6.opacity=0
-                            rectangleForCom7.opacity=0
-                            rectangleForCom8.opacity=0
-                            rectangleForCom9.opacity=0
-                            rectangleForCom10.opacity=0
-                            bmBoxRect1.border.color="#217efd"
+                                mouseArea11.visible=false
+                                comBM11.source="images/Com3.svg"
+                                bmBox1.text="Motor"
+                                infoText.text="Selected the Motor"
+                                bmBoxRect1.border.color="#d6e0e7"
+                                animationClick11.complete()
+                                animationClick11.stop()
+                                dropZone11.opacity=0
+                                animationRectsClicked.complete()
+                                animationRectsClicked.stop()
+                                rectangleForCom1.opacity=0
+                                rectangleForCom2.opacity=0
+                                rectangleForCom3.opacity=0
+                                rectangleForCom4.opacity=0
+                                rectangleForCom5.opacity=0
+                                rectangleForCom6.opacity=0
+                                rectangleForCom7.opacity=0
+                                rectangleForCom8.opacity=0
+                                rectangleForCom9.opacity=0
+                                rectangleForCom10.opacity=0
+                                bmBoxRect1.border.color="#217efd"
 
-                            rectangle1.x=-500
-                            rectangleForMotor.x=0
-                            rectangle3.visible=false
-                            rectangle4.visible=false
-                            rectangle3.rotation=0
-                            comBM11.visible=true
+                                rectangle1.x=-500
+                                rectangleForMotor.x=0
+                                rectangle3.visible=false
+                                rectangle4.visible=false
+                                rectangle3.rotation=0
+                                comBM11.visible=true
 
-                            if(mouseArea1.visible===false && mouseArea2.visible===false){
-                                rectanglenode1.visible=true
+                                if(mouseArea11.visible===false && mouseArea12.visible===false){
+                                    rectanglenode1.visible=true
+                                }
                             }
-                        }
-                        if(dropZone12.opacity!==0){
-                            com12.source="images/Com3.svg"
+                            if(dropZone12.opacity!==0){
+                                com12.source="images/Com3.svg"
 
-                            mouseArea2.visible=false
-                            comBM12.source="images/Com3.svg"
-                            bmBox2.text="Motor"
-                            infoText.text="Selected the Motor"
-                            bmBoxRect2.border.color="#d6e0e7"
-                            animationClick12.complete()
-                            animationClick12.stop()
-                            dropZone12.opacity=0
-                            animationRectsClicked.complete()
-                            animationRectsClicked.stop()
-                            rectangleForCom1.opacity=0
-                            rectangleForCom2.opacity=0
-                            rectangleForCom3.opacity=0
-                            rectangleForCom4.opacity=0
-                            rectangleForCom5.opacity=0
-                            rectangleForCom6.opacity=0
-                            rectangleForCom7.opacity=0
-                            rectangleForCom8.opacity=0
-                            rectangleForCom9.opacity=0
-                            rectangleForCom10.opacity=0
-                            bmBoxRect2.border.color="#217efd"
-                        }
+                                mouseArea12.visible=false
+                                comBM12.source="images/Com3.svg"
+                                bmBox2.text="Motor"
+                                infoText.text="Selected the Motor"
+                                bmBoxRect2.border.color="#d6e0e7"
+                                animationClick12.complete()
+                                animationClick12.stop()
+                                dropZone12.opacity=0
+                                animationRectsClicked.complete()
+                                animationRectsClicked.stop()
+                                rectangleForCom1.opacity=0
+                                rectangleForCom2.opacity=0
+                                rectangleForCom3.opacity=0
+                                rectangleForCom4.opacity=0
+                                rectangleForCom5.opacity=0
+                                rectangleForCom6.opacity=0
+                                rectangleForCom7.opacity=0
+                                rectangleForCom8.opacity=0
+                                rectangleForCom9.opacity=0
+                                rectangleForCom10.opacity=0
+                                bmBoxRect2.border.color="#217efd"
+                            }
 
-                        if(dropZone14.opacity!==0){
-                            com14.source="images/Com3.svg"
+                            if(dropZone14.opacity!==0){
+                                com14.source="images/Com3.svg"
 
-                            mouseArea4.visible=false
-                            comBM14.source="images/Com3.svg"
-                            bmBox4.text="Motor"
-                            infoText.text="Selected the Motor"
-                            bmBoxRect4.border.color="#d6e0e7"
-                            animationClick14.complete()
-                            animationClick14.stop()
-                            dropZone14.opacity=0
-                            animationRectsClicked.complete()
-                            animationRectsClicked.stop()
-                            rectangleForCom1.opacity=0
-                            rectangleForCom2.opacity=0
-                            rectangleForCom3.opacity=0
-                            rectangleForCom4.opacity=0
-                            rectangleForCom5.opacity=0
-                            rectangleForCom6.opacity=0
-                            rectangleForCom7.opacity=0
-                            rectangleForCom8.opacity=0
-                            rectangleForCom9.opacity=0
-                            rectangleForCom10.opacity=0
-                        }
-                        if(dropZone15.opacity!==0){
+                                mouseArea14.visible=false
+                                comBM14.source="images/Com3.svg"
+                                bmBox4.text="Motor"
+                                infoText.text="Selected the Motor"
+                                bmBoxRect4.border.color="#d6e0e7"
+                                animationClick14.complete()
+                                animationClick14.stop()
+                                dropZone14.opacity=0
+                                animationRectsClicked.complete()
+                                animationRectsClicked.stop()
+                                rectangleForCom1.opacity=0
+                                rectangleForCom2.opacity=0
+                                rectangleForCom3.opacity=0
+                                rectangleForCom4.opacity=0
+                                rectangleForCom5.opacity=0
+                                rectangleForCom6.opacity=0
+                                rectangleForCom7.opacity=0
+                                rectangleForCom8.opacity=0
+                                rectangleForCom9.opacity=0
+                                rectangleForCom10.opacity=0
+
+                                rectangle1.x=-500
+                                rectangleForMotor.x=0
+                                bmBoxRect4.border.color="#217efd"
+
+                                rectangle7.visible=false
+                                rectangle8.visible=false
+                                rectangle7.rotation=0
+                                comBM14.visible=true
+
+                            }
+                            if(dropZone15.opacity!==0){
                             com15.source="images/Com3.svg"
 
-                            mouseArea5.visible=false
+                            mouseArea15.visible=false
                             comBM15.source="images/Com3.svg"
                             bmBox5.text="Motor"
                             infoText.text="Selected the Motor"
@@ -871,6 +1085,144 @@ Rectangle {
                             rectangleForCom10.opacity=0
                             bmBoxRect5.border.color="#217efd"
                         }
+
+                        }
+
+                           if(forRectifierNumber===2){
+                               if(dropZone21.opacity!==0){
+                                   com11.source="images/Com3.svg"
+
+                                   mouseArea11.visible=false
+                                   comBM11.source="images/Com3.svg"
+                                   bmBox1.text="Motor"
+                                   infoText.text="Selected the Motor"
+                                   bmBoxRect1.border.color="#d6e0e7"
+                                   animationClick11.complete()
+                                   animationClick11.stop()
+                                   dropZone11.opacity=0
+                                   animationRectsClicked.complete()
+                                   animationRectsClicked.stop()
+                                   rectangleForCom1.opacity=0
+                                   rectangleForCom2.opacity=0
+                                   rectangleForCom3.opacity=0
+                                   rectangleForCom4.opacity=0
+                                   rectangleForCom5.opacity=0
+                                   rectangleForCom6.opacity=0
+                                   rectangleForCom7.opacity=0
+                                   rectangleForCom8.opacity=0
+                                   rectangleForCom9.opacity=0
+                                   rectangleForCom10.opacity=0
+                                   bmBoxRect1.border.color="#217efd"
+
+                                   rectangle1.x=-500
+                                   rectangleForMotor.x=0
+                                   rectangle3.visible=false
+                                   rectangle4.visible=false
+                                   rectangle3.rotation=0
+                                   comBM11.visible=true
+
+                                   if(mouseArea11.visible===false && mouseArea12.visible===false){
+                                       rectanglenode1.visible=true
+                                   }
+                               }
+                               if(dropZone22.opacity!==0){
+                                   com12.source="images/Com3.svg"
+
+                                   mouseArea12.visible=false
+                                   comBM12.source="images/Com3.svg"
+                                   bmBox2.text="Motor"
+                                   infoText.text="Selected the Motor"
+                                   bmBoxRect2.border.color="#d6e0e7"
+                                   animationClick12.complete()
+                                   animationClick12.stop()
+                                   dropZone12.opacity=0
+                                   animationRectsClicked.complete()
+                                   animationRectsClicked.stop()
+                                   rectangleForCom1.opacity=0
+                                   rectangleForCom2.opacity=0
+                                   rectangleForCom3.opacity=0
+                                   rectangleForCom4.opacity=0
+                                   rectangleForCom5.opacity=0
+                                   rectangleForCom6.opacity=0
+                                   rectangleForCom7.opacity=0
+                                   rectangleForCom8.opacity=0
+                                   rectangleForCom9.opacity=0
+                                   rectangleForCom10.opacity=0
+                                   bmBoxRect2.border.color="#217efd"
+                               }
+
+                               if(dropZone24.opacity!==0){
+                                   com24.source="images/Com3.svg"
+
+                                   mouseArea24.visible=false
+                                   comBM24.source="images/Com3.svg"
+                                   bmBox24.text="Motor"
+                                   infoText.text="Selected the Motor"
+                                   bmBoxRect24.border.color="#d6e0e7"
+                                   animationClick24.complete()
+                                   animationClick24.stop()
+                                   dropZone24.opacity=0
+                                   animationRectsClicked.complete()
+                                   animationRectsClicked.stop()
+                                   rectangleForCom1.opacity=0
+                                   rectangleForCom2.opacity=0
+                                   rectangleForCom3.opacity=0
+                                   rectangleForCom4.opacity=0
+                                   rectangleForCom5.opacity=0
+                                   rectangleForCom6.opacity=0
+                                   rectangleForCom7.opacity=0
+                                   rectangleForCom8.opacity=0
+                                   rectangleForCom9.opacity=0
+                                   rectangleForCom10.opacity=0
+
+                                   rectangle1.x=-500
+                                   rectangleForMotor.x=0
+                                   bmBoxRect24.border.color="#217efd"
+
+                                   rectangle17.visible=false
+                                   rectangle18.visible=false
+                                   rectangle17.rotation=0
+                                   comBM24.visible=true
+
+                               }
+                               if(dropZone25.opacity!==0){
+                               com25.source="images/Com3.svg"
+
+                               mouseArea25.visible=false
+                               comBM25.source="images/Com3.svg"
+                               bmBox25.text="Motor"
+                               infoText.text="Selected the Motor"
+                               bmBoxRect25.border.color="#d6e0e7"
+                               animationClick25.complete()
+                               animationClick25.stop()
+                               dropZone25.opacity=0
+                               animationRectsClicked.complete()
+                               animationRectsClicked.stop()
+                               rectangleForCom1.opacity=0
+                               rectangleForCom2.opacity=0
+                               rectangleForCom3.opacity=0
+                               rectangleForCom4.opacity=0
+                               rectangleForCom5.opacity=0
+                               rectangleForCom6.opacity=0
+                               rectangleForCom7.opacity=0
+                               rectangleForCom8.opacity=0
+                               rectangleForCom9.opacity=0
+                               rectangleForCom10.opacity=0
+                               bmBoxRect25.border.color="#217efd"
+
+                                   rectangle1.x=-500
+                                   rectangleForMotor.x=0
+                                   bmBoxRect25.border.color="#217efd"
+
+
+                                   rectangle19.visible=false
+                                   rectangle20.visible=false
+                                   rectangle19.rotation=0
+                                   comBM25.visible=true
+
+                           }
+
+                           }
                     }
 
                 }
@@ -917,11 +1269,11 @@ Rectangle {
             }
 
             Image {
-                id: sLDBGForImages5
+                id: sLDBGForImg5
                 x: 3
                 y: 223
                 width: 314/2
-                source: "images/SLDBGForImages.svg"
+                source: "images/SLDBGForImg.svg"
                 MouseArea {
                     x: 0
                     y: 0
@@ -933,7 +1285,7 @@ Rectangle {
                         if(dropZone11.opacity!==0){
                             com11.source="images/Com5.svg"
 
-                            mouseArea1.visible=false
+                            mouseArea11.visible=false
                             comBM11.source="images/Com5.svg"
                             bmBox1.text="Circuit Breaker"
                             infoText.text="Selected the Circuit Breaker"
@@ -962,14 +1314,14 @@ Rectangle {
                             rectangle3.rotation=0
                             comBM11.visible=true
 
-                            if(mouseArea1.visible===false && mouseArea2.visible===false){
+                            if(mouseArea11.visible===false && mouseArea12.visible===false){
                                 rectanglenode1.visible=true
                             }
                         }
                         if(dropZone12.opacity!==0){
                             com12.source="images/Com5.svg"
 
-                            mouseArea2.visible=false
+                            mouseArea12.visible=false
                             comBM12.source="images/Com5.svg"
                             bmBox2.text="Circuit Breaker"
                             infoText.text="Selected the Circuit Breaker"
@@ -995,7 +1347,7 @@ Rectangle {
                         if(dropZone14.opacity!==0){
                             com14.source="images/Com5.svg"
 
-                            mouseArea4.visible=false
+                            mouseArea14.visible=false
                             comBM14.source="images/Com5.svg"
                             bmBox4.text="Circuit Breaker"
                             infoText.text="Selected the Circuit Breaker"
@@ -1020,7 +1372,7 @@ Rectangle {
                         if(dropZone15.opacity!==0){
                             com15.source="images/Com5.svg"
 
-                            mouseArea5.visible=false
+                            mouseArea15.visible=false
                             comBM15.source="images/Com5.svg"
                             bmBox5.text="Circuit Breaker"
                             infoText.text="Selected the Circuit Breaker"
@@ -1088,11 +1440,11 @@ Rectangle {
             }
 
             Image {
-                id: sLDBGForImages6
+                id: sLDBGForImg6
                 x: 167
                 y: 223
                 width: 314/2
-                source: "images/SLDBGForImages.svg"
+                source: "images/SLDBGForImg.svg"
                 MouseArea {
                     x: 0
                     y: 0
@@ -1104,7 +1456,7 @@ Rectangle {
                         if(dropZone11.opacity!==0){
                             com11.source="images/Com6.svg"
 
-                            mouseArea1.visible=false
+                            mouseArea11.visible=false
                             comBM11.source="images/Com6.svg"
                             bmBox1.text="Load"
                             infoText.text="Selected the Load"
@@ -1129,7 +1481,7 @@ Rectangle {
                         if(dropZone12.opacity!==0){
                             com12.source="images/Com6.svg"
 
-                            mouseArea2.visible=false
+                            mouseArea12.visible=false
                             comBM12.source="images/Com6.svg"
                             bmBox2.text="Load"
                             infoText.text="Selected the Load"
@@ -1155,7 +1507,7 @@ Rectangle {
                         if(dropZone14.opacity!==0){
                             com14.source="images/Com6.svg"
 
-                            mouseArea4.visible=false
+                            mouseArea14.visible=false
                             comBM14.source="images/Com6.svg"
                             bmBox4.text="Load"
                             infoText.text="Selected the Load"
@@ -1180,7 +1532,7 @@ Rectangle {
                         if(dropZone15.opacity!==0){
                             com15.source="images/Com6.svg"
 
-                            mouseArea5.visible=false
+                            mouseArea15.visible=false
                             comBM15.source="images/Com6.svg"
                             bmBox5.text="Load"
                             infoText.text="Selected the Load"
@@ -1248,11 +1600,11 @@ Rectangle {
             }
 
             Image {
-                id: sLDBGForImages7
+                id: sLDBGForImg7
                 x: 3
                 y: 331
                 width: 314/2
-                source: "images/SLDBGForImages.svg"
+                source: "images/SLDBGForImg.svg"
                 MouseArea {
                     x: 0
                     y: 0
@@ -1264,7 +1616,7 @@ Rectangle {
                         if(dropZone11.opacity!==0){
                             com11.source="images/Com7.svg"
 
-                            mouseArea1.visible=false
+                            mouseArea11.visible=false
                             comBM11.source="images/Com7.svg"
                             bmBox1.text="Generator"
                             infoText.text="Selected the Generator"
@@ -1293,14 +1645,14 @@ Rectangle {
                             rectangle3.rotation=0
                             comBM11.visible=true
 
-                            if(mouseArea1.visible===false && mouseArea2.visible===false){
+                            if(mouseArea11.visible===false && mouseArea12.visible===false){
                                 rectanglenode1.visible=true
                             }
                         }
                         if(dropZone12.opacity!==0){
                             com12.source="images/Com7.svg"
 
-                            mouseArea2.visible=false
+                            mouseArea12.visible=false
                             comBM12.source="images/Com7.svg"
                             bmBox2.text="Generator"
                             infoText.text="Selected the Generator"
@@ -1326,7 +1678,7 @@ Rectangle {
                         if(dropZone14.opacity!==0){
                             com14.source="images/Com7.svg"
 
-                            mouseArea4.visible=false
+                            mouseArea14.visible=false
                             comBM14.source="images/Com7.svg"
                             bmBox4.text="Generator"
                             infoText.text="Selected the Generator"
@@ -1351,7 +1703,7 @@ Rectangle {
                         if(dropZone15.opacity!==0){
                             com15.source="images/Com7.svg"
 
-                            mouseArea5.visible=false
+                            mouseArea15.visible=false
                             comBM15.source="images/Com7.svg"
                             bmBox5.text="Generator"
                             infoText.text="Selected the Generator"
@@ -1419,11 +1771,11 @@ Rectangle {
             }
 
             Image {
-                id: sLDBGForImages8
+                id: sLDBGForImg8
                 x: 167
                 y: 331
                 width: 314/2
-                source: "images/SLDBGForImages.svg"
+                source: "images/SLDBGForImg.svg"
                 MouseArea {
                     x: 0
                     y: 0
@@ -1435,7 +1787,7 @@ Rectangle {
                         if(dropZone11.opacity!==0){
                             com11.source="images/Com8.svg"
 
-                            mouseArea1.visible=false
+                            mouseArea11.visible=false
                             comBM11.source="images/Com8.svg"
                             bmBox1.text="Filter"
                             infoText.text="Selected the Filter"
@@ -1460,7 +1812,7 @@ Rectangle {
                         if(dropZone12.opacity!==0){
                             com12.source="images/Com8.svg"
 
-                            mouseArea2.visible=false
+                            mouseArea12.visible=false
                             comBM12.source="images/Com8.svg"
                             bmBox2.text="Filter"
                             infoText.text="Selected the Filter"
@@ -1486,7 +1838,7 @@ Rectangle {
                         if(dropZone14.opacity!==0){
                             com14.source="images/Com8.svg"
 
-                            mouseArea4.visible=false
+                            mouseArea14.visible=false
                             comBM14.source="images/Com8.svg"
                             bmBox4.text="Filter"
                             infoText.text="Selected the Filter"
@@ -1511,7 +1863,7 @@ Rectangle {
                         if(dropZone15.opacity!==0){
                             com15.source="images/Com8.svg"
 
-                            mouseArea5.visible=false
+                            mouseArea15.visible=false
                             comBM15.source="images/Com8.svg"
                             bmBox5.text="Filter"
                             infoText.text="Selected the Filter"
@@ -1579,11 +1931,11 @@ Rectangle {
             }
 
             Image {
-                id: sLDBGForImages9
+                id: sLDBGForImg9
                 x: 3
                 y: 439
                 width: 314/2
-                source: "images/SLDBGForImages.svg"
+                source: "images/SLDBGForImg.svg"
                 MouseArea {
                     x: 0
                     y: 0
@@ -1595,7 +1947,7 @@ Rectangle {
                         if(dropZone11.opacity!==0){
                             com11.source="images/Com9.svg"
 
-                            mouseArea1.visible=false
+                            mouseArea11.visible=false
                             comBM11.source="images/Com9.svg"
                             bmBox1.text="UPS"
                             infoText.text="Selected the UPS"
@@ -1620,7 +1972,7 @@ Rectangle {
                         if(dropZone12.opacity!==0){
                             com12.source="images/Com9.svg"
 
-                            mouseArea2.visible=false
+                            mouseArea12.visible=false
                             comBM12.source="images/Com9.svg"
                             bmBox2.text="UPS"
                             infoText.text="Selected the UPS"
@@ -1646,7 +1998,7 @@ Rectangle {
                         if(dropZone14.opacity!==0){
                             com14.source="images/Com9.svg"
 
-                            mouseArea4.visible=false
+                            mouseArea14.visible=false
                             comBM14.source="images/Com9.svg"
                             bmBox4.text="UPS"
                             infoText.text="Selected the UPS"
@@ -1671,7 +2023,7 @@ Rectangle {
                         if(dropZone15.opacity!==0){
                             com15.source="images/Com9.svg"
 
-                            mouseArea5.visible=false
+                            mouseArea15.visible=false
                             comBM15.source="images/Com9.svg"
                             bmBox5.text="UPS"
                             infoText.text="Selected the UPS"
@@ -1739,11 +2091,11 @@ Rectangle {
             }
 
             Image {
-                id: sLDBGForImages10
+                id: sLDBGForImg10
                 x: 167
                 y: 439
                 width: 314/2
-                source: "images/SLDBGForImages.svg"
+                source: "images/SLDBGForImg.svg"
                 MouseArea {
                     x: 0
                     y: 0
@@ -1755,7 +2107,7 @@ Rectangle {
                         if(dropZone11.opacity!==0){
                             com11.source="images/Com10.svg"
 
-                            mouseArea1.visible=false
+                            mouseArea11.visible=false
                             comBM11.source="images/Com10.svg"
                             bmBox1.text="Rectifier"
                             infoText.text="Selected the Rectifier"
@@ -1780,7 +2132,7 @@ Rectangle {
                         if(dropZone12.opacity!==0){
                             com12.source="images/Com10.svg"
 
-                            mouseArea2.visible=false
+                            mouseArea12.visible=false
                             comBM12.source="images/Com10.svg"
                             bmBox2.text="Rectifier"
                             infoText.text="Selected the Rectifier"
@@ -1806,7 +2158,7 @@ Rectangle {
                         if(dropZone14.opacity!==0){
                             com14.source="images/Com10.svg"
 
-                            mouseArea4.visible=false
+                            mouseArea14.visible=false
                             comBM14.source="images/Com10.svg"
                             bmBox4.text="Rectifier"
                             infoText.text="Selected the Rectifier"
@@ -1831,7 +2183,7 @@ Rectangle {
                         if(dropZone15.opacity!==0){
                             com15.source="images/Com10.svg"
 
-                            mouseArea5.visible=false
+                            mouseArea15.visible=false
                             comBM15.source="images/Com10.svg"
                             bmBox5.text="Rectifier"
                             infoText.text="Selected the Rectifier"
@@ -1911,12 +2263,294 @@ Rectangle {
         }
 
         Rectangle {
+            id: bGForHeader1
+            x: 11
+            y: 531
+            width: 648/2
+            height: 130
+            color: "#f7f8fa"
+            border.color: "#a3adb1b4"
+            Text {
+                x: 8
+                y: 0
+                width: 150
+                height: 40
+                color: "#284863"
+                text: qsTr("Info")
+                font.letterSpacing: -2
+                font.pixelSize: 19
+                horizontalAlignment: Text.AlignLeft
+                verticalAlignment: Text.AlignVCenter
+                wrapMode: Text.Wrap
+                font.styleName: "Bold"
+                font.family: "Akshar"
+            }
+
+            Image {
+                x: 50
+                y: 326
+                width: 66
+                height: 43
+                source: "images/Accept.svg"
+                MouseArea {
+                    x: -30
+                    y: -10
+                    width: parent.width+60
+                    height: parent.height+20
+                    onClicked: {
+
+                    }
+                }
+                fillMode: Image.PreserveAspectFit
+            }
+
+            Image {
+                x: 208
+                y: 326
+                width: 66
+                height: 43
+                source: "images/Cancel.svg"
+                MouseArea {
+                    x: -30
+                    y: -10
+                    width: parent.width+60
+                    height: parent.height+20
+                    onClicked: {
+
+                    }
+                }
+                fillMode: Image.PreserveAspectFit
+            }
+
+            Text {
+                id:infoText
+                x: 8
+                y: 33
+                width: 315
+                height: 91
+                color: "#284863"
+                text: "Please select the job you want to do"
+                font.pixelSize: 18
+                horizontalAlignment: Text.AlignLeft
+                verticalAlignment: Text.AlignTop
+                wrapMode: Text.Wrap
+                clip: true
+            }
+        }
+
+        Rectangle {
             id: rectangle12
             x: 11
             y: 465
             width: 324
             height: 60
+            visible:
+                if(forRectifierNumber===2){
+                    true
+                }
+                else{
+                    false
+                }
             color: "#f7f8fa"
+            Rectangle {
+                id: rectangle124222
+                x: 157
+                y: 10
+                width: 161
+                height: 40
+                color: "#ffffff"
+                border.color: "#d9d9d9"
+                border.width: 1
+                Image {
+                    id: okUp01222
+                    x: 139
+                    y: 16
+                    width: 14
+                    source: "images/okUp22.svg"
+                    rotation: 0
+                    fillMode: Image.PreserveAspectFit
+                }
+
+                Text {
+                    id: chosenText3122
+                    color: "#284863"
+                    anchors.verticalCenter: parent.verticalCenter
+                    anchors.left: parent.left
+                    font.pixelSize: 17
+                    anchors.leftMargin: 5
+                }
+
+                MouseArea {
+                    anchors.fill: parent
+                    anchors.rightMargin: -1
+                    onClicked: {
+                        if(okUp01222.rotation===180)
+                        {
+                            okUp01222.rotation=0
+                            backgroundList24222.visible=false
+                            listView24222.visible=false
+                            elementText01222.visible=false
+                            rectangle14.z=0
+                        }
+                        else
+                        {
+                            okUp01222.rotation=180
+                            backgroundList24222.visible=true
+                            listView24222.visible=true
+                            elementText01222.visible=false
+                            rectangle14.z=1
+                        }
+                    }
+                    anchors.leftMargin: -5
+                    anchors.topMargin: -5
+                    anchors.bottomMargin: -5
+                }
+
+                Text {
+                    id: elementText01222
+                    x: 5
+                    y: 0
+                    width: 156
+                    height: 40
+                    color: "#d4d4d4"
+                    text: qsTr("")
+                    font.letterSpacing: -2
+                    font.pixelSize: 17
+                    horizontalAlignment: Text.AlignLeft
+                    verticalAlignment: Text.AlignVCenter
+                    wrapMode: Text.Wrap
+                    font.family: "Akshar"
+                    font.styleName: "SemiBold"
+                }
+            }
+
+            Rectangle {
+                id: backgroundList24222
+                x: 157
+                y: 50
+                width: rectangle124222.width
+                height: 125
+                visible: false
+            }
+
+            ListView {
+                id: listView24222
+                x: 157
+                y: 51
+                width: rectangle124222.width
+                height: backgroundList24222.height
+                visible: false
+                delegate: Item {
+                    width: listView24222.width
+                    height: 60
+                    Rectangle {
+                        width: parent.width
+                        height: 50
+                        color: "#eff2f6"
+                        Text {
+                            text: model.name
+                            anchors.centerIn: parent
+                        }
+                        MouseArea {
+                            anchors.fill: parent
+                            onClicked: {
+                                chosenText3122.text = model.name
+                                if(chosenText3122.text==="n1" || chosenText3122.text==="n2"){
+                                    bmBox21.text="node"
+                                    rectangle13.visible=false
+                                    rectangle14.visible=false
+                                    com21.source="images/NodeLine.svg"
+                                    comBM21.source="images/NodeLine.svg"
+                                }
+
+                                if(forRectifierNumber===2){
+                                    if(bmBoxRect21.border.color=="#217efd" && rectangleForTransformer.x===0){
+                                        text21.text=textPower.text+"kVA" +"\n" +  chosenText22.text
+                                    }
+                                    if(bmBoxRect22.border.color=="#217efd" && rectangleForTransformer.x===0){
+                                        text22.text=textPower.text+"kVA" +"\n" +  chosenText22.text
+                                    }
+
+                                    if(bmBoxRect24.border.color=="#217efd" && rectangleForTransformer.x===0){
+                                        text24.text=textPower.text+"kVA" +"\n" +  chosenText22.text
+                                    }
+                                    if(bmBoxRect25.border.color=="#217efd" && rectangleForTransformer.x===0){
+                                        text25.text=textPower.text+"kVA" +"\n" +  chosenText22.text
+                                    }
+                                    bmBoxRect21.border.color="#d6e0e7"
+                                    bmBoxRect22.border.color="#d6e0e7"
+
+                                    bmBoxRect24.border.color="#d6e0e7"
+                                    bmBoxRect25.border.color="#d6e0e7"
+
+                                    rectangle1.x=0
+                                    rectangleForTransformer.x=-500
+                                    infoText.text = "You have selected the node named " + model.name + "."
+                                }
+                                dropZone21.opacity=0
+                                animationClick21.complete()
+                                animationClick21.stop()
+                                dropZone21.opacity=0
+                                animationRectsClicked.complete()
+                                animationRectsClicked.stop()
+                                rectangleForCom1.opacity=0
+                                rectangleForCom2.opacity=0
+                                rectangleForCom3.opacity=0
+                                rectangleForCom4.opacity=0
+                                rectangleForCom5.opacity=0
+                                rectangleForCom6.opacity=0
+                                rectangleForCom7.opacity=0
+                                rectangleForCom8.opacity=0
+                                rectangleForCom9.opacity=0
+                                rectangleForCom10.opacity=0
+
+                            }
+                        }
+                    }
+                }
+                clip: true
+                model: ListModel {
+                    id:listModelForNodes
+//                    ListElement {
+//                        name: ""
+//                    }
+
+//                    ListElement {
+//                        name: "n2"
+//                    }
+                }
+
+                Connections {
+                    target: rectanglenode1
+                    onVisibleChanged: {
+                        if (rectanglenode1.visible) {
+                            listModelForNodes.append({ name: "n1" })
+                        } else {
+                            for (var i = listModelForNodes.count - 1; i >= 0; i--) {
+                                if (listModelForNodes.get(i).name === "n1") {
+                                    listModelForNodes.remove(i)
+                                }
+                            }
+                        }
+                    }
+                }
+
+                Connections {
+                    target: rectanglenode2
+                    onVisibleChanged: {
+                        if (rectanglenode2.visible) {
+                            listModelForNodes.append({ name: "n2" })
+                        } else {
+                            for (var i = listModelForNodes.count - 1; i >= 0; i--) {
+                                if (listModelForNodes.get(i).name === "n2") {
+                                    listModelForNodes.remove(i)
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
 
             Text {
                 x: 8
@@ -1935,7 +2569,9 @@ Rectangle {
             }
         }
 
+
     }
+
 
 
     Rectangle {
@@ -1966,28 +2602,56 @@ Rectangle {
                 anchors.left: parent.left
                 anchors.leftMargin: -10
                 onClicked: {
-                    if(bmBoxRect1.border.color=="#217efd" && rectangleForTransformer.x===0){
-                        text11.text=textPower.text+"kVA" +"\n" +  chosenText22.text
-                    }
-                    if(bmBoxRect2.border.color=="#217efd" && rectangleForTransformer.x===0){
-                        text12.text=textPower.text+"kVA" +"\n" +  chosenText22.text
+
+                    if(forRectifierNumber===1){
+                        if(bmBoxRect1.border.color=="#217efd" && rectangleForTransformer.x===0){
+                            text11.text=textPower.text+"kVA" +"\n" +  chosenText22.text
+                        }
+                        if(bmBoxRect2.border.color=="#217efd" && rectangleForTransformer.x===0){
+                            text12.text=textPower.text+"kVA" +"\n" +  chosenText22.text
+                        }
+
+                        if(bmBoxRect4.border.color=="#217efd" && rectangleForTransformer.x===0){
+                            text14.text=textPower.text+"kVA" +"\n" +  chosenText22.text
+                        }
+                        if(bmBoxRect5.border.color=="#217efd" && rectangleForTransformer.x===0){
+                            text15.text=textPower.text+"kVA" +"\n" +  chosenText22.text
+                        }
+                        bmBoxRect1.border.color="#d6e0e7"
+                        bmBoxRect2.border.color="#d6e0e7"
+
+                        bmBoxRect4.border.color="#d6e0e7"
+                        bmBoxRect5.border.color="#d6e0e7"
+
+                        rectangle1.x=0
+                        rectangleForTransformer.x=-500
+                        infoText.text="You are changed setup parameters for transformer"
                     }
 
-                    if(bmBoxRect4.border.color=="#217efd" && rectangleForTransformer.x===0){
-                        text14.text=textPower.text+"kVA" +"\n" +  chosenText22.text
-                    }
-                    if(bmBoxRect5.border.color=="#217efd" && rectangleForTransformer.x===0){
-                        text15.text=textPower.text+"kVA" +"\n" +  chosenText22.text
-                    }
-                    bmBoxRect1.border.color="#d6e0e7"
-                    bmBoxRect2.border.color="#d6e0e7"
+                    if(forRectifierNumber===2){
+                        if(bmBoxRect21.border.color=="#217efd" && rectangleForTransformer.x===0){
+                            text21.text=textPower.text+"kVA" +"\n" +  chosenText22.text
+                        }
+                        if(bmBoxRect22.border.color=="#217efd" && rectangleForTransformer.x===0){
+                            text22.text=textPower.text+"kVA" +"\n" +  chosenText22.text
+                        }
 
-                    bmBoxRect4.border.color="#d6e0e7"
-                    bmBoxRect5.border.color="#d6e0e7"
+                        if(bmBoxRect24.border.color=="#217efd" && rectangleForTransformer.x===0){
+                            text24.text=textPower.text+"kVA" +"\n" +  chosenText22.text
+                        }
+                        if(bmBoxRect25.border.color=="#217efd" && rectangleForTransformer.x===0){
+                            text25.text=textPower.text+"kVA" +"\n" +  chosenText22.text
+                        }
+                        bmBoxRect21.border.color="#d6e0e7"
+                        bmBoxRect22.border.color="#d6e0e7"
 
-                    rectangle1.x=0
-                    rectangleForTransformer.x=-500
-                    infoText.text="You are changed setup parameters for transformer"
+                        bmBoxRect24.border.color="#d6e0e7"
+                        bmBoxRect25.border.color="#d6e0e7"
+
+                        rectangle1.x=0
+                        rectangleForTransformer.x=-500
+                        infoText.text="You are changed setup parameters for transformer"
+                    }
 
                 }
             }
@@ -2235,12 +2899,13 @@ Rectangle {
                 radius: 0
                 border.color: "#d9d9d9"
                 TextInput {
+                    id:textTRPrimerVoltage
                     x: 5
                     y: 0
                     width: 146
                     height: 41
                     color: "#284863"
-                    text: qsTr("Transformer1")
+                    text: qsTr("250")
                     font.pixelSize: 16
                     horizontalAlignment: Text.AlignLeft
                     verticalAlignment: Text.AlignVCenter
@@ -2267,12 +2932,13 @@ Rectangle {
                 radius: 0
                 border.color: "#d9d9d9"
                 TextInput {
+                    id:textTRSeconderVoltage
                     x: 5
                     y: 0
                     width: 146
                     height: 41
                     color: "#284863"
-                    text: qsTr("250")
+                    text: qsTr("1000")
                     font.pixelSize: 16
                     horizontalAlignment: Text.AlignLeft
                     verticalAlignment: Text.AlignVCenter
@@ -2291,12 +2957,13 @@ Rectangle {
                 radius: 0
                 border.color: "#d9d9d9"
                 TextInput {
+                    id:textTRPhase
                     x: 5
                     y: 0
                     width: 146
                     height: 41
                     color: "#284863"
-                    text: qsTr("Transformer1")
+                    text: qsTr("120")
                     font.pixelSize: 16
                     horizontalAlignment: Text.AlignLeft
                     verticalAlignment: Text.AlignVCenter
@@ -2315,6 +2982,7 @@ Rectangle {
                 radius: 0
                 border.color: "#d9d9d9"
                 TextInput {
+                    id:textTRZ
                     x: 5
                     y: 0
                     width: 146
@@ -2338,12 +3006,13 @@ Rectangle {
                 radius: 0
                 border.color: "#d9d9d9"
                 TextInput {
+                    id:textTRXandR
                     x: 5
                     y: 0
                     width: 146
                     height: 41
                     color: "#284863"
-                    text: qsTr("Transformer1")
+                    text: qsTr("1")
                     font.pixelSize: 16
                     horizontalAlignment: Text.AlignLeft
                     verticalAlignment: Text.AlignVCenter
@@ -2552,6 +3221,1214 @@ Rectangle {
         height: 1456/2
         color: "#ffffff"
         border.color: "#e1e5ea"
+
+        Rectangle {
+            id: rightSightForRec1
+            x: 2
+            y: 0
+            width: 370
+            height: 364
+            color: "#ffffff"
+        }
+
+        Flickable {
+            id: flickableForRec1
+            x: 2
+            y: 8
+            visible: true
+            width: 370
+            height: 355
+            ScrollBar.vertical: ScrollBar {
+                x: 330
+                width: 10
+                z:1
+                height: 650
+                policy: ScrollBar.AlwaysOn
+                size: flickable.height / flickable.contentHeight
+                //                position: flickable.contentY / flickable.contentHeight
+                position:0
+                anchors.right: parent.right
+                anchors.rightMargin: 8
+                contentItem: Rectangle {
+                    implicitHeight: parent.height / 2
+                    implicitWidth: parent.width
+                    color: "gray"
+                    radius: 5
+                }
+            }
+
+            clip: true
+            contentHeight: 720
+
+
+            Text {
+                x: 5
+                y: 9
+                width: 222
+                height: 36
+                color: "#284863"
+                text: qsTr("Set Parameters")
+                font.letterSpacing: -1.4
+                font.pixelSize: 17
+                horizontalAlignment: Text.AlignLeft
+                verticalAlignment: Text.AlignVCenter
+                wrapMode: Text.Wrap
+                font.styleName: "Bold"
+                font.family: "Akshar"
+            }
+            Rectangle {
+                x: 8
+                y: 45
+                width: 200
+                height: 1
+                color: "#284863"
+            }
+
+            Rectangle {
+                id: utilityRectangleForRec1
+                x: 5
+                y: 45
+                width: 345
+                height:
+                    if(rectangle3.visible===false){
+                        180
+                    }
+                    else {
+                        0
+                    }
+
+                visible: true
+                opacity:
+                    if(rectangle3.visible===false){
+                        1
+                    }
+                    else {
+                        0
+                    }
+
+                color: "#f7f8fa"
+                border.color: "#e1e5ea"
+
+                Text {
+                    x: 12
+                    y: 30
+                    width: 157
+                    height: 41
+                    color: "#284863"
+                    text: qsTr("Power")
+                    font.letterSpacing: -1.4
+                    font.pixelSize: 17
+                    horizontalAlignment: Text.AlignLeft
+                    verticalAlignment: Text.AlignVCenter
+                    wrapMode: Text.Wrap
+                    font.family: "Akshar"
+                    font.styleName: "SemiBold"
+                }
+
+                Text {
+                    x: 12
+                    y: 64
+                    width: 157
+                    height: 41
+                    color: "#284863"
+                    text: qsTr("X/R")
+                    font.letterSpacing: -1.4
+                    font.pixelSize: 17
+                    horizontalAlignment: Text.AlignLeft
+                    verticalAlignment: Text.AlignVCenter
+                    wrapMode: Text.Wrap
+                    font.family: "Akshar"
+                    font.styleName: "SemiBold"
+                }
+
+                Text {
+                    x: 12
+                    y: 98
+                    width: 157
+                    height: 41
+                    color: "#284863"
+                    text: qsTr("Z")
+                    font.letterSpacing: -1.4
+                    font.pixelSize: 17
+                    horizontalAlignment: Text.AlignLeft
+                    verticalAlignment: Text.AlignVCenter
+                    wrapMode: Text.Wrap
+                    font.family: "Akshar"
+                    font.styleName: "SemiBold"
+                }
+
+                Text {
+                    x: 12
+                    y: 132
+                    width: 157
+                    height: 41
+                    color: "#284863"
+                    text: qsTr("Rated Voltage")
+                    font.letterSpacing: -1.4
+                    font.pixelSize: 17
+                    horizontalAlignment: Text.AlignLeft
+                    verticalAlignment: Text.AlignVCenter
+                    wrapMode: Text.Wrap
+                    font.family: "Akshar"
+                    font.styleName: "SemiBold"
+                }
+
+
+
+                Rectangle {
+                    x: 12
+                    y: 30
+                    width: 200
+                    height: 1
+                    color: "#284863"
+                }
+                Text {
+                    x: 12
+                    y: 1
+                    width: 157
+                    height: 36
+                    color: "#284863"
+                    text: qsTr("Utility1")
+                    font.letterSpacing: -1.4
+                    font.pixelSize: 17
+                    horizontalAlignment: Text.AlignLeft
+                    verticalAlignment: Text.AlignVCenter
+                    wrapMode: Text.Wrap
+                    font.styleName: "Bold"
+                    font.family: "Akshar"
+                }
+
+                Text {
+                    x: 180
+                    y: 30
+                    width: 157
+                    height: 41
+                    color: "#284863"
+                    text: textUtility.text
+                    font.letterSpacing: -1.4
+                    font.pixelSize: 17
+                    horizontalAlignment: Text.AlignRight
+                    verticalAlignment: Text.AlignVCenter
+                    wrapMode: Text.Wrap
+                    font.styleName: "SemiBold"
+                    font.family: "Akshar"
+                }
+
+                Text {
+                    x: 180
+                    y: 64
+                    width: 157
+                    height: 41
+                    color: "#284863"
+                    text: textXR.text
+                    font.letterSpacing: -1.4
+                    font.pixelSize: 17
+                    horizontalAlignment: Text.AlignRight
+                    verticalAlignment: Text.AlignVCenter
+                    wrapMode: Text.Wrap
+                    font.styleName: "SemiBold"
+                    font.family: "Akshar"
+                }
+
+                Text {
+                    x: 180
+                    y: 98
+                    width: 157
+                    height: 41
+                    color: "#284863"
+                    text: textZ.text
+                    font.letterSpacing: -1.4
+                    font.pixelSize: 17
+                    horizontalAlignment: Text.AlignRight
+                    verticalAlignment: Text.AlignVCenter
+                    wrapMode: Text.Wrap
+                    font.styleName: "SemiBold"
+                    font.family: "Akshar"
+                }
+
+                Text {
+                    x: 180
+                    y: 132
+                    width: 157
+                    height: 41
+                    color: "#284863"
+                    text: textUtilityRV.text
+                    font.letterSpacing: -1.4
+                    font.pixelSize: 17
+                    horizontalAlignment: Text.AlignRight
+                    verticalAlignment: Text.AlignVCenter
+                    wrapMode: Text.Wrap
+                    font.styleName: "SemiBold"
+                    font.family: "Akshar"
+                }
+            }
+
+
+            Rectangle {
+                id: transformerRectangleForRec1
+                x: 5
+                width: 345
+                height:
+                    if(rectangle5.visible===false){
+                        280
+                    }
+                    else {
+                        0
+                    }
+
+                visible: true
+                opacity:
+                    if(rectangle5.visible===false){
+                        1
+                    }
+                    else {
+                        0
+                    }
+
+                color: "#f7f8fa"
+                border.color: "#e1e5ea"
+                anchors.top: utilityRectangleForRec1.bottom
+                anchors.topMargin: 4
+                Text {
+                    x: 12
+                    y: 30
+                    width: 157
+                    height: 41
+                    color: "#284863"
+                    text: qsTr("Power")
+                    font.letterSpacing: -1.4
+                    font.pixelSize: 17
+                    horizontalAlignment: Text.AlignLeft
+                    verticalAlignment: Text.AlignVCenter
+                    wrapMode: Text.Wrap
+                    font.family: "Akshar"
+                    font.styleName: "SemiBold"
+                }
+
+                Text {
+                    x: 12
+                    y: 64
+                    width: 157
+                    height: 41
+                    color: "#284863"
+                    text: qsTr("Primer Voltage")
+                    font.letterSpacing: -1.4
+                    font.pixelSize: 17
+                    horizontalAlignment: Text.AlignLeft
+                    verticalAlignment: Text.AlignVCenter
+                    wrapMode: Text.Wrap
+                    font.family: "Akshar"
+                    font.styleName: "SemiBold"
+                }
+
+                Text {
+                    x: 12
+                    y: 98
+                    width: 157
+                    height: 41
+                    color: "#284863"
+                    text: qsTr("Seconder Voltage")
+                    font.letterSpacing: -1.4
+                    font.pixelSize: 17
+                    horizontalAlignment: Text.AlignLeft
+                    verticalAlignment: Text.AlignVCenter
+                    wrapMode: Text.Wrap
+                    font.family: "Akshar"
+                    font.styleName: "SemiBold"
+                }
+
+                Text {
+                    x: 12
+                    y: 132
+                    width: 157
+                    height: 41
+                    color: "#284863"
+                    text: qsTr("Phase")
+                    font.letterSpacing: -1.4
+                    font.pixelSize: 17
+                    horizontalAlignment: Text.AlignLeft
+                    verticalAlignment: Text.AlignVCenter
+                    wrapMode: Text.Wrap
+                    font.family: "Akshar"
+                    font.styleName: "SemiBold"
+                }
+
+                Text {
+                    x: 12
+                    y: 166
+                    width: 157
+                    height: 41
+                    color: "#284863"
+                    text: qsTr("Z")
+                    font.letterSpacing: -1.4
+                    font.pixelSize: 17
+                    horizontalAlignment: Text.AlignLeft
+                    verticalAlignment: Text.AlignVCenter
+                    wrapMode: Text.Wrap
+                    font.family: "Akshar"
+                    font.styleName: "SemiBold"
+                }
+
+                Text {
+                    x: 12
+                    y: 200
+                    width: 157
+                    height: 41
+                    color: "#284863"
+                    text: qsTr("X / R")
+                    font.letterSpacing: -1.4
+                    font.pixelSize: 17
+                    horizontalAlignment: Text.AlignLeft
+                    verticalAlignment: Text.AlignVCenter
+                    wrapMode: Text.Wrap
+                    font.family: "Akshar"
+                    font.styleName: "SemiBold"
+                }
+
+                Text {
+                    x: 12
+                    y: 234
+                    width: 157
+                    height: 41
+                    color: "#284863"
+                    text: qsTr("Type")
+                    font.letterSpacing: -1.4
+                    font.pixelSize: 17
+                    horizontalAlignment: Text.AlignLeft
+                    verticalAlignment: Text.AlignVCenter
+                    wrapMode: Text.Wrap
+                    font.family: "Akshar"
+                    font.styleName: "SemiBold"
+                }
+
+                Rectangle {
+                    x: 12
+                    y: 30
+                    width: 200
+                    height: 1
+                    color: "#284863"
+                }
+
+                Text {
+                    x: 12
+                    y: 1
+                    width: 157
+                    height: 36
+                    color: "#284863"
+                    text: qsTr("Transformer1")
+                    font.letterSpacing: -1.4
+                    font.pixelSize: 17
+                    horizontalAlignment: Text.AlignLeft
+                    verticalAlignment: Text.AlignVCenter
+                    wrapMode: Text.Wrap
+                    font.family: "Akshar"
+                    font.styleName: "Bold"
+                }
+
+                Text {
+                    x: 180
+                    y: 33
+                    width: 157
+                    height: 41
+                    color: "#284863"
+                    text: textPower.text
+                    font.letterSpacing: -1.4
+                    font.pixelSize: 17
+                    horizontalAlignment: Text.AlignRight
+                    verticalAlignment: Text.AlignVCenter
+                    wrapMode: Text.Wrap
+                    font.styleName: "SemiBold"
+                    font.family: "Akshar"
+                }
+
+                Text {
+                    x: 180
+                    y: 67
+                    width: 157
+                    height: 41
+                    color: "#284863"
+                    text: textTRPrimerVoltage.text
+                    font.letterSpacing: -1.4
+                    font.pixelSize: 17
+                    horizontalAlignment: Text.AlignRight
+                    verticalAlignment: Text.AlignVCenter
+                    wrapMode: Text.Wrap
+                    font.styleName: "SemiBold"
+                    font.family: "Akshar"
+                }
+
+                Text {
+                    x: 180
+                    y: 101
+                    width: 157
+                    height: 41
+                    color: "#284863"
+                    text: textTRSeconderVoltage.text
+                    font.letterSpacing: -1.4
+                    font.pixelSize: 17
+                    horizontalAlignment: Text.AlignRight
+                    verticalAlignment: Text.AlignVCenter
+                    wrapMode: Text.Wrap
+                    font.styleName: "SemiBold"
+                    font.family: "Akshar"
+                }
+
+                Text {
+                    x: 180
+                    y: 135
+                    width: 157
+                    height: 41
+                    color: "#284863"
+                    text: textTRPhase.text
+                    font.letterSpacing: -1.4
+                    font.pixelSize: 17
+                    horizontalAlignment: Text.AlignRight
+                    verticalAlignment: Text.AlignVCenter
+                    wrapMode: Text.Wrap
+                    font.styleName: "SemiBold"
+                    font.family: "Akshar"
+                }
+
+                Text {
+                    x: 180
+                    y: 169
+                    width: 157
+                    height: 41
+                    color: "#284863"
+                    text: textTRZ.text
+                    font.letterSpacing: -1.4
+                    font.pixelSize: 17
+                    horizontalAlignment: Text.AlignRight
+                    verticalAlignment: Text.AlignVCenter
+                    wrapMode: Text.Wrap
+                    font.styleName: "SemiBold"
+                    font.family: "Akshar"
+                }
+
+                Text {
+                    x: 180
+                    y: 203
+                    width: 157
+                    height: 41
+                    color: "#284863"
+                    text: textTRXandR.text
+                    font.letterSpacing: -1.4
+                    font.pixelSize: 17
+                    horizontalAlignment: Text.AlignRight
+                    verticalAlignment: Text.AlignVCenter
+                    wrapMode: Text.Wrap
+                    font.styleName: "SemiBold"
+                    font.family: "Akshar"
+                }
+
+                Text {
+                    x: 180
+                    y: 237
+                    width: 157
+                    height: 41
+                    color: "#284863"
+                    text:chosenText22.text
+                    font.letterSpacing: -1.4
+                    font.pixelSize: 17
+                    horizontalAlignment: Text.AlignRight
+                    verticalAlignment: Text.AlignVCenter
+                    wrapMode: Text.Wrap
+                    font.styleName: "SemiBold"
+                    font.family: "Akshar"
+                }
+            }
+
+            Rectangle {
+                id: motorRectangleForRec1
+                x: 5
+                y: 437
+                width: 345
+                height:
+                    if(rectangle7.visible===false){
+                        140
+                    }
+                    else {
+                        0
+                    }
+                visible: true
+                color: "#f7f8fa"
+                opacity:
+                    if(rectangle7.visible===false){
+                        1
+                    }
+                    else {
+                        0
+                    }
+                border.color: "#e1e5ea"
+                anchors.top: transformerRectangleForRec1.bottom
+                Text {
+                    x: 12
+                    y: 30
+                    width: 157
+                    height: 41
+                    color: "#284863"
+                    text: qsTr("Frequency")
+                    font.letterSpacing: -1.4
+                    font.pixelSize: 17
+                    horizontalAlignment: Text.AlignLeft
+                    verticalAlignment: Text.AlignVCenter
+                    wrapMode: Text.Wrap
+                    font.family: "Akshar"
+                    font.styleName: "SemiBold"
+                }
+
+                Text {
+                    x: 12
+                    y: 64
+                    width: 157
+                    height: 41
+                    color: "#284863"
+                    text: qsTr("Rated Voltage")
+                    font.letterSpacing: -1.4
+                    font.pixelSize: 17
+                    horizontalAlignment: Text.AlignLeft
+                    verticalAlignment: Text.AlignVCenter
+                    wrapMode: Text.Wrap
+                    font.family: "Akshar"
+                    font.styleName: "SemiBold"
+                }
+
+                Text {
+                    x: 12
+                    y: 98
+                    width: 157
+                    height: 41
+                    color: "#284863"
+                    text: qsTr("Rated Current")
+                    font.letterSpacing: -1.4
+                    font.pixelSize: 17
+                    horizontalAlignment: Text.AlignLeft
+                    verticalAlignment: Text.AlignVCenter
+                    wrapMode: Text.Wrap
+                    font.family: "Akshar"
+                    font.styleName: "SemiBold"
+                }
+
+                Rectangle {
+                    x: 12
+                    y: 30
+                    width: 200
+                    height: 1
+                    color: "#284863"
+                }
+
+                Text {
+                    x: 12
+                    y: 1
+                    width: 157
+                    height: 36
+                    color: "#284863"
+                    text: qsTr("Motor1")
+                    font.letterSpacing: -1.4
+                    font.pixelSize: 17
+                    horizontalAlignment: Text.AlignLeft
+                    verticalAlignment: Text.AlignVCenter
+                    wrapMode: Text.Wrap
+                    font.family: "Akshar"
+                    font.styleName: "Bold"
+                }
+
+                Text {
+                    x: 180
+                    y: 25
+                    width: 157
+                    height: 41
+                    color: "#284863"
+                    text: textFreq.text
+                    font.letterSpacing: -1.4
+                    font.pixelSize: 17
+                    horizontalAlignment: Text.AlignRight
+                    verticalAlignment: Text.AlignVCenter
+                    wrapMode: Text.Wrap
+                    font.styleName: "SemiBold"
+                    font.family: "Akshar"
+                }
+
+                Text {
+                    x: 180
+                    y: 59
+                    width: 157
+                    height: 41
+                    color: "#284863"
+                    text: textRatedVoltage.text
+                    font.letterSpacing: -1.4
+                    font.pixelSize: 17
+                    horizontalAlignment: Text.AlignRight
+                    verticalAlignment: Text.AlignVCenter
+                    wrapMode: Text.Wrap
+                    font.styleName: "SemiBold"
+                    font.family: "Akshar"
+                }
+
+                Text {
+                    x: 180
+                    y: 93
+                    width: 157
+                    height: 41
+                    color: "#284863"
+                    text: textRatedCurrent.text
+                    font.letterSpacing: -1.4
+                    font.pixelSize: 17
+                    horizontalAlignment: Text.AlignRight
+                    verticalAlignment: Text.AlignVCenter
+                    wrapMode: Text.Wrap
+                    font.styleName: "SemiBold"
+                    font.family: "Akshar"
+                }
+                anchors.topMargin: 4
+            }
+
+            Rectangle {
+                id: transformerRectangleForRec2
+                x: 5
+                width: 345
+                height:
+                    if(forRectifierNumber===2){
+                    if(rectangle15.visible===false){
+                                    280
+                                }
+                                else {
+                                    0
+                                }
+                    }
+                opacity:
+                    if(forRectifierNumber===2){
+                        if(rectangle15.visible===false){
+                                    1
+                                }
+                                else {
+                                    0
+                                }
+                    }
+                visible: if(forRectifierNumber===2){
+                            true
+                         }
+                         else{
+                         false
+                         }
+
+                color: "#f7f8fa"
+                border.color: "#e1e5ea"
+                anchors.top: motorRectangleForRec1.bottom
+                anchors.topMargin: 4
+                Text {
+                    x: 12
+                    y: 30
+                    width: 157
+                    height: 41
+                    color: "#284863"
+                    text: qsTr("Power")
+                    font.letterSpacing: -1.4
+                    font.pixelSize: 17
+                    horizontalAlignment: Text.AlignLeft
+                    verticalAlignment: Text.AlignVCenter
+                    wrapMode: Text.Wrap
+                    font.styleName: "SemiBold"
+                    font.family: "Akshar"
+                }
+
+                Text {
+                    x: 12
+                    y: 64
+                    width: 157
+                    height: 41
+                    color: "#284863"
+                    text: qsTr("Primer Voltage")
+                    font.letterSpacing: -1.4
+                    font.pixelSize: 17
+                    horizontalAlignment: Text.AlignLeft
+                    verticalAlignment: Text.AlignVCenter
+                    wrapMode: Text.Wrap
+                    font.styleName: "SemiBold"
+                    font.family: "Akshar"
+                }
+
+                Text {
+                    x: 12
+                    y: 98
+                    width: 157
+                    height: 41
+                    color: "#284863"
+                    text: qsTr("Seconder Voltage")
+                    font.letterSpacing: -1.4
+                    font.pixelSize: 17
+                    horizontalAlignment: Text.AlignLeft
+                    verticalAlignment: Text.AlignVCenter
+                    wrapMode: Text.Wrap
+                    font.styleName: "SemiBold"
+                    font.family: "Akshar"
+                }
+
+                Text {
+                    x: 12
+                    y: 132
+                    width: 157
+                    height: 41
+                    color: "#284863"
+                    text: qsTr("Phase")
+                    font.letterSpacing: -1.4
+                    font.pixelSize: 17
+                    horizontalAlignment: Text.AlignLeft
+                    verticalAlignment: Text.AlignVCenter
+                    wrapMode: Text.Wrap
+                    font.styleName: "SemiBold"
+                    font.family: "Akshar"
+                }
+
+                Text {
+                    x: 12
+                    y: 166
+                    width: 157
+                    height: 41
+                    color: "#284863"
+                    text: qsTr("Z")
+                    font.letterSpacing: -1.4
+                    font.pixelSize: 17
+                    horizontalAlignment: Text.AlignLeft
+                    verticalAlignment: Text.AlignVCenter
+                    wrapMode: Text.Wrap
+                    font.styleName: "SemiBold"
+                    font.family: "Akshar"
+                }
+
+                Text {
+                    x: 12
+                    y: 200
+                    width: 157
+                    height: 41
+                    color: "#284863"
+                    text: qsTr("X / R")
+                    font.letterSpacing: -1.4
+                    font.pixelSize: 17
+                    horizontalAlignment: Text.AlignLeft
+                    verticalAlignment: Text.AlignVCenter
+                    wrapMode: Text.Wrap
+                    font.styleName: "SemiBold"
+                    font.family: "Akshar"
+                }
+
+                Text {
+                    x: 12
+                    y: 234
+                    width: 157
+                    height: 41
+                    color: "#284863"
+                    text: qsTr("Type")
+                    font.letterSpacing: -1.4
+                    font.pixelSize: 17
+                    horizontalAlignment: Text.AlignLeft
+                    verticalAlignment: Text.AlignVCenter
+                    wrapMode: Text.Wrap
+                    font.styleName: "SemiBold"
+                    font.family: "Akshar"
+                }
+
+                Rectangle {
+                    x: 12
+                    y: 30
+                    width: 200
+                    height: 1
+                    color: "#284863"
+                }
+
+                Text {
+                    x: 12
+                    y: 1
+                    width: 157
+                    height: 36
+                    color: "#284863"
+                    text: qsTr("Transformer2")
+                    font.letterSpacing: -1.4
+                    font.pixelSize: 17
+                    horizontalAlignment: Text.AlignLeft
+                    verticalAlignment: Text.AlignVCenter
+                    wrapMode: Text.Wrap
+                    font.styleName: "Bold"
+                    font.family: "Akshar"
+                }
+
+                Text {
+                    x: 180
+                    y: 33
+                    width: 157
+                    height: 41
+                    color: "#284863"
+                    text: textPower.text
+                    font.letterSpacing: -1.4
+                    font.pixelSize: 17
+                    horizontalAlignment: Text.AlignRight
+                    verticalAlignment: Text.AlignVCenter
+                    wrapMode: Text.Wrap
+                    font.styleName: "SemiBold"
+                    font.family: "Akshar"
+                }
+
+                Text {
+                    x: 180
+                    y: 67
+                    width: 157
+                    height: 41
+                    color: "#284863"
+                    text: textTRPrimerVoltage.text
+                    font.letterSpacing: -1.4
+                    font.pixelSize: 17
+                    horizontalAlignment: Text.AlignRight
+                    verticalAlignment: Text.AlignVCenter
+                    wrapMode: Text.Wrap
+                    font.styleName: "SemiBold"
+                    font.family: "Akshar"
+                }
+
+                Text {
+                    x: 180
+                    y: 101
+                    width: 157
+                    height: 41
+                    color: "#284863"
+                    text: textTRSeconderVoltage.text
+                    font.letterSpacing: -1.4
+                    font.pixelSize: 17
+                    horizontalAlignment: Text.AlignRight
+                    verticalAlignment: Text.AlignVCenter
+                    wrapMode: Text.Wrap
+                    font.styleName: "SemiBold"
+                    font.family: "Akshar"
+                }
+
+                Text {
+                    x: 180
+                    y: 135
+                    width: 157
+                    height: 41
+                    color: "#284863"
+                    text: textTRPhase.text
+                    font.letterSpacing: -1.4
+                    font.pixelSize: 17
+                    horizontalAlignment: Text.AlignRight
+                    verticalAlignment: Text.AlignVCenter
+                    wrapMode: Text.Wrap
+                    font.styleName: "SemiBold"
+                    font.family: "Akshar"
+                }
+
+                Text {
+                    x: 180
+                    y: 169
+                    width: 157
+                    height: 41
+                    color: "#284863"
+                    text: textTRZ.text
+                    font.letterSpacing: -1.4
+                    font.pixelSize: 17
+                    horizontalAlignment: Text.AlignRight
+                    verticalAlignment: Text.AlignVCenter
+                    wrapMode: Text.Wrap
+                    font.styleName: "SemiBold"
+                    font.family: "Akshar"
+                }
+
+                Text {
+                    x: 180
+                    y: 203
+                    width: 157
+                    height: 41
+                    color: "#284863"
+                    text: textTRXandR.text
+                    font.letterSpacing: -1.4
+                    font.pixelSize: 17
+                    horizontalAlignment: Text.AlignRight
+                    verticalAlignment: Text.AlignVCenter
+                    wrapMode: Text.Wrap
+                    font.styleName: "SemiBold"
+                    font.family: "Akshar"
+                }
+
+                Text {
+                    x: 180
+                    y: 237
+                    width: 157
+                    height: 41
+                    color: "#284863"
+                    text: chosenText22.text
+                    font.letterSpacing: -1.4
+                    font.pixelSize: 17
+                    horizontalAlignment: Text.AlignRight
+                    verticalAlignment: Text.AlignVCenter
+                    wrapMode: Text.Wrap
+                    font.styleName: "SemiBold"
+                    font.family: "Akshar"
+                }
+            }
+
+            Rectangle {
+                id: motorRectangleForRec2
+                x: 5
+                width: 345
+                height:
+                               if(forRectifierNumber===2){
+                                   if(rectangle19.visible===false){
+                                    140
+                                }
+                                else {
+                                    0
+                                }
+                               }
+                opacity:
+                    if(forRectifierNumber===2){
+                        if(rectangle19.visible===false){
+                                        1
+                                    }
+                                    else {
+                                        0
+                                    }
+                    }
+                visible: if(forRectifierNumber===2){
+                            true
+                         }
+                         else{
+                         false
+                         }
+                color: "#f7f8fa"
+                border.color: "#e1e5ea"
+                anchors.top: transformerRectangleForRec2.bottom
+                anchors.topMargin: 4
+                Text {
+                    x: 12
+                    y: 30
+                    width: 157
+                    height: 41
+                    color: "#284863"
+                    text: qsTr("Frequency")
+                    font.letterSpacing: -1.4
+                    font.pixelSize: 17
+                    horizontalAlignment: Text.AlignLeft
+                    verticalAlignment: Text.AlignVCenter
+                    wrapMode: Text.Wrap
+                    font.styleName: "SemiBold"
+                    font.family: "Akshar"
+                }
+
+                Text {
+                    x: 12
+                    y: 64
+                    width: 157
+                    height: 41
+                    color: "#284863"
+                    text: qsTr("Rated Voltage")
+                    font.letterSpacing: -1.4
+                    font.pixelSize: 17
+                    horizontalAlignment: Text.AlignLeft
+                    verticalAlignment: Text.AlignVCenter
+                    wrapMode: Text.Wrap
+                    font.styleName: "SemiBold"
+                    font.family: "Akshar"
+                }
+
+                Text {
+                    x: 12
+                    y: 98
+                    width: 157
+                    height: 41
+                    color: "#284863"
+                    text: qsTr("Rated Current")
+                    font.letterSpacing: -1.4
+                    font.pixelSize: 17
+                    horizontalAlignment: Text.AlignLeft
+                    verticalAlignment: Text.AlignVCenter
+                    wrapMode: Text.Wrap
+                    font.styleName: "SemiBold"
+                    font.family: "Akshar"
+                }
+
+                Rectangle {
+                    x: 12
+                    y: 30
+                    width: 200
+                    height: 1
+                    color: "#284863"
+                }
+
+                Text {
+                    x: 12
+                    y: 1
+                    width: 157
+                    height: 36
+                    color: "#284863"
+                    text: qsTr("Motor2")
+                    font.letterSpacing: -1.4
+                    font.pixelSize: 17
+                    horizontalAlignment: Text.AlignLeft
+                    verticalAlignment: Text.AlignVCenter
+                    wrapMode: Text.Wrap
+                    font.styleName: "Bold"
+                    font.family: "Akshar"
+                }
+
+                Text {
+                    x: 180
+                    y: 25
+                    width: 157
+                    height: 41
+                    color: "#284863"
+                    text: textFreq.text
+                    font.letterSpacing: -1.4
+                    font.pixelSize: 17
+                    horizontalAlignment: Text.AlignRight
+                    verticalAlignment: Text.AlignVCenter
+                    wrapMode: Text.Wrap
+                    font.styleName: "SemiBold"
+                    font.family: "Akshar"
+                }
+
+                Text {
+                    x: 180
+                    y: 59
+                    width: 157
+                    height: 41
+                    color: "#284863"
+                    text: textRatedVoltage.text
+                    font.letterSpacing: -1.4
+                    font.pixelSize: 17
+                    horizontalAlignment: Text.AlignRight
+                    verticalAlignment: Text.AlignVCenter
+                    wrapMode: Text.Wrap
+                    font.styleName: "SemiBold"
+                    font.family: "Akshar"
+                }
+
+                Text {
+                    x: 180
+                    y: 93
+                    width: 157
+                    height: 41
+                    color: "#284863"
+                    text: textRatedCurrent.text
+                    font.letterSpacing: -1.4
+                    font.pixelSize: 17
+                    horizontalAlignment: Text.AlignRight
+                    verticalAlignment: Text.AlignVCenter
+                    wrapMode: Text.Wrap
+                    font.styleName: "SemiBold"
+                    font.family: "Akshar"
+                }
+            }
+        }
+
+        Flickable {
+            id: flickable3
+            x: 2
+            y: 414
+            width: 370
+            height: 300
+            visible: true
+            clip: true
+
+            Timer {
+                id: typeWriterTimer
+                interval: 50 // 1 saniyede 4 harf gösterecek şekilde interval ayarla
+                running: false
+                repeat: true
+                onTriggered: {
+                    if (currentIndex < fullText.length) {
+                        displayText += fullText.substring(currentIndex, currentIndex + 1);
+                        currentIndex++;
+                    } else {
+                        typeWriterTimer.stop(); // Tüm metin yazıldıktan sonra timer'ı durdur
+                    }
+                }
+            }
+
+
+            Text {
+                id: animatedText
+                x: 7
+                y: 6
+                text: displayText
+                //                    horizontalAlignment: Text.AlignHCenter
+                //                    verticalAlignment: Text.AlignVCenter
+                wrapMode: Text.Wrap
+                font.family: "Akshar"
+                width: 343
+                font.pixelSize: 25
+                color: "#284863"
+                lineHeight: 1.2
+
+                //                    maximumLineCount: 5
+
+                visible: displayText.length > 0
+            }
+
+
+
+
+
+
+
+
+
+
+            contentHeight: animatedText.height+150
+            ScrollBar.vertical: ScrollBar {
+                x: 330
+                width: 10
+                height: 650
+                position: 0
+                anchors.right: parent.right
+                z: 1
+                size: flickable.height / flickable.contentHeight
+                contentItem: Rectangle {
+                    color: "#808080"
+                    radius: 5
+                    implicitWidth: parent.width
+                    implicitHeight: parent.height / 2
+                }
+                anchors.rightMargin: 8
+                policy: ScrollBar.AlwaysOn
+            }
+        }
+
+        Rectangle {
+            x: 8
+            y: 411
+            width: 200
+            height: 1
+            color: "#284863"
+        }
+
+        Text {
+            x: 8
+            y: 376
+            width: 157
+            height: 36
+            color: "#284863"
+            text: qsTr("Analysis Results")
+            font.letterSpacing: -1.4
+            font.pixelSize: 17
+            horizontalAlignment: Text.AlignLeft
+            verticalAlignment: Text.AlignVCenter
+            wrapMode: Text.Wrap
+            font.family: "Akshar"
+            font.styleName: "Bold"
+        }
+
+        Rectangle {
+            id: rectangle2
+            x: 0
+            y: 369
+            width: 373
+            height: 6
+            color: "#f7f8fa"
+            border.color: "#e1e5ea"
+        }
+
+
+
+
     }
 
     Rectangle {
@@ -2564,14 +4441,30 @@ Rectangle {
         border.color: "#e1e5ea"
 
         Image {
-            id: bottomForSLD
+            id: bottomForSLD1
             x: 8
-            y: 619
+            y:{
+                if(forRectifierNumber===1){
+                    620
+                }
+                else{
+                    770
+                }
+            }
             width: 1060/2
             source: "images/BottomForSLD.svg"
             antialiasing: true
             fillMode: Image.PreserveAspectFit
-
+            visible:
+                 {
+                true
+//                if(forRectifierNumber===1){
+//                    true
+//                }
+//                else{
+//                    false
+//                }
+            }
             Text {
                 id:bmBox1
                 x: 0
@@ -2635,10 +4528,10 @@ Rectangle {
                 y: 0
                 width: 106
                 height: 43
-                color: "#284863"
                 text: qsTr("Empty")
                 font.letterSpacing: -1.4
                 font.pixelSize: 18
+                color: "#284863"
                 lineHeight: 0.8
                 horizontalAlignment: Text.AlignHCenter
                 verticalAlignment: Text.AlignVCenter
@@ -2745,6 +4638,74 @@ Rectangle {
                     }
                 }
 
+
+                SequentialAnimation{
+                    id:animationClick25
+                    loops: -1
+                    PropertyAnimation {
+                        target: dropZone25
+                        property: "opacity"
+                        duration: 1000
+                        to: 1
+                    }
+                    PropertyAnimation {
+                        target: dropZone25
+                        property: "opacity"
+                        duration: 1000
+                        to: 0.001
+                    }
+                }
+                SequentialAnimation{
+                    id:animationClick24
+                    loops: -1
+                    PropertyAnimation {
+                        target: dropZone24
+                        property: "opacity"
+                        duration: 1000
+                        to: 1
+                    }
+                    PropertyAnimation {
+                        target: dropZone24
+                        property: "opacity"
+                        duration: 1000
+                        to: 0.001
+                    }
+                }
+
+                SequentialAnimation{
+                    id:animationClick22
+                    loops: -1
+                    PropertyAnimation {
+                        target: dropZone22
+                        property: "opacity"
+                        duration: 1000
+                        to: 1
+                    }
+                    PropertyAnimation {
+                        target: dropZone22
+                        property: "opacity"
+                        duration: 1000
+                        to: 0.001
+                    }
+                }
+
+                SequentialAnimation{
+                    id:animationClick21
+                    loops: -1
+                    PropertyAnimation {
+                        target: dropZone21
+                        property: "opacity"
+                        duration: 1000
+                        to: 1
+                    }
+                    PropertyAnimation {
+                        target: dropZone21
+                        property: "opacity"
+                        duration: 1000
+                        to: 0.001
+                    }
+                }
+
                 Image {
                     id: comBM11
                     x: 0
@@ -2756,7 +4717,7 @@ Rectangle {
                 }
 
                 MouseArea {
-                    id: mouseArea1
+                    id: mouseArea11
                     x: 0
                     y: 0
                     width: 106
@@ -2923,6 +4884,7 @@ Rectangle {
                             }
                         }
                     }
+
                 }
 
 
@@ -2948,13 +4910,13 @@ Rectangle {
                 }
 
                 MouseArea {
-                    id: mouseArea1Y
+                    id: mouseArea11Y
                     x: 0
                     y: 0
                     width: 106
                     height: 100
                     visible:
-                        if(mouseArea1.visible){
+                        if(mouseArea11.visible){
                             false
                         }
                         else{
@@ -3060,7 +5022,7 @@ Rectangle {
 
 
                 MouseArea {
-                    id: mouseArea2
+                    id: mouseArea12
                     x: 0
                     y: 0
                     width: 106
@@ -3252,13 +5214,13 @@ Rectangle {
                 }
 
                 MouseArea {
-                    id: mouseArea2Y
+                    id: mouseArea12Y
                     x: 0
                     y: 0
                     width: 106
                     height: 100
                     visible:
-                        if(mouseArea2.visible){
+                        if(mouseArea12.visible){
                             false
                         }
                         else{
@@ -3346,7 +5308,7 @@ Rectangle {
                 border.color: "#217efd"
                 border.width: 3
                 MouseArea {
-                    id: mouseArea3
+                    id: mouseArea13
                     x: 0
                     y: 0
                     width: 106
@@ -3402,7 +5364,7 @@ Rectangle {
                     fillMode: Image.PreserveAspectFit
                 }
                 MouseArea {
-                    id: mouseArea4
+                    id: mouseArea14
                     x: 0
                     y: 0
                     width: 106
@@ -3620,7 +5582,7 @@ Rectangle {
                     fillMode: Image.PreserveAspectFit
                 }
                 MouseArea {
-                    id: mouseArea5
+                    id: mouseArea15
                     x: 0
                     y: 0
                     width: 106
@@ -3815,6 +5777,1198 @@ Rectangle {
                 }
             }
         }
+
+        Image {
+            id: bottomForSLD2
+            x: 8
+            y:{
+                if(forRectifierNumber===2){
+                    620
+                }
+                else{
+                    770
+                }
+                }
+            width: 1060/2
+            source: "images/BottomForSLD.svg"
+            visible:
+                 {
+                true
+//                if(forRectifierNumber===2){
+//                    true
+//                }
+//                else{
+//                    false
+//                }
+            }
+            Text {
+                id:bmBox21
+                x: 0
+                y: 0
+                width: 106
+                height: 43
+                color: "#284863"
+                text: qsTr("Empty")
+                font.letterSpacing: -1.4
+                font.pixelSize: 18
+                horizontalAlignment: Text.AlignHCenter
+                verticalAlignment: Text.AlignVCenter
+                lineHeight: 0.8
+                wrapMode: Text.Wrap
+                font.styleName: "SemiBold"
+                font.family: "Akshar"
+            }
+
+            Text {
+                id:bmBox22
+                x: 106
+                y: 0
+                width: 106
+                height: 43
+                color: "#284863"
+                text: qsTr("Empty")
+                font.letterSpacing: -1.4
+                font.pixelSize: 18
+                horizontalAlignment: Text.AlignHCenter
+                verticalAlignment: Text.AlignVCenter
+                lineHeight: 0.8
+                wrapMode: Text.Wrap
+                font.styleName: "SemiBold"
+                font.family: "Akshar"
+            }
+
+            Text {
+                id:bmBox23
+                x: 212
+                y: 0
+                width: 106
+                height: 43
+                color: "#284863"
+                text: qsTr("Rectifier")
+                font.letterSpacing: -1.4
+                font.pixelSize: 18
+                horizontalAlignment: Text.AlignHCenter
+                verticalAlignment: Text.AlignVCenter
+                lineHeight: 0.8
+                wrapMode: Text.Wrap
+                font.styleName: "SemiBold"
+                font.family: "Akshar"
+            }
+
+            Text {
+                id:bmBox24
+                x: 318
+                y: 0
+                width: 106
+                height: 43
+                color: "#284863"
+                text: qsTr("Empty")
+                font.letterSpacing: -1.4
+                font.pixelSize: 18
+                horizontalAlignment: Text.AlignHCenter
+                verticalAlignment: Text.AlignVCenter
+                lineHeight: 0.8
+                wrapMode: Text.Wrap
+                font.styleName: "SemiBold"
+                font.family: "Akshar"
+            }
+
+            Text {
+                id:bmBox25
+                x: 424
+                y: 0
+                width: 106
+                height: 43
+                color: "#284863"
+                text: qsTr("Empty")
+                font.letterSpacing: -1.4
+                font.pixelSize: 18
+                horizontalAlignment: Text.AlignHCenter
+                verticalAlignment: Text.AlignVCenter
+                lineHeight: 0.8
+                wrapMode: Text.Wrap
+                font.styleName: "SemiBold"
+                font.family: "Akshar"
+            }
+
+            Rectangle {
+                id:bmBoxRect21
+                x: 0
+                y: 0
+                width: 106
+                height: 101
+                visible: true
+                color: "#003bb53b"
+                border.color: "#d6e0e7"
+                border.width: 3
+                SequentialAnimation {
+                    loops: -1
+                    PropertyAnimation {
+                        target: dropZone25
+                        property: "opacity"
+                        duration: 1000
+                        to: 1
+                    }
+
+                    PropertyAnimation {
+                        target: dropZone25
+                        property: "opacity"
+                        duration: 1000
+                        to: 0.001
+                    }
+                }
+
+                SequentialAnimation {
+                    loops: -1
+                    PropertyAnimation {
+                        target: dropZone24
+                        property: "opacity"
+                        duration: 1000
+                        to: 1
+                    }
+
+                    PropertyAnimation {
+                        target: dropZone24
+                        property: "opacity"
+                        duration: 1000
+                        to: 0.001
+                    }
+                }
+
+                SequentialAnimation {
+                    loops: -1
+                    PropertyAnimation {
+                        target: dropZone22
+                        property: "opacity"
+                        duration: 1000
+                        to: 1
+                    }
+
+                    PropertyAnimation {
+                        target: dropZone22
+                        property: "opacity"
+                        duration: 1000
+                        to: 0.001
+                    }
+                }
+
+                SequentialAnimation {
+                    loops: -1
+                    PropertyAnimation {
+                        target: dropZone21
+                        property: "opacity"
+                        duration: 1000
+                        to: 1
+                    }
+
+                    PropertyAnimation {
+                        target: dropZone21
+                        property: "opacity"
+                        duration: 1000
+                        to: 0.001
+                    }
+                }
+
+                Image {
+                    id:comBM21
+                    x: 0
+                    y: 39
+                    width: 106
+                    source: "images/BlankImage.svg"
+                    fillMode: Image.PreserveAspectFit
+                    antialiasing: true
+                }
+
+                MouseArea {
+                    id: mouseArea21
+                    x: 0
+                    y: 0
+                    width: 106
+                    height: 100
+                    visible: true
+                    ParallelAnimation {
+                        id:anim21
+                        PropertyAnimation {
+                            target: bmBoxRect21
+                            property: "border.color"
+                            duration: 200
+                            to: "#217efd"
+                        }
+
+                        PropertyAnimation {
+                            target: rectangle13
+                            property: "rotation"
+                            duration: 200
+                            to: 45
+                        }
+
+                        PropertyAnimation {
+                            target: rectangle14
+                            property: "rotation"
+                            duration: 200
+                            to: 135
+                        }
+
+                        SequentialAnimation {
+                            ParallelAnimation {
+                                PropertyAnimation {
+                                    target: rectangle14
+                                    property: "scale"
+                                    duration: 100
+                                    to: 1.3
+                                }
+
+                                PropertyAnimation {
+                                    target: rectangle13
+                                    property: "scale"
+                                    duration: 100
+                                    to: 1.3
+                                }
+                            }
+
+                            ParallelAnimation {
+                                PropertyAnimation {
+                                    target: rectangle14
+                                    property: "scale"
+                                    duration: 100
+                                    to: 1
+                                }
+
+                                PropertyAnimation {
+                                    target: rectangle13
+                                    property: "scale"
+                                    duration: 100
+                                    to: 1
+                                }
+                            }
+                        }
+                    }
+
+                    ParallelAnimation {
+                        id:anim21close
+                        PropertyAnimation {
+                            target: bmBoxRect21
+                            property: "border.color"
+                            duration: 200
+                            to: "#d6e0e7"
+                        }
+
+                        PropertyAnimation {
+                            target: rectangle13
+                            property: "rotation"
+                            duration: 200
+                            to: 0
+                        }
+
+                        PropertyAnimation {
+                            target: rectangle14
+                            property: "rotation"
+                            duration: 200
+                            to: 90
+                        }
+
+                        SequentialAnimation {
+                            ParallelAnimation {
+                                PropertyAnimation {
+                                    target: rectangle14
+                                    property: "scale"
+                                    duration: 100
+                                    to: 1.3
+                                }
+
+                                PropertyAnimation {
+                                    target: rectangle13
+                                    property: "scale"
+                                    duration: 100
+                                    to: 1.3
+                                }
+                            }
+
+                            ParallelAnimation {
+                                PropertyAnimation {
+                                    target: rectangle14
+                                    property: "scale"
+                                    duration: 100
+                                    to: 1
+                                }
+
+                                PropertyAnimation {
+                                    target: rectangle13
+                                    property: "scale"
+                                    duration: 100
+                                    to: 1
+                                }
+                            }
+                        }
+                    }
+                    onClicked: {
+                                if(rectangle13.rotation===0){
+                                    anim21.start()
+                                    bmBox21.text="Delete"
+                                    animationClick21.start()
+                                    animationRectsClicked.start()
+                                    bmBoxRect22.border.color="#d6e0e7"
+                                    anim22close.start()
+                                    bmBoxRect24.border.color="#d6e0e7"
+                                    anim24close.start()
+                                    bmBoxRect25.border.color="#d6e0e7"
+                                    anim25close.start()
+                                    if(bmBox22.text==="Delete"){
+                                        bmBox22.text="Empty"
+                                    }
+                                    if(bmBox24.text==="Delete"){
+                                        bmBox24.text="Empty"
+                                    }
+                                    if(bmBox25.text==="Delete"){
+                                        bmBox25.text="Empty"
+                                    }
+
+                                    animationClick22.complete()
+                                    animationClick22.stop()
+                                    dropZone22.opacity=0
+                                    animationClick24.complete()
+                                    animationClick24.stop()
+                                    dropZone24.opacity=0
+                                    animationClick25.complete()
+                                    animationClick25.stop()
+                                    dropZone25.opacity=0
+
+                                }
+
+                                else {
+                                    anim21close.start()
+                                    bmBox21.text="Empty"
+                                    animationClick21.complete()
+                                    animationClick21.stop()
+                                    dropZone21.opacity=0
+                                    animationRectsClicked.complete()
+                                    animationRectsClicked.stop()
+                                    rectangleForCom1.opacity=0
+                                    rectangleForCom2.opacity=0
+                                    rectangleForCom3.opacity=0
+                                    rectangleForCom4.opacity=0
+                                    rectangleForCom5.opacity=0
+                                    rectangleForCom6.opacity=0
+                                    rectangleForCom7.opacity=0
+                                    rectangleForCom8.opacity=0
+                                    rectangleForCom9.opacity=0
+                                    rectangleForCom10.opacity=0
+                                }
+                            }
+                    antialiasing: true
+                }
+
+                Rectangle {
+                    id: rectangle13
+                    x: 31
+                    y: 58
+                    width: 45
+                    height: 5
+                    color: "#617284"
+                    antialiasing: true
+                }
+
+                Rectangle {
+                    id: rectangle14
+                    x: 31
+                    y: 58
+                    width: 45
+                    height: 5
+                    color: "#617284"
+                    rotation: 90
+                    antialiasing: true
+                }
+
+            }
+
+            Rectangle {
+                id:bmBoxRect22
+                x: 106
+                y: 0
+                width: 106
+                height: 101
+                visible: true
+                color: "#003bb53b"
+                border.color: "#d6e0e7"
+                border.width: 3
+                Image {
+                    id:comBM22
+                    x: 0
+                    y: 39
+                    width: 106
+                    source: "images/BlankImage.svg"
+                    fillMode: Image.PreserveAspectFit
+                    antialiasing: true
+                }
+
+                MouseArea {
+                    id: mouseArea22
+                    x: 0
+                    y: 0
+                    width: 106
+                    height: 100
+                    ParallelAnimation {
+                        id:anim22
+                        PropertyAnimation {
+                            target: bmBoxRect22
+                            property: "border.color"
+                            duration: 200
+                            to: "#217efd"
+                        }
+
+                        PropertyAnimation {
+                            target: rectangle15
+                            property: "rotation"
+                            duration: 200
+                            to: 45
+                        }
+
+                        PropertyAnimation {
+                            target: rectangle16
+                            property: "rotation"
+                            duration: 200
+                            to: 135
+                        }
+
+                        SequentialAnimation {
+                            ParallelAnimation {
+                                PropertyAnimation {
+                                    target: rectangle16
+                                    property: "scale"
+                                    duration: 100
+                                    to: 1.3
+                                }
+
+                                PropertyAnimation {
+                                    target: rectangle15
+                                    property: "scale"
+                                    duration: 100
+                                    to: 1.3
+                                }
+                            }
+
+                            ParallelAnimation {
+                                PropertyAnimation {
+                                    target: rectangle16
+                                    property: "scale"
+                                    duration: 100
+                                    to: 1
+                                }
+
+                                PropertyAnimation {
+                                    target: rectangle15
+                                    property: "scale"
+                                    duration: 100
+                                    to: 1
+                                }
+                            }
+                        }
+                    }
+
+                    ParallelAnimation {
+                        id:anim22close
+                        PropertyAnimation {
+                            target: bmBoxRect22
+                            property: "border.color"
+                            duration: 200
+                            to: "#d6e0e7"
+                        }
+
+                        PropertyAnimation {
+                            target: rectangle15
+                            property: "rotation"
+                            duration: 200
+                            to: 0
+                        }
+
+                        PropertyAnimation {
+                            target: rectangle16
+                            property: "rotation"
+                            duration: 200
+                            to: 90
+                        }
+
+                        SequentialAnimation {
+                            ParallelAnimation {
+                                PropertyAnimation {
+                                    target: rectangle16
+                                    property: "scale"
+                                    duration: 100
+                                    to: 1.3
+                                }
+
+                                PropertyAnimation {
+                                    target: rectangle15
+                                    property: "scale"
+                                    duration: 100
+                                    to: 1.3
+                                }
+                            }
+
+                            ParallelAnimation {
+                                PropertyAnimation {
+                                    target: rectangle16
+                                    property: "scale"
+                                    duration: 100
+                                    to: 1
+                                }
+
+                                PropertyAnimation {
+                                    target: rectangle15
+                                    property: "scale"
+                                    duration: 100
+                                    to: 1
+                                }
+                            }
+                        }
+                    }
+                    onClicked: {
+                                if(rectangle15.rotation===0){
+                                    anim22.start()
+                                    bmBox22.text="Delete"
+                                    animationClick22.start()
+                                    animationRectsClicked.start()
+                                    bmBoxRect21.border.color="#d6e0e7"
+                                    anim21close.start()
+                                    bmBoxRect24.border.color="#d6e0e7"
+                                    anim24close.start()
+                                    bmBoxRect25.border.color="#d6e0e7"
+                                    anim25close.start()
+                                    if(bmBox21.text==="Delete"){
+                                        bmBox21.text="Empty"
+                                    }
+                                    if(bmBox24.text==="Delete"){
+                                        bmBox24.text="Empty"
+                                    }
+                                    if(bmBox25.text==="Delete"){
+                                        bmBox25.text="Empty"
+                                    }
+                                    animationClick21.complete()
+                                    animationClick21.stop()
+                                    dropZone21.opacity=0
+                                    animationClick24.complete()
+                                    animationClick24.stop()
+                                    dropZone24.opacity=0
+                                    animationClick25.complete()
+                                    animationClick25.stop()
+                                    dropZone25.opacity=0
+                                }
+
+                                else {
+                                    anim22close.start()
+                                    bmBox22.text="Empty"
+                                    animationClick22.complete()
+                                    animationClick22.stop()
+                                    dropZone22.opacity=0
+                                    animationRectsClicked.complete()
+                                    animationRectsClicked.stop()
+                                    rectangleForCom1.opacity=0
+                                    rectangleForCom2.opacity=0
+                                    rectangleForCom3.opacity=0
+                                    rectangleForCom4.opacity=0
+                                    rectangleForCom5.opacity=0
+                                    rectangleForCom6.opacity=0
+                                    rectangleForCom7.opacity=0
+                                    rectangleForCom8.opacity=0
+                                    rectangleForCom9.opacity=0
+                                    rectangleForCom10.opacity=0
+
+                                }
+                            }
+                    antialiasing: true
+                }
+
+                Rectangle {
+                    id: rectangle15
+                    x: 31
+                    y: 58
+                    width: 45
+                    height: 5
+                    color: "#617284"
+                    antialiasing: true
+                }
+
+                Rectangle {
+                    id: rectangle16
+                    x: 31
+                    y: 58
+                    width: 45
+                    height: 5
+                    color: "#617284"
+                    rotation: 90
+                    antialiasing: true
+                }
+
+                MouseArea {
+                    id: mouseArea22Y
+                    x: 0
+                    y: 0
+                    width: 106
+                    height: 100
+                    visible: if(mouseArea22.visible){
+                                    false
+                                }
+                                else{
+                                    true
+                                }
+                    onClicked: {
+                                if(rectangle15.rotation===0){
+                                    rectangle15.visible=true
+                                    rectangle16.visible=true
+                                    comBM22.visible=false
+                                    anim22.start()
+
+                                    bmBox22.text="Delete"
+                                    animationClick22.start()
+                                    animationRectsClicked.start()
+                                    bmBoxRect21.border.color="#d6e0e7"
+                                    anim21close.start()
+                                    bmBoxRect24.border.color="#d6e0e7"
+                                    anim24close.start()
+                                    bmBoxRect25.border.color="#d6e0e7"
+                                    anim25close.start()
+                                    if(bmBox21.text==="Delete"){
+                                        bmBox21.text="Empty"
+                                    }
+                                    if(bmBox24.text==="Delete"){
+                                        bmBox24.text="Empty"
+                                    }
+                                    if(bmBox25.text==="Delete"){
+                                        bmBox25.text="Empty"
+                                    }
+
+                                    animationClick21.complete()
+                                    animationClick21.stop()
+                                    dropZone21.opacity=0
+                                    animationClick24.complete()
+                                    animationClick24.stop()
+                                    dropZone24.opacity=0
+                                    animationClick25.complete()
+                                    animationClick25.stop()
+                                    dropZone25.opacity=0
+                                }
+
+                                else {
+                                    anim22close.start()
+                                    bmBox22.text="Empty"
+                                    animationClick22.complete()
+                                    animationClick22.stop()
+                                    dropZone22.opacity=0
+                                    animationRectsClicked.complete()
+                                    animationRectsClicked.stop()
+                                    rectangleForCom1.opacity=0
+                                    rectangleForCom2.opacity=0
+                                    rectangleForCom3.opacity=0
+                                    rectangleForCom4.opacity=0
+                                    rectangleForCom5.opacity=0
+                                    rectangleForCom6.opacity=0
+                                    rectangleForCom7.opacity=0
+                                    rectangleForCom8.opacity=0
+                                    rectangleForCom9.opacity=0
+                                    rectangleForCom10.opacity=0
+
+                                    com22.source="images/BlankImage.svg"
+                                    text22.text=" "
+                                }
+                            }
+                    antialiasing: true
+                }
+            }
+
+            Rectangle {
+                id:bmBoxRect23
+                x: 212
+                y: 0
+                width: 106
+                height: 101
+                visible: true
+                color: "#003bb53b"
+                border.color: "#217efd"
+                border.width: 3
+                MouseArea {
+                    id: mouseArea23
+                    x: 0
+                    y: 0
+                    width: 106
+                    height: 100
+                    onClicked: {
+                                if(bmBoxRect23.border.color=="#217efd"){
+                                    recForBottomMiddle.source="images/RecForBottomMiddle.svg"
+                                    bmBoxRect23.border.color="#d6e0e7"
+                                    rec2.visible=true
+                                    rec2Text23.visible=true
+                                    rectangleForLeftMenuRec1.x=-500
+                                }
+                                else if(bmBoxRect23.border.color=="#d6e0e7"){
+                                    recForBottomMiddle.source="images/SaveButton.svg"
+                                    bmBoxRect23.border.color="#217efd"
+                                    rectangleForLeftMenuRec1.x=0
+                                    //                            text13Rec1.visible=false
+                                    //                            rec1.visible=false
+                                }
+
+                            }
+                }
+
+                Image {
+                    x: 32
+                    y: 42
+                    width: 83/2
+                    source: "images/SaveButton.svg"
+                    fillMode: Image.PreserveAspectFit
+                    antialiasing: true
+                }
+            }
+
+            Rectangle {
+                id:bmBoxRect24
+                x: 318
+                y: 0
+                width: 106
+                height: 101
+                visible: true
+                color: "#003bb53b"
+                border.color: "#d6e0e7"
+                border.width: 3
+                Image {
+                    id:comBM24
+                    x: 0
+                    y: 39
+                    width: 106
+                    source: "images/BlankImage.svg"
+                    fillMode: Image.PreserveAspectFit
+                    antialiasing: true
+                }
+
+                MouseArea {
+                    id:mouseArea24
+                    x: 0
+                    y: 0
+                    width: 106
+                    height: 100
+                    ParallelAnimation {
+                        id:anim24
+                        PropertyAnimation {
+                            target: bmBoxRect4
+                            property: "border.color"
+                            duration: 200
+                            to: "#217efd"
+                        }
+
+                        PropertyAnimation {
+                            target: rectangle7
+                            property: "rotation"
+                            duration: 200
+                            to: 45
+                        }
+
+                        PropertyAnimation {
+                            target: rectangle8
+                            property: "rotation"
+                            duration: 200
+                            to: 135
+                        }
+
+                        SequentialAnimation {
+                            ParallelAnimation {
+                                PropertyAnimation {
+                                    target: rectangle8
+                                    property: "scale"
+                                    duration: 100
+                                    to: 1.3
+                                }
+
+                                PropertyAnimation {
+                                    target: rectangle7
+                                    property: "scale"
+                                    duration: 100
+                                    to: 1.3
+                                }
+                            }
+
+                            ParallelAnimation {
+                                PropertyAnimation {
+                                    target: rectangle8
+                                    property: "scale"
+                                    duration: 100
+                                    to: 1
+                                }
+
+                                PropertyAnimation {
+                                    target: rectangle7
+                                    property: "scale"
+                                    duration: 100
+                                    to: 1
+                                }
+                            }
+                        }
+                    }
+
+                    ParallelAnimation {
+                        id:anim24close
+                        PropertyAnimation {
+                            target: bmBoxRect24
+                            property: "border.color"
+                            duration: 200
+                            to: "#d6e0e7"
+                        }
+
+                        PropertyAnimation {
+                            target: rectangle17
+                            property: "rotation"
+                            duration: 200
+                            to: 0
+                        }
+
+                        PropertyAnimation {
+                            target: rectangle18
+                            property: "rotation"
+                            duration: 200
+                            to: 90
+                        }
+
+                        SequentialAnimation {
+                            ParallelAnimation {
+                                PropertyAnimation {
+                                    target: rectangle18
+                                    property: "scale"
+                                    duration: 100
+                                    to: 1.3
+                                }
+
+                                PropertyAnimation {
+                                    target: rectangle17
+                                    property: "scale"
+                                    duration: 100
+                                    to: 1.3
+                                }
+                            }
+
+                            ParallelAnimation {
+                                PropertyAnimation {
+                                    target: rectangle18
+                                    property: "scale"
+                                    duration: 100
+                                    to: 1
+                                }
+
+                                PropertyAnimation {
+                                    target: rectangle17
+                                    property: "scale"
+                                    duration: 100
+                                    to: 1
+                                }
+                            }
+                        }
+                    }
+
+                    Rectangle {
+                        id: rectangle17
+                        x: 31
+                        y: 58
+                        width: 45
+                        height: 5
+                        color: "#617284"
+                        antialiasing: true
+                    }
+
+                    Rectangle {
+                        id: rectangle18
+                        x: 31
+                        y: 58
+                        width: 45
+                        height: 5
+                        color: "#617284"
+                        rotation: 90
+                        antialiasing: true
+                    }
+                    onClicked: {
+                                if(rectangle17.rotation===0){
+                                    anim24.start()
+                                    bmBox24.text="Delete"
+                                    animationClick24.start()
+                                    animationRectsClicked.start()
+
+                                    bmBoxRect21.border.color="#d6e0e7"
+                                    anim21close.start()
+                                    bmBoxRect22.border.color="#d6e0e7"
+                                    anim22close.start()
+                                    bmBoxRect25.border.color="#d6e0e7"
+                                    anim25close.start()
+                                    if(bmBox21.text==="Delete"){
+                                        bmBox21.text="Empty"
+                                    }
+                                    if(bmBox22.text==="Delete"){
+                                        bmBox22.text="Empty"
+                                    }
+                                    if(bmBox25.text==="Delete"){
+                                        bmBox25.text="Empty"
+                                    }
+                                    dropZone21.opacity=0
+                                    dropZone22.opacity=0
+                                    dropZone25.opacity=0
+                                    animationClick21.complete()
+                                    animationClick21.stop()
+                                    dropZone21.opacity=0
+                                    animationClick22.complete()
+                                    animationClick22.stop()
+                                    dropZone22.opacity=0
+                                    animationClick25.complete()
+                                    animationClick25.stop()
+                                    dropZone25.opacity=0
+                                }
+
+                                else {
+                                    anim24close.start()
+                                    bmBox24.text="Empty"
+
+                                    animationClick24.complete()
+                                    animationClick24.stop()
+
+                                    dropZone24.opacity=0
+                                    animationRectsClicked.complete()
+                                    animationRectsClicked.stop()
+                                    rectangleForCom1.opacity=0
+                                    rectangleForCom2.opacity=0
+                                    rectangleForCom3.opacity=0
+                                    rectangleForCom4.opacity=0
+                                    rectangleForCom5.opacity=0
+                                    rectangleForCom6.opacity=0
+                                    rectangleForCom7.opacity=0
+                                    rectangleForCom8.opacity=0
+                                    rectangleForCom9.opacity=0
+                                    rectangleForCom10.opacity=0
+                                }
+                            }
+                    antialiasing: true
+                }
+            }
+
+            Rectangle {
+                id:bmBoxRect25
+                x: 424
+                y: 0
+                width: 106
+                height: 101
+                visible: true
+                color: "#003bb53b"
+                border.color: "#d6e0e7"
+                border.width: 3
+                Image {
+                    id:comBM25
+                    x: 0
+                    y: 39
+                    width: 106
+                    source: "images/BlankImage.svg"
+                    fillMode: Image.PreserveAspectFit
+                    antialiasing: true
+                }
+
+                MouseArea {
+                    id:mouseArea25
+                    x: 0
+                    y: 0
+                    width: 106
+                    height: 100
+                    ParallelAnimation {
+                        id:anim25
+                        PropertyAnimation {
+                            target: bmBoxRect5
+                            property: "border.color"
+                            duration: 200
+                            to: "#217efd"
+                        }
+
+                        PropertyAnimation {
+                            target: rectangle9
+                            property: "rotation"
+                            duration: 200
+                            to: 45
+                        }
+
+                        PropertyAnimation {
+                            target: rectangle10
+                            property: "rotation"
+                            duration: 200
+                            to: 135
+                        }
+
+                        SequentialAnimation {
+                            ParallelAnimation {
+                                PropertyAnimation {
+                                    target: rectangle10
+                                    property: "scale"
+                                    duration: 100
+                                    to: 1.3
+                                }
+
+                                PropertyAnimation {
+                                    target: rectangle9
+                                    property: "scale"
+                                    duration: 100
+                                    to: 1.3
+                                }
+                            }
+
+                            ParallelAnimation {
+                                PropertyAnimation {
+                                    target: rectangle10
+                                    property: "scale"
+                                    duration: 100
+                                    to: 1
+                                }
+
+                                PropertyAnimation {
+                                    target: rectangle9
+                                    property: "scale"
+                                    duration: 100
+                                    to: 1
+                                }
+                            }
+                        }
+                    }
+
+                    ParallelAnimation {
+                        id:anim25close
+                        PropertyAnimation {
+                            target: bmBoxRect5
+                            property: "border.color"
+                            duration: 200
+                            to: "#d6e0e7"
+                        }
+
+                        PropertyAnimation {
+                            target: rectangle9
+                            property: "rotation"
+                            duration: 200
+                            to: 0
+                        }
+
+                        PropertyAnimation {
+                            target: rectangle10
+                            property: "rotation"
+                            duration: 200
+                            to: 90
+                        }
+
+                        SequentialAnimation {
+                            ParallelAnimation {
+                                PropertyAnimation {
+                                    target: rectangle10
+                                    property: "scale"
+                                    duration: 100
+                                    to: 1.3
+                                }
+
+                                PropertyAnimation {
+                                    target: rectangle9
+                                    property: "scale"
+                                    duration: 100
+                                    to: 1.3
+                                }
+                            }
+
+                            ParallelAnimation {
+                                PropertyAnimation {
+                                    target: rectangle10
+                                    property: "scale"
+                                    duration: 100
+                                    to: 1
+                                }
+
+                                PropertyAnimation {
+                                    target: rectangle9
+                                    property: "scale"
+                                    duration: 100
+                                    to: 1
+                                }
+                            }
+                        }
+                    }
+
+                    Rectangle {
+                        id: rectangle19
+                        x: 31
+                        y: 58
+                        width: 45
+                        height: 5
+                        color: "#617284"
+                        antialiasing: true
+                    }
+
+                    Rectangle {
+                        id: rectangle20
+                        x: 31
+                        y: 58
+                        width: 45
+                        height: 5
+                        color: "#617284"
+                        rotation: 90
+                        antialiasing: true
+                    }
+                    onClicked: {
+                                if(rectangle19.rotation===0){
+                                    anim25.start()
+                                    bmBox25.text="Delete"
+
+                                    animationClick25.start()
+                                    animationRectsClicked.start()
+                                    bmBoxRect21.border.color="#d6e0e7"
+                                    anim21close.start()
+                                    bmBoxRect22.border.color="#d6e0e7"
+                                    anim22close.start()
+                                    bmBoxRect24.border.color="#d6e0e7"
+                                    anim24close.start()
+                                    if(bmBox21.text==="Delete"){
+                                        bmBox21.text="Empty"
+                                    }
+                                    if(bmBox22.text==="Delete"){
+                                        bmBox22.text="Empty"
+                                    }
+                                    if(bmBox24.text==="Delete"){
+                                        bmBox24.text="Empty"
+                                    }
+                                    dropZone21.opacity=0
+                                    dropZone22.opacity=0
+                                    dropZone24.opacity=0
+                                    animationClick21.complete()
+                                    animationClick21.stop()
+                                    dropZone21.opacity=0
+                                    animationClick22.complete()
+                                    animationClick22.stop()
+                                    dropZone22.opacity=0
+                                    animationClick24.complete()
+                                    animationClick24.stop()
+                                    dropZone24.opacity=0
+                                }
+
+                                else {
+                                    anim25close.start()
+                                    bmBox25.text="Empty"
+
+                                    animationClick25.complete()
+                                    animationClick25.stop()
+                                    dropZone25.opacity=0
+                                    animationRectsClicked.complete()
+                                    animationRectsClicked.stop()
+                                    rectangleForCom1.opacity=0
+                                    rectangleForCom2.opacity=0
+                                    rectangleForCom3.opacity=0
+                                    rectangleForCom4.opacity=0
+                                    rectangleForCom5.opacity=0
+                                    rectangleForCom6.opacity=0
+                                    rectangleForCom7.opacity=0
+                                    rectangleForCom8.opacity=0
+                                    rectangleForCom9.opacity=0
+                                    rectangleForCom10.opacity=0
+                                }
+                            }
+                    antialiasing: true
+                }
+            }
+            fillMode: Image.PreserveAspectFit
+            antialiasing: true
+        }
     }
 
     Rectangle {
@@ -3823,7 +6977,7 @@ Rectangle {
         y: 9
         width: 1070/2
         height: 300/2
-        visible: true
+        visible:true
         color: "#f7f8fa"
         border.color: "#e1e5ea"
 
@@ -3891,7 +7045,7 @@ Rectangle {
             height: 11
             visible:
             {
-                if(mouseArea1.visible===false && mouseArea2.visible===false){
+                if(mouseArea11.visible===false && mouseArea12.visible===false){
                     true
                 }
                 else {
@@ -4073,9 +7227,17 @@ Rectangle {
             y: 1
             width: 100
             height: 27
-            visible: true
+            visible:
+
+                if(rectangle3.visible===false){
+                    true
+                }
+                else{
+                    false
+                }
+
             color: "#284863"
-            text: qsTr("")
+            text: qsTr("U1")
             font.letterSpacing: -1.4
             font.pixelSize: 17
             horizontalAlignment: Text.AlignHCenter
@@ -4091,9 +7253,16 @@ Rectangle {
             y: 1
             width: 100
             height: 27
-            visible: false
+            visible:
+                if(rectangle5.visible===false){
+                    true
+                }
+                else{
+                    false
+                }
+
             color: "#284863"
-            text: qsTr("")
+            text: qsTr("T1")
             font.letterSpacing: -1.4
             font.pixelSize: 17
             horizontalAlignment: Text.AlignHCenter
@@ -4109,9 +7278,16 @@ Rectangle {
             y: 1
             width: 106
             height: 27
-            visible: false
+            visible:
+
+                if(rectangle7.visible===false){
+                    true
+                }
+                else{
+                    false
+                }
             color: "#284863"
-            text: qsTr("")
+            text: qsTr("M1")
             font.letterSpacing: -1.4
             font.pixelSize: 17
             horizontalAlignment: Text.AlignHCenter
@@ -4137,6 +7313,42 @@ Rectangle {
             wrapMode: Text.Wrap
             font.family: "Akshar"
             font.styleName: "SemiBold"
+        }
+
+        Rectangle {
+            id: rectanglenode2
+            x: 316
+            y: 39
+            width: 11
+            height: 11
+            visible: {
+                if(mouseArea12.visible===false && mouseArea14.visible===false){
+                    true
+                }
+                else {
+                    false
+                }
+
+            }
+            color: "#617284"
+            radius: 6
+            antialiasing: true
+            Text {
+                x: -4
+                y: -38
+                width: 20
+                height: 27
+                visible: true
+                color: "#284863"
+                text: qsTr("n2")
+                font.letterSpacing: -1.4
+                font.pixelSize: 17
+                horizontalAlignment: Text.AlignHCenter
+                verticalAlignment: Text.AlignVCenter
+                wrapMode: Text.Wrap
+                font.styleName: "SemiBold"
+                font.family: "Akshar"
+            }
         }
 
     }
@@ -4366,9 +7578,16 @@ Rectangle {
         y: 159
         width: 1070/2
         height: 300/2
-        visible: false
+        visible:
+            if(forRectifierNumber===2){
+                true
+            }
+            else{
+                false
+            }
         color: "#f7f8fa"
         border.color: "#e1e5ea"
+
         Rectangle {
             id: dropZone21
             x: 3
@@ -4426,21 +7645,24 @@ Rectangle {
         }
 
         Image {
+            id: rec2
             x: 215
             y: 36
             width: 106
+            visible: false
             source: "images/Rec.svg"
-            antialiasing: true
             fillMode: Image.PreserveAspectFit
+            antialiasing: true
         }
+
         Image {
             id: com21
             x: 3
             y: 23
             width: 106
             source: "images/BlankImage.svg"
-            antialiasing: true
             fillMode: Image.PreserveAspectFit
+            antialiasing: true
         }
 
         Image {
@@ -4449,8 +7671,8 @@ Rectangle {
             y: 23
             width: 106
             source: "images/BlankImage.svg"
-            antialiasing: true
             fillMode: Image.PreserveAspectFit
+            antialiasing: true
         }
 
         Image {
@@ -4459,8 +7681,8 @@ Rectangle {
             y: 23
             width: 106
             source: "images/BlankImage.svg"
-            antialiasing: true
             fillMode: Image.PreserveAspectFit
+            antialiasing: true
         }
 
         Image {
@@ -4469,8 +7691,223 @@ Rectangle {
             y: 23
             width: 106
             source: "images/BlankImage.svg"
-            antialiasing: true
             fillMode: Image.PreserveAspectFit
+            antialiasing: true
+        }
+
+        Text {
+            id: text21
+            x: 3
+            y: 66
+            width: 106
+            height: 76
+            color: "#284863"
+            text: qsTr(" ")
+            font.letterSpacing: -1.4
+            font.pixelSize: 17
+            horizontalAlignment: Text.AlignHCenter
+            verticalAlignment: Text.AlignTop
+            wrapMode: Text.Wrap
+            font.styleName: "SemiBold"
+            font.family: "Akshar"
+        }
+
+        Text {
+            id: text22
+            x: 109
+            y: 66
+            width: 106
+            height: 76
+            color: "#284863"
+            text: qsTr(" ")
+            font.letterSpacing: -1.4
+            font.pixelSize: 17
+            horizontalAlignment: Text.AlignHCenter
+            verticalAlignment: Text.AlignTop
+            wrapMode: Text.Wrap
+            font.styleName: "SemiBold"
+            font.family: "Akshar"
+        }
+
+        Text {
+            id: text24
+            x: 321
+            y: 66
+            width: 106
+            height: 76
+            color: "#284863"
+            text: qsTr(" ")
+            font.letterSpacing: -1.4
+            font.pixelSize: 17
+            horizontalAlignment: Text.AlignHCenter
+            verticalAlignment: Text.AlignTop
+            wrapMode: Text.Wrap
+            font.styleName: "SemiBold"
+            font.family: "Akshar"
+        }
+
+        Text {
+            id: text25
+            x: 427
+            y: 66
+            width: 106
+            height: 76
+            color: "#284863"
+            text: qsTr(" ")
+            font.letterSpacing: -1.4
+            font.pixelSize: 17
+            horizontalAlignment: Text.AlignHCenter
+            verticalAlignment: Text.AlignTop
+            wrapMode: Text.Wrap
+            font.styleName: "SemiBold"
+            font.family: "Akshar"
+        }
+
+        Text {
+            id: rec2Text23
+            x: 215
+            y: 1
+            width: 106
+            height: 27
+            visible: false
+            color: "#284863"
+            text: qsTr("Rec2")
+            font.letterSpacing: -1.4
+            font.pixelSize: 17
+            horizontalAlignment: Text.AlignHCenter
+            verticalAlignment: Text.AlignVCenter
+            wrapMode: Text.Wrap
+            font.styleName: "SemiBold"
+            font.family: "Akshar"
+        }
+
+        Text {
+            id: rec2Text21
+            x: 3
+            y: 1
+            width: 100
+            height: 27
+            visible: if(rectangle13.visible===false){
+                         true
+                     }
+                     else{
+                         false
+                     }
+            color: "#284863"
+            text: qsTr("n1")
+            font.letterSpacing: -1.4
+            font.pixelSize: 17
+            horizontalAlignment: Text.AlignHCenter
+            verticalAlignment: Text.AlignVCenter
+            wrapMode: Text.Wrap
+            font.styleName: "SemiBold"
+            font.family: "Akshar"
+        }
+
+        Text {
+            id: rec2Text22
+            x: 115
+            y: 1
+            width: 100
+            height: 27
+            visible: if(rectangle15.visible===false){
+                         true
+                     }
+                     else{
+                         false
+                     }
+            color: "#284863"
+            text: qsTr("T2")
+            font.letterSpacing: -1.4
+            font.pixelSize: 17
+            horizontalAlignment: Text.AlignHCenter
+            verticalAlignment: Text.AlignVCenter
+            wrapMode: Text.Wrap
+            font.styleName: "SemiBold"
+            font.family: "Akshar"
+        }
+
+        Text {
+            id: rec2Text24
+            x: 321
+            y: 1
+            width: 106
+            height: 27
+            visible: if(rectangle17.visible===false){
+                         true
+                     }
+                     else{
+                         false
+                     }
+            color: "#284863"
+            text: qsTr("M1")
+            font.letterSpacing: -1.4
+            font.pixelSize: 17
+            horizontalAlignment: Text.AlignHCenter
+            verticalAlignment: Text.AlignVCenter
+            wrapMode: Text.Wrap
+            font.styleName: "SemiBold"
+            font.family: "Akshar"
+        }
+
+        Text {
+            id: rec2Text25
+            x: 427
+            y: 1
+            width: 106
+            height: 27
+            visible:
+                if(rectangle19.visible===false){
+                                         true
+                                     }
+                                     else{
+                                         false
+                                     }
+            color: "#284863"
+            text: qsTr("M2")
+            font.letterSpacing: -1.4
+            font.pixelSize: 17
+            horizontalAlignment: Text.AlignHCenter
+            verticalAlignment: Text.AlignVCenter
+            wrapMode: Text.Wrap
+            font.styleName: "SemiBold"
+            font.family: "Akshar"
+        }
+
+        Rectangle {
+            id: rectanglenode4
+            x: 316
+            y: 39
+            width: 11
+            height: 11
+            visible: {
+                if(mouseArea22.visible===false && mouseArea24.visible===false){
+                    true
+                }
+                else {
+                    false
+                }
+
+            }
+            color: "#617284"
+            radius: 6
+            Text {
+                x: -4
+                y: -38
+                width: 20
+                height: 27
+                visible: true
+                color: "#284863"
+                text: qsTr("n3")
+                font.letterSpacing: -1.4
+                font.pixelSize: 17
+                horizontalAlignment: Text.AlignHCenter
+                verticalAlignment: Text.AlignVCenter
+                wrapMode: Text.Wrap
+                font.styleName: "SemiBold"
+                font.family: "Akshar"
+            }
+            antialiasing: true
         }
     }
 
@@ -4704,86 +8141,11 @@ Rectangle {
         }
     }
 
-    Rectangle {
-        id: bGForHeader1
-        x: 11
-        y: 531
-        width: 648/2
-        height: 130
-        color: "#f7f8fa"
-        border.color: "#a3adb1b4"
-        Text {
-            x: 8
-            y: 0
-            width: 150
-            height: 40
-            color: "#284863"
-            text: qsTr("Info")
-            font.letterSpacing: -2
-            font.pixelSize: 19
-            horizontalAlignment: Text.AlignLeft
-            verticalAlignment: Text.AlignVCenter
-            wrapMode: Text.Wrap
-            font.styleName: "Bold"
-            font.family: "Akshar"
-        }
-
-        Image {
-            x: 50
-            y: 326
-            width: 66
-            height: 43
-            source: "images/Accept.svg"
-            MouseArea {
-                x: -30
-                y: -10
-                width: parent.width+60
-                height: parent.height+20
-                onClicked: {
-
-                }
-            }
-            fillMode: Image.PreserveAspectFit
-        }
-
-        Image {
-            x: 208
-            y: 326
-            width: 66
-            height: 43
-            source: "images/Cancel.svg"
-            MouseArea {
-                x: -30
-                y: -10
-                width: parent.width+60
-                height: parent.height+20
-                onClicked: {
-
-                }
-            }
-            fillMode: Image.PreserveAspectFit
-        }
-
-        Text {
-            id:infoText
-            x: 8
-            y: 33
-            width: 315
-            height: 91
-            color: "#284863"
-            text: "Please select the job you want to do"
-            font.pixelSize: 18
-            horizontalAlignment: Text.AlignLeft
-            verticalAlignment: Text.AlignTop
-            wrapMode: Text.Wrap
-            clip: true
-        }
-    }
 
     Rectangle {
         id: rectangleForLeftMenuRec1
         x: 0
-        y: -900
+        y: 0
         width: 696/2
         height: 1456/2
         color: "#ffffff"
@@ -5415,7 +8777,7 @@ Rectangle {
 
         Rectangle {
             x: 10
-            y: 34
+            y: 0
             width: 200
             height: 1
             color: "#284863"
@@ -5459,9 +8821,9 @@ Rectangle {
                     if(bmBoxRect4.border.color=="#217efd" && rectangleForLeftMenuRec1.x===0){
                         text14.text=textUtility.text+"kVA" +"\n" +  chosenText22.text
                     }
-                    if(bmBoxRect5.border.color=="#217efd" && rectangleForLeftMenuRec1.x===0){
-                        text15.text=textUtility.text+"kVA" +"\n" +  chosenText22.text
-                    }
+//                    if(bmBoxRect5.border.color=="#217efd" && rectangleForLeftMenuRec1.x===0){
+//                        text15.text=textUtility.text+"kVA" +"\n" +  chosenText22.text
+//                    }
                     bmBoxRect1.border.color="#d6e0e7"
                     bmBoxRect2.border.color="#d6e0e7"
 
@@ -5469,7 +8831,11 @@ Rectangle {
                     bmBoxRect5.border.color="#d6e0e7"
                     rectangle1.x=0
                     rectangleForLeftMenuRec1.x=-500
-                    infoText.text="You are changed setup parameters for transformer"
+                    infoText.text="You are analyzing the system."
+                    typeWriterTimer.running=true
+
+                    com24.source="images/Line.svg"
+                    rectanglenode4.visible=true
 
                 }
             }
@@ -5493,7 +8859,7 @@ Rectangle {
 
         Rectangle {
             x: 10
-            y: 47
+            y: 0
             width: 328
             height: 236
             color: "#f7f8fa"
@@ -5564,7 +8930,7 @@ Rectangle {
 
             Text {
                 x: 270
-                y: 10
+                y: 0
                 width: 50
                 height: 41
                 color: "#284863"
@@ -5823,7 +9189,7 @@ Rectangle {
 
             Rectangle {
                 x: 141
-                y: 10
+                y: 11
                 width: 182
                 height: 40
                 color: "#ffffff"
@@ -5850,6 +9216,7 @@ Rectangle {
                 }
 
                 MouseArea {
+                    y: 0
                     anchors.fill: parent
                     anchors.leftMargin: -5
                     anchors.topMargin: -5
@@ -6455,29 +9822,54 @@ Rectangle {
                 height: parent.height
                 anchors.left: parent.left
                 onClicked: {
-                    if(bmBoxRect1.border.color=="#217efd" && rectangleForMotor.x===0){
-                        text11.text=textMotor.text+"rpm" +"\n"
-                    }
-                    if(bmBoxRect2.border.color=="#217efd" && rectangleForMotor.x===0){
-                        text12.text=textMotor.text+"rpm" +"\n"
-                    }
+                    if(forRectifierNumber===1){
+                        if(bmBoxRect1.border.color=="#217efd" && rectangleForMotor.x===0){
+                            text11.text=textMotor.text+"rpm" +"\n"
+                        }
+                        if(bmBoxRect2.border.color=="#217efd" && rectangleForMotor.x===0){
+                            text12.text=textMotor.text+"rpm" +"\n"
+                        }
 
-                    if(bmBoxRect4.border.color=="#217efd" && rectangleForMotor.x===0){
-                        text14.text=textMotor.text+"rpm" +"\n"
+                        if(bmBoxRect4.border.color=="#217efd" && rectangleForMotor.x===0){
+                            text14.text=textMotor.text+"rpm" +"\n"
+                        }
+                        if(bmBoxRect5.border.color=="#217efd" && rectangleForMotor.x===0){
+                            text15.text=textMotor.text+"rpm" +"\n"
+                        }
+                        bmBoxRect1.border.color="#d6e0e7"
+                        bmBoxRect2.border.color="#d6e0e7"
+
+                        bmBoxRect4.border.color="#d6e0e7"
+                        bmBoxRect5.border.color="#d6e0e7"
+
+                        rectangle1.x=0
+                        rectangleForMotor.x=-500
+                        infoText.text="You are changed setup parameters for Motor"
                     }
-                    if(bmBoxRect5.border.color=="#217efd" && rectangleForMotor.x===0){
-                        text15.text=textMotor.text+"rpm" +"\n"
+                    if(forRectifierNumber===2){
+                        if(bmBoxRect21.border.color=="#217efd" && rectangleForMotor.x===0){
+                            text21.text=textMotor.text+"rpm" +"\n"
+                        }
+                        if(bmBoxRect22.border.color=="#217efd" && rectangleForMotor.x===0){
+                            text22.text=textMotor.text+"rpm" +"\n"
+                        }
+
+                        if(bmBoxRect24.border.color=="#217efd" && rectangleForMotor.x===0){
+                            text24.text=textMotor.text+"rpm" +"\n"
+                        }
+                        if(bmBoxRect25.border.color=="#217efd" && rectangleForMotor.x===0){
+                            text25.text=textMotor.text+"rpm" +"\n"
+                        }
+                        bmBoxRect21.border.color="#d6e0e7"
+                        bmBoxRect22.border.color="#d6e0e7"
+
+                        bmBoxRect24.border.color="#d6e0e7"
+                        bmBoxRect25.border.color="#d6e0e7"
+
+                        rectangle1.x=0
+                        rectangleForMotor.x=-500
+                        infoText.text="You are changed setup parameters for Motor"
                     }
-                    bmBoxRect1.border.color="#d6e0e7"
-                    bmBoxRect2.border.color="#d6e0e7"
-
-                    bmBoxRect4.border.color="#d6e0e7"
-                    bmBoxRect5.border.color="#d6e0e7"
-
-                    rectangle1.x=0
-                    rectangleForMotor.x=-500
-                    infoText.text="You are changed setup parameters for Motor"
-
                 }
                 anchors.leftMargin: -10
             }

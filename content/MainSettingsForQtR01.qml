@@ -35,14 +35,8 @@ Rectangle {
     property var redoHistory: []
 
     property string colorOverlayColor: String("#80bfbfbf")
-    //    property string colorOverlayColor2: String("#9eaaa9a5")
-    //    property string colorOverlayColor255: String("#9eaaa9a5")
 
     Component.onCompleted: {
-        //        customswitchB.rectangle.color="#FCAE18"
-        //        customswitchB.rectangle1.x=48
-        //        customswitchC.rectangle.color="#217EFD"
-        //        customswitchC.rectangle1.x=48
         groupDotRotation.start()
     }
 
@@ -757,10 +751,10 @@ Rectangle {
                 height: 31
                 color: "#284863"
                 text: "1µs rise"
-                font.pixelSize: 16
+                font.pixelSize: 15
                 horizontalAlignment: Text.AlignHCenter
                 verticalAlignment: Text.AlignVCenter
-                wrapMode: Text.Wrap
+                wrapMode: Text.NoWrap
                 layer.enabled: true
                 clip: true
             }
@@ -775,10 +769,10 @@ Rectangle {
                 height: 32
                 color: "#284863"
                 text: "0.1ms rise"
-                font.pixelSize: 16
+                font.pixelSize: 15
                 horizontalAlignment: Text.AlignHCenter
                 verticalAlignment: Text.AlignVCenter
-                wrapMode: Text.Wrap
+                wrapMode: Text.NoWrap
                 clip: true
             }
 
@@ -791,10 +785,10 @@ Rectangle {
                 height: 32
                 color: "#284863"
                 text: "< 5kHz"
-                font.pixelSize: 16
+                font.pixelSize: 15
                 horizontalAlignment: Text.AlignHCenter
                 verticalAlignment: Text.AlignVCenter
-                wrapMode: Text.Wrap
+                wrapMode: Text.NoWrap
                 clip: true
             }
 
@@ -807,10 +801,10 @@ Rectangle {
                 height: 32
                 color: "#284863"
                 text: "5-500 kHz"
-                font.pixelSize: 16
+                font.pixelSize: 15
                 horizontalAlignment: Text.AlignHCenter
                 verticalAlignment: Text.AlignVCenter
-                wrapMode: Text.Wrap
+                wrapMode: Text.NoWrap
                 clip: true
             }
 
@@ -823,10 +817,10 @@ Rectangle {
                 height: 31
                 color: "#284863"
                 text: "0.5-5 MHz"
-                font.pixelSize: 16
+                font.pixelSize: 15
                 horizontalAlignment: Text.AlignHCenter
                 verticalAlignment: Text.AlignVCenter
-                wrapMode: Text.Wrap
+                wrapMode: Text.NoWrap
                 clip: true
             }
 
@@ -840,10 +834,10 @@ Rectangle {
                 height: 31
                 color: "#284863"
                 text: "50ns-1ms"
-                font.pixelSize: 16
+                font.pixelSize: 15
                 horizontalAlignment: Text.AlignHCenter
                 verticalAlignment: Text.AlignVCenter
-                wrapMode: Text.Wrap
+                wrapMode: Text.NoWrap
                 clip: true
             }
 
@@ -856,10 +850,10 @@ Rectangle {
                 height: 32
                 color: "#284863"
                 text: "> 1ms"
-                font.pixelSize: 16
+                font.pixelSize: 15
                 horizontalAlignment: Text.AlignHCenter
                 verticalAlignment: Text.AlignVCenter
-                wrapMode: Text.Wrap
+                wrapMode: Text.NoWrap
                 clip: true
             }
 
@@ -872,10 +866,10 @@ Rectangle {
                 height: 32
                 color: "#284863"
                 text: "0.3-50ms"
-                font.pixelSize: 16
+                font.pixelSize: 15
                 horizontalAlignment: Text.AlignHCenter
                 verticalAlignment: Text.AlignVCenter
-                wrapMode: Text.Wrap
+                wrapMode: Text.NoWrap
                 clip: true
             }
 
@@ -888,10 +882,10 @@ Rectangle {
                 height: 32
                 color: "#284863"
                 text: "20µs"
-                font.pixelSize: 16
+                font.pixelSize: 15
                 horizontalAlignment: Text.AlignHCenter
                 verticalAlignment: Text.AlignVCenter
-                wrapMode: Text.Wrap
+                wrapMode: Text.NoWrap
                 clip: true
             }
 
@@ -904,10 +898,10 @@ Rectangle {
                 height: 30
                 color: "#284863"
                 text: "5µs"
-                font.pixelSize: 16
+                font.pixelSize: 15
                 horizontalAlignment: Text.AlignHCenter
                 verticalAlignment: Text.AlignVCenter
-                wrapMode: Text.Wrap
+                wrapMode: Text.NoWrap
                 clip: true
             }
 
@@ -1058,9 +1052,9 @@ Rectangle {
 
                 Text {
                     id: text44
-                    x: 141
+                    x: 51
                     y: -28
-                    width: 190
+                    width: 280
                     height: 25
                     color: "#284863"
                     text: "IEEE 1159-1995 Standarts"
@@ -1083,10 +1077,10 @@ Rectangle {
                 height: 32
                 color: "#284863"
                 text: "0-4pu"
-                font.pixelSize: 16
+                font.pixelSize: 15
                 horizontalAlignment: Text.AlignHCenter
                 verticalAlignment: Text.AlignVCenter
-                wrapMode: Text.Wrap
+                wrapMode: Text.NoWrap
                 clip: true
             }
 
@@ -1099,10 +1093,10 @@ Rectangle {
                 height: 32
                 color: "#284863"
                 text: "0-8pu"
-                font.pixelSize: 16
+                font.pixelSize: 15
                 horizontalAlignment: Text.AlignHCenter
                 verticalAlignment: Text.AlignVCenter
-                wrapMode: Text.Wrap
+                wrapMode: Text.NoWrap
                 clip: true
             }
 
@@ -1115,10 +1109,10 @@ Rectangle {
                 height: 30
                 color: "#284863"
                 text: "0-4pu"
-                font.pixelSize: 16
+                font.pixelSize: 15
                 horizontalAlignment: Text.AlignHCenter
                 verticalAlignment: Text.AlignVCenter
-                wrapMode: Text.Wrap
+                wrapMode: Text.NoWrap
                 clip: true
             }
 
@@ -4688,6 +4682,7 @@ Rectangle {
                         }
                     }
                 }
+
             }
 
 
@@ -7227,13 +7222,13 @@ Rectangle {
 
         Text {
             id: nominalVoltageForGraph1
-            x: -64
+            x: -68
             y: 0
-            width: 62
+            width: 65
             height: 14
             color: "#284863"
-            text: "6000.00"
-            font.pixelSize: 17
+            text: "6000.0"
+            font.pixelSize: 16
             horizontalAlignment: Text.AlignRight
             verticalAlignment: Text.AlignVCenter
             wrapMode: Text.Wrap
@@ -7263,8 +7258,8 @@ Rectangle {
             width: 62
             height: 14
             color: "#284863"
-            text: "0.00"
-            font.pixelSize: 17
+            text: "0.0"
+            font.pixelSize: 16
             horizontalAlignment: Text.AlignRight
             verticalAlignment: Text.AlignVCenter
             wrapMode: Text.Wrap
@@ -7279,7 +7274,7 @@ Rectangle {
             height: 14
             color: "#284863"
             text: "0" + " ms"
-            font.pixelSize: 17
+            font.pixelSize: 16
             horizontalAlignment: Text.AlignLeft
             verticalAlignment: Text.AlignVCenter
             wrapMode: Text.Wrap
@@ -7294,7 +7289,7 @@ Rectangle {
             height: 14
             color: "#284863"
             text: ((1/(spinBox255.value / 10)*1000)/2).toFixed(2) + " ms"
-            font.pixelSize: 17
+            font.pixelSize: 16
             horizontalAlignment: Text.AlignLeft
             verticalAlignment: Text.AlignVCenter
             wrapMode: Text.Wrap
@@ -7309,7 +7304,7 @@ Rectangle {
             height: 14
             color: "#284863"
             text: (1/(spinBox255.value / 10)*1000).toFixed(2) + " ms"
-            font.pixelSize: 17
+            font.pixelSize: 16
             horizontalAlignment: Text.AlignRight
             verticalAlignment: Text.AlignVCenter
             wrapMode: Text.Wrap

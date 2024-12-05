@@ -2903,7 +2903,7 @@ Rectangle {
                 height: 87
                 source: "images/BGHeader.svg"
                 fillMode: Image.PreserveAspectFit
-                CustomCheckBox {
+                CustomCheckBoxForHarmonic {
                     id:voltagecheck
                     x: 9
                     y: 10
@@ -3292,7 +3292,7 @@ Rectangle {
 
                 }
 
-                CustomCheckBox {
+                CustomCheckBoxForHarmonic {
                     id:powercheck
                     x: 9
                     y: 45
@@ -3666,7 +3666,7 @@ Rectangle {
 
                 }
 
-                CustomCheckBox {
+                CustomCheckBoxForHarmonic {
                     id:currentcheck
                     x: 145
                     y: 9
